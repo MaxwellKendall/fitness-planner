@@ -1,0 +1,45 @@
+# User intent — never modified by the system.
+# Edit this file to change your training configuration.
+
+athlete:
+  age: 36                              # determines goal-tier bracket (18-29 / 30-39 / 40-49 / 50-59 / 60+)
+  units: lbs                           # kg | lbs — affects all load suggestions
+  height_ft: 6
+  weight_lb: 200                       # current bodyweight — update as you progress
+  target_weight_lb: 180                # recomp target (~180 lb is athletic-lean for 6ft male)
+
+goals:
+  primary: lose_fat                    # build_strength | lose_fat | improve_endurance | maintain
+  secondary: build_strength            # recomp: shed fat while maintaining and gaining strength
+  timeline_weeks: 16                   # planning horizon for goal targets; recalibrates every 4 weeks
+
+schedule:
+  days_per_week: 3                     # training days per week
+  session_duration_minutes: 45         # target session length
+  preferred_days: [monday, wednesday, friday]
+  workout_times:
+    monday: "7:00am"
+    wednesday: "7:00am"
+    friday: "7:00am"
+  cook_windows:
+    - {day: saturday, duration_hours: 2, label: "weekly bulk cook"}   # shop morning, cook afternoon
+    - {day: wednesday, duration_hours: 1, label: "midweek refresh"}
+  grocery_day: saturday                # shop before bulk cook
+
+equipment:
+  available: [barbell, rack, dumbbells, pull_up_bar, bench]  # full gym
+
+constraints:
+  injuries: []                         # e.g. {area: lower_back, note: "avoid heavy spinal flexion"}
+  avoid_exercises: []                  # exercise slugs to skip permanently
+  max_weekly_volume_sets: 60           # flag if planned volume exceeds this ceiling
+
+preferences:
+  training_style: powerbuilding        # powerlifting | hypertrophy | powerbuilding | functional
+  cardio: optional                     # required | optional | none
+  warmup_in_plan: true                 # include warm-up sets in plan output
+  notes_voice: concise                 # concise | detailed
+
+deload:
+  auto_suggest: true
+  frequency_weeks: 6                   # suggest a deload week every N weeks of training

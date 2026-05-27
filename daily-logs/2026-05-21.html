@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Log — Thu May 21, 2026</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header meal">
+  <div class="header-inner">
+    <span class="badge rest">Rest Day</span>
+    <h1>Thu May 21, 2026</h1>
+    <span class="header-meta">nutrition · sleep · recovery</span>
+  </div>
+</header>
+
+<main>
+
+  <section class="card meal">
+    <div class="card-header">Daily targets — rest day</div>
+    <div class="card-body">
+      <div class="goal-list">
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Protein</span>
+            <span class="goal-pct">111 g / 160 g target</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill meal" style="width:69%"></div>
+          </div>
+        </div>
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Calories</span>
+            <span class="goal-pct">~2,230 kcal / 2,300 kcal target</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill meal" style="width:97%"></div>
+          </div>
+        </div>
+
+      </div>
+      <p class="small muted" style="margin-top:.75rem">Calories nearly on target. Protein 49g short — skipping breakfast and a milkshake at dinner is the gap. Tomorrow is a training day: start with a protein breakfast.</p>
+    </div>
+  </section>
+
+  <section class="card meal">
+    <div class="card-header">Meals</div>
+    <div class="card-body">
+
+      <div style="border:1px solid var(--meal-border);border-radius:var(--radius);padding:1rem;margin-bottom:.75rem;background:var(--meal-bg);">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.25rem;">
+          <strong style="color:var(--meal)">Chicken and rice</strong>
+          <span class="badge meal">Lunch</span>
+        </div>
+        <p class="small muted" style="margin-bottom:.5rem">Chicken breast with rice — first meal of the day.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:.85rem;">
+          <span>🔥 <strong>480</strong> kcal</span>
+          <span>🥩 <strong>56g</strong> protein</span>
+          <span>🍚 <strong>45g</strong> carbs</span>
+          <span>🫒 <strong>6g</strong> fat</span>
+          <span class="muted">confidence: medium</span>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--meal-border);border-radius:var(--radius);padding:1rem;background:var(--meal-bg);">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.25rem;">
+          <strong style="color:var(--meal)">Burger, fries, milkshake</strong>
+          <span class="badge meal">Dinner</span>
+        </div>
+        <p class="small muted" style="margin-bottom:.5rem">Restaurant burger with fries and a milkshake.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:.85rem;">
+          <span>🔥 <strong>1,750</strong> kcal</span>
+          <span>🥩 <strong>55g</strong> protein</span>
+          <span>🍚 <strong>195g</strong> carbs</span>
+          <span>🫒 <strong>73g</strong> fat</span>
+          <span class="muted">confidence: medium</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-header">Daily summary</div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Metric</th><th>Logged</th><th>Target</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Protein</strong></td>
+              <td>111 g</td>
+              <td>160 g</td>
+              <td><span class="badge recovery">⚠ 49g short</span></td>
+            </tr>
+            <tr>
+              <td><strong>Calories</strong></td>
+              <td>~2,230 kcal</td>
+              <td>2,300 kcal (rest)</td>
+              <td><span class="badge meal">✓ on target</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted" style="margin-top:.75rem">The milkshake added ~600 kcal with almost no protein — same pattern as Monday's cake. Calories landed fine but protein took a big hit from skipping breakfast and the low-protein dinner add-ons. Friday is a training day: eggs or a shake first thing before the 7am session.</p>
+    </div>
+  </section>
+
+</main>
+
+<script type="application/json" id="daily-log-data">
+{
+  "date": "2026-05-21",
+  "day_type": "rest",
+  "targets": { "protein_g": 160, "calories_training": 2600, "calories_rest": 2300 },
+  "meals": [
+    { "meal_name": "Chicken and rice", "calories_est": 480, "protein_g": 56, "carbs_g": 45, "fat_g": 6, "confidence": "medium" },
+    { "meal_name": "Burger, fries, milkshake", "calories_est": 1750, "protein_g": 55, "carbs_g": 195, "fat_g": 73, "confidence": "medium" }
+  ],
+  "totals": { "calories_est": 2230, "protein_g": 111, "carbs_g": 240, "fat_g": 79 },
+  "review_signals": { "protein_ok": false, "calories_ok": true, "protein_g": 111, "calories_est": 2230 }
+}
+</script>
+
+</body>
+</html>

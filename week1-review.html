@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Review — May 18–24, 2026</title>
+  <style>
+/* Fitness Planner — shared stylesheet for all HTML outputs */
+
+:root {
+  --bg: #f5f5f4;
+  --card: #ffffff;
+  --text: #1c1917;
+  --muted: #78716c;
+  --border: #e7e5e4;
+  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+
+  --workout: #2563eb;
+  --workout-bg: #eff6ff;
+  --workout-border: #bfdbfe;
+
+  --meal: #16a34a;
+  --meal-bg: #f0fdf4;
+  --meal-border: #bbf7d0;
+
+  --recovery: #d97706;
+  --recovery-bg: #fffbeb;
+  --recovery-border: #fde68a;
+
+  --pr: #dc2626;
+  --pr-bg: #fef2f2;
+
+  --header-bg: #1c1917;
+  --header-text: #fafaf9;
+  --header-muted: #a8a29e;
+
+  --radius: 8px;
+  --radius-sm: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ── Header ─────────────────────────────────────── */
+
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 1.5rem 2rem;
+  border-bottom: 3px solid var(--workout);
+}
+.site-header.meal   { border-bottom-color: var(--meal); }
+.site-header.review { border-bottom-color: var(--recovery); }
+.site-header.log    { border-bottom-color: #7c3aed; }
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
+
+.header-meta {
+  color: var(--header-muted);
+  font-size: .875rem;
+  margin-left: auto;
+}
+
+.header-nav {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  margin-top: .5rem;
+  font-size: .8rem;
+}
+.header-nav a { color: var(--header-muted); text-decoration: none; }
+.header-nav a:hover { color: var(--header-text); }
+
+/* ── Layout ──────────────────────────────────────── */
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Cards ───────────────────────────────────────── */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: .75rem 1.25rem;
+  font-weight: 600;
+  font-size: .95rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.card-body { padding: 1.25rem; }
+
+.card.workout .card-header { background: var(--workout-bg); color: var(--workout); border-bottom-color: var(--workout-border); }
+.card.meal    .card-header { background: var(--meal-bg);    color: var(--meal);    border-bottom-color: var(--meal-border); }
+.card.recovery .card-header { background: var(--recovery-bg); color: var(--recovery); border-bottom-color: var(--recovery-border); }
+
+/* ── Badges ──────────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: .2em .6em;
+  border-radius: 99px;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+.badge.workout  { background: var(--workout-bg);  color: var(--workout); }
+.badge.meal     { background: var(--meal-bg);     color: var(--meal); }
+.badge.recovery { background: var(--recovery-bg); color: var(--recovery); }
+.badge.pr       { background: var(--pr-bg);       color: var(--pr); }
+.badge.rest     { background: var(--border);      color: var(--muted); }
+
+/* ── Tables ──────────────────────────────────────── */
+
+.table-wrap { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+
+th {
+  text-align: left;
+  padding: .5rem .75rem;
+  font-weight: 600;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+
+td {
+  padding: .6rem .75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) td { background: #fafaf9; }
+tr:hover td { background: var(--workout-bg); }
+
+/* ── Progress bars ───────────────────────────────── */
+
+.goal-list { display: flex; flex-direction: column; gap: .75rem; }
+
+.goal-row { display: flex; flex-direction: column; gap: .25rem; }
+
+.goal-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: .85rem;
+}
+.goal-label .goal-name { font-weight: 600; }
+.goal-label .goal-pct  { color: var(--muted); }
+
+.progress-track {
+  height: 8px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--workout);
+  border-radius: 99px;
+  transition: width .3s ease;
+}
+.progress-fill.meal { background: var(--meal); }
+
+/* ── Schedule grid ───────────────────────────────── */
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.day-cell {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: .5rem .4rem;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+.day-cell.workout-day { border-color: var(--workout-border); background: var(--workout-bg); }
+.day-cell.cook-day    { border-color: var(--meal-border);    background: var(--meal-bg); }
+.day-cell.both        { border-color: var(--meal-border);    background: linear-gradient(135deg, var(--workout-bg) 50%, var(--meal-bg) 50%); }
+.day-cell.rest        { opacity: .6; }
+
+.day-name {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+}
+.day-date { font-size: .75rem; color: var(--muted); }
+.day-event {
+  font-size: .75rem;
+  font-weight: 600;
+  margin-top: auto;
+  line-height: 1.3;
+}
+.day-event.workout { color: var(--workout); }
+.day-event.cook    { color: var(--meal); }
+.day-event.shop    { color: var(--recovery); }
+
+/* ── Recipe cards ────────────────────────────────── */
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.recipe-card {
+  background: var(--card);
+  border: 1px solid var(--meal-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.recipe-card h3 { font-size: .95rem; }
+.recipe-card a  { color: var(--meal); text-decoration: none; }
+.recipe-card a:hover { text-decoration: underline; }
+
+.recipe-meta {
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+/* ── Grocery checklist ───────────────────────────── */
+
+.checklist { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  font-size: .9rem;
+  padding: .4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.checklist li:last-child { border-bottom: none; }
+
+.checklist input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--meal);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.checklist label { cursor: pointer; flex: 1; }
+.checklist input:checked + label { text-decoration: line-through; color: var(--muted); }
+
+.checklist .item-note {
+  font-size: .78rem;
+  color: var(--muted);
+  display: block;
+}
+
+.checklist-section { margin-bottom: 1.5rem; }
+.checklist-section h3 {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  margin-bottom: .5rem;
+  padding-bottom: .25rem;
+  border-bottom: 2px solid var(--border);
+}
+
+/* ── Session ratings ─────────────────────────────── */
+
+.ratings-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: .75rem 0;
+}
+
+.rating-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .5rem .75rem;
+  min-width: 70px;
+}
+.rating-chip .chip-val {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.rating-chip .chip-label {
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
+  margin-top: .15rem;
+}
+
+/* ── Collapsibles ────────────────────────────────── */
+
+details { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+details + details { margin-top: .5rem; }
+
+summary {
+  padding: .75rem 1rem;
+  font-weight: 600;
+  font-size: .9rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--bg);
+}
+summary::before { content: "▶"; font-size: .65rem; color: var(--muted); transition: transform .2s; }
+details[open] summary::before { transform: rotate(90deg); }
+
+details .details-body { padding: 1rem; border-top: 1px solid var(--border); }
+
+/* ── Utility ─────────────────────────────────────── */
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: .75rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.muted { color: var(--muted); }
+.small  { font-size: .85rem; }
+
+.alert {
+  padding: .75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: .9rem;
+  border-left: 4px solid;
+}
+.alert.warning { background: var(--recovery-bg); border-color: var(--recovery); color: #92400e; }
+.alert.info    { background: var(--workout-bg);  border-color: var(--workout);  color: #1e3a8a; }
+
+.prep-steps { padding-left: 1.25rem; display: flex; flex-direction: column; gap: .4rem; font-size: .9rem; }
+
+/* ── Responsive ──────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .site-header { padding: 1rem; }
+  .header-inner { gap: .5rem; }
+  main { padding: 0 1rem 3rem; gap: 1.25rem; }
+
+  .week-grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+  }
+  .day-cell { min-height: 60px; padding: .3rem; }
+  .day-event { font-size: .65rem; }
+
+  .recipe-grid { grid-template-columns: 1fr; }
+  .ratings-row { gap: .5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="site-header review">
+  <div class="header-inner">
+    <span class="badge recovery">Week 1 Review</span>
+    <h1>May 18–24, 2026</h1>
+    <span class="header-meta">Re-baseline week · B/A/B rotation · 3/3 sessions complete</span>
+  </div>
+</header>
+
+<main>
+
+  <div class="alert info">
+    <strong>Week 1 complete — all 3 sessions done.</strong> Every major lift has a baseline now. Bench and deadlift are both trending up. The push-up goal is done. One pattern to fix heading into week 2: protein and dead bugs.
+  </div>
+
+  <!-- ── Week at a glance ── -->
+  <section class="card">
+    <div class="card-header">Week at a glance</div>
+    <div class="card-body">
+      <div class="week-grid">
+        <div class="day-cell workout-day">
+          <span class="day-name">Mon</span>
+          <span class="day-date">May 18</span>
+          <span class="day-event workout">Session B ✓</span>
+        </div>
+        <div class="day-cell rest">
+          <span class="day-name">Tue</span>
+          <span class="day-date">May 19</span>
+          <span class="day-event">Rest</span>
+        </div>
+        <div class="day-cell workout-day">
+          <span class="day-name">Wed</span>
+          <span class="day-date">May 20</span>
+          <span class="day-event workout">Session A ✓</span>
+        </div>
+        <div class="day-cell rest">
+          <span class="day-name">Thu</span>
+          <span class="day-date">May 21</span>
+          <span class="day-event">Rest</span>
+        </div>
+        <div class="day-cell rest">
+          <span class="day-name">Fri</span>
+          <span class="day-date">May 22</span>
+          <span class="day-event">Rest</span>
+        </div>
+        <div class="day-cell workout-day">
+          <span class="day-name">Sat</span>
+          <span class="day-date">May 23</span>
+          <span class="day-event workout">Session B ✓</span>
+        </div>
+        <div class="day-cell rest">
+          <span class="day-name">Sun</span>
+          <span class="day-date">May 24</span>
+          <span class="day-event">Rest</span>
+        </div>
+      </div>
+      <p class="small muted" style="margin-top:.75rem">Sessions completed: 3 of 3 · Rotation: B / A / B · Full week achieved</p>
+    </div>
+  </section>
+
+  <!-- ── Training performance ── -->
+  <section class="card workout">
+    <div class="card-header">Training performance — all sessions</div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Exercise</th>
+              <th>Date</th>
+              <th>Sets × Reps</th>
+              <th>Load</th>
+              <th>RPE</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bench Press</strong></td>
+              <td>May 18</td>
+              <td>3 × 5</td>
+              <td>135 lb</td>
+              <td>8 ⚠️</td>
+              <td>Higher than target. Est. 1RM ~152 lb.</td>
+            </tr>
+            <tr>
+              <td><strong>Deadlift</strong></td>
+              <td>May 18</td>
+              <td>3 × 5</td>
+              <td>155 lb</td>
+              <td>4</td>
+              <td>Undertested — no useful baseline at this weight.</td>
+            </tr>
+            <tr>
+              <td><strong>Push-up</strong></td>
+              <td>May 18</td>
+              <td>2 sets</td>
+              <td>BW</td>
+              <td>—</td>
+              <td><span class="badge pr">✓ Goal hit — 15 unbroken</span></td>
+            </tr>
+            <tr>
+              <td><strong>Dead Bug</strong></td>
+              <td>May 18</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td><span class="badge recovery">⚠ Skipped (1 of 2)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Back Squat</strong></td>
+              <td>May 20</td>
+              <td>3 × 5</td>
+              <td>135 lb</td>
+              <td>6 ✓</td>
+              <td>Right on target. Est. 1RM ~170 lb.</td>
+            </tr>
+            <tr>
+              <td><strong>Pull-up</strong></td>
+              <td>May 20</td>
+              <td>4 × 4</td>
+              <td>BW</td>
+              <td>8 ⚠️</td>
+              <td>1 rep short of plan. Current ceiling ~4–5/set.</td>
+            </tr>
+            <tr>
+              <td><strong>DB Row</strong></td>
+              <td>May 20</td>
+              <td>3 × 10</td>
+              <td>24 kg/hand</td>
+              <td>—</td>
+              <td>Completed as planned ✓</td>
+            </tr>
+            <tr>
+              <td><strong>Farmer Carry</strong></td>
+              <td>May 20</td>
+              <td>3 × 30m</td>
+              <td>22 kg/hand</td>
+              <td>—</td>
+              <td>Completed as planned ✓</td>
+            </tr>
+            <tr>
+              <td><strong>Plank</strong></td>
+              <td>May 20</td>
+              <td>3 × 50s</td>
+              <td>BW</td>
+              <td>—</td>
+              <td>Completed as planned ✓</td>
+            </tr>
+            <tr>
+              <td><strong>Bench Press</strong></td>
+              <td>May 23</td>
+              <td>3 × 5</td>
+              <td>135 lb</td>
+              <td>7 ✓</td>
+              <td>RPE dropped from 8 → 7 — adaptation confirmed. Ready to add weight.</td>
+            </tr>
+            <tr>
+              <td><strong>Deadlift</strong></td>
+              <td>May 23</td>
+              <td>3 × 5</td>
+              <td>195 lb</td>
+              <td>7 ✓</td>
+              <td>Real baseline established. Est. 1RM ~219 lb.</td>
+            </tr>
+            <tr>
+              <td><strong>Barbell Row</strong></td>
+              <td>May 23</td>
+              <td>—</td>
+              <td>95 lb</td>
+              <td>5</td>
+              <td>Switched from DB rows. Underloaded — bring to 115–125 lb next session.</td>
+            </tr>
+            <tr>
+              <td><strong>Push-up</strong></td>
+              <td>May 23</td>
+              <td>2 × 10</td>
+              <td>BW</td>
+              <td>—</td>
+              <td>Slow tempo quality work ✓</td>
+            </tr>
+            <tr>
+              <td><strong>Dead Bug</strong></td>
+              <td>May 23</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td><span class="badge recovery">⚠ Skipped (2 of 2)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Strength baselines ── -->
+  <section class="card workout">
+    <div class="card-header">Strength baselines — end of week 1</div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Lift</th>
+              <th>Working Weight</th>
+              <th>RPE</th>
+              <th>Est. 1RM</th>
+              <th>Target</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Back Squat</strong></td>
+              <td>135 lb × 5</td>
+              <td>6</td>
+              <td>~170 lb</td>
+              <td>250 lb</td>
+              <td>Historical PR: 235 lb · Clean baseline · +10 lb week 2</td>
+            </tr>
+            <tr>
+              <td><strong>Bench Press</strong></td>
+              <td>135 lb × 5</td>
+              <td>7 (was 8)</td>
+              <td>~152 lb</td>
+              <td>200 lb</td>
+              <td>Historical PR: 225 lb · RPE improving — add 5–10 lb week 2</td>
+            </tr>
+            <tr>
+              <td><strong>Deadlift</strong></td>
+              <td>195 lb × 5</td>
+              <td>7</td>
+              <td>~219 lb</td>
+              <td>350 lb</td>
+              <td>Historical PR: 255 lb · Solid baseline · +10–20 lb week 2</td>
+            </tr>
+            <tr>
+              <td><strong>Pull-up</strong></td>
+              <td>BW × 4/set</td>
+              <td>8</td>
+              <td>—</td>
+              <td>10 unbroken</td>
+              <td>Current limiting factor · Hold volume, build consistency</td>
+            </tr>
+            <tr>
+              <td><strong>Push-up</strong></td>
+              <td>BW × 15</td>
+              <td>—</td>
+              <td>—</td>
+              <td>15 unbroken</td>
+              <td><span class="badge pr">✓ Goal achieved</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted" style="margin-top:.75rem">Brzycki: 1RM = weight × (36 / (37 − reps)). Valid at RPE ≤ 8 for 1–10 reps.</p>
+    </div>
+  </section>
+
+  <!-- ── Goals progress ── -->
+  <section class="card">
+    <div class="card-header">Goals progress</div>
+    <div class="card-body">
+      <div class="goal-list">
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Back Squat</span>
+            <span class="goal-pct">est. ~170 lb → target 250 lb · 68%</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width:68%"></div></div>
+        </div>
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Bench Press</span>
+            <span class="goal-pct">est. ~152 lb → target 200 lb · 76%</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width:76%"></div></div>
+        </div>
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Deadlift</span>
+            <span class="goal-pct">est. ~219 lb → target 350 lb · 63%</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width:63%"></div></div>
+        </div>
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Pull-ups</span>
+            <span class="goal-pct">~4–5 reps/set → target 10 unbroken · ~45%</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width:45%"></div></div>
+        </div>
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Push-ups</span>
+            <span class="goal-pct">✓ 15 unbroken — goal complete</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
+        </div>
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Body composition</span>
+            <span class="goal-pct">200 lb → target 180 lb · Week 1 of 16</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill meal" style="width:6%"></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Nutrition ── -->
+  <section class="card meal">
+    <div class="card-header">Nutrition — logged days (4 of 6)</div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Day Type</th>
+              <th>Calories</th>
+              <th>Cal Target</th>
+              <th>Protein</th>
+              <th>Pro Target</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>May 18</td>
+              <td><span class="badge workout">Training</span></td>
+              <td>~2,870</td>
+              <td>2,600</td>
+              <td>137g</td>
+              <td>160g</td>
+              <td><span class="badge recovery">+270 cal · −23g protein</span></td>
+            </tr>
+            <tr>
+              <td>May 19</td>
+              <td><span class="badge rest">Rest</span></td>
+              <td>~1,785</td>
+              <td>2,300</td>
+              <td>145g</td>
+              <td>160g</td>
+              <td><span class="badge recovery">−515 cal · −15g protein</span></td>
+            </tr>
+            <tr>
+              <td>May 20</td>
+              <td><span class="badge workout">Training</span></td>
+              <td>~2,490</td>
+              <td>2,600</td>
+              <td>151g</td>
+              <td>160g</td>
+              <td><span class="badge meal">Close · −9g protein</span></td>
+            </tr>
+            <tr>
+              <td>May 21</td>
+              <td><span class="badge rest">Rest</span></td>
+              <td>~2,230</td>
+              <td>2,300</td>
+              <td>111g</td>
+              <td>160g</td>
+              <td><span class="badge recovery">−49g protein</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted" style="margin-top:.75rem">4/6 days logged · Average protein: ~136g · Average shortfall: ~27g/day · May 22 and 23 unlogged.</p>
+
+      <div style="margin-top:1.25rem;padding:1rem;background:var(--recovery-bg);border-radius:var(--radius-sm);border-left:3px solid var(--recovery);">
+        <p class="small" style="color:#92400e;font-weight:600;margin-bottom:.4rem">⚠ Consistent protein miss — skipping breakfast is the root cause</p>
+        <p class="small muted">Every day with a missed protein target had no logged breakfast. A morning protein anchor (eggs, shake, Greek yogurt) adds 25–40g and de-risks the rest of the day. One habit, biggest return.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Recovery flags ── -->
+  <section class="card recovery">
+    <div class="card-header">Recovery flags</div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Flag</th><th>Detail</th><th>Action</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Dead bug — skipped twice</strong></td>
+              <td>Skipped both Session B workouts (May 18 and May 23). As deadlift load climbs this becomes a real risk.</td>
+              <td>Mandatory end of every Session B. 3 × 8/side. 5 minutes. Non-negotiable.</td>
+            </tr>
+            <tr>
+              <td><strong>Left ankle</strong></td>
+              <td>Mild post-session oddness after May 20 squats + farmer carries. Not during the session.</td>
+              <td>Monitor over week 2. Flag if it shows up during a session or at warm-up.</td>
+            </tr>
+            <tr>
+              <td><strong>Sleep — May 18</strong></td>
+              <td>Late food + beer delayed sleep onset by ~1 hour.</td>
+              <td>Finish eating 2–3 hrs before bed on training nights.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Week 2 loading ── -->
+  <section class="card">
+    <div class="card-header">Week 2 loading targets</div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Lift</th><th>Week 1</th><th>Week 2 Target</th><th>Rationale</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Back Squat</strong></td>
+              <td>135 lb @ RPE 6</td>
+              <td>145 lb</td>
+              <td>RPE 6 — ready for 10 lb jump</td>
+            </tr>
+            <tr>
+              <td><strong>Bench Press</strong></td>
+              <td>135 lb @ RPE 7</td>
+              <td>140–145 lb</td>
+              <td>RPE improving — add load</td>
+            </tr>
+            <tr>
+              <td><strong>Deadlift</strong></td>
+              <td>195 lb @ RPE 7</td>
+              <td>205–215 lb</td>
+              <td>Solid baseline — progress linearly</td>
+            </tr>
+            <tr>
+              <td><strong>Pull-up</strong></td>
+              <td>4 reps @ RPE 8</td>
+              <td>4–5 reps, same volume</td>
+              <td>Don't force reps — build consistency</td>
+            </tr>
+            <tr>
+              <td><strong>Barbell Row</strong></td>
+              <td>95 lb @ RPE 5</td>
+              <td>115–125 lb</td>
+              <td>RPE 5 = significantly underloaded</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Summary ── -->
+  <section class="card">
+    <div class="card-header">Summary</div>
+    <div class="card-body">
+      <p style="font-size:.9rem">Strong week 1. 3 for 3 sessions, all major lifts baselined, push-up goal closed out. The two things that carry into week 2: eat breakfast (protein every morning, no exceptions) and do the dead bugs (every Session B, full stop). Everything else is tracking well — loads are conservative by design and will move up quickly as the body remembers what it can do.</p>
+    </div>
+  </section>
+
+</main>
+
+<script type="application/json" id="review-data">
+{
+  "review_date": "2026-05-25",
+  "week": 1,
+  "window": { "start": "2026-05-18", "end": "2026-05-24" },
+  "sessions_planned": 3,
+  "sessions_completed": 3,
+  "session_logs": ["2026-05-18", "2026-05-20", "2026-05-23"],
+  "daily_logs": ["2026-05-18", "2026-05-19", "2026-05-20", "2026-05-21"],
+  "strength_baselines": {
+    "back-squat":  { "estimated_1rm_lb": 170, "confidence": "medium" },
+    "bench-press": { "estimated_1rm_lb": 152, "confidence": "medium" },
+    "deadlift":    { "estimated_1rm_lb": 219, "confidence": "medium" }
+  },
+  "nutrition_avg": { "protein_g": 136, "calories": 2344, "days_logged": 4 },
+  "goals_achieved": ["push-up-15-unbroken"],
+  "flags": ["dead-bug-skipped-both-session-b", "left-ankle-monitor", "protein-deficit-pattern", "barbell-row-underloaded"]
+}
+</script>
+
+</body>
+</html>

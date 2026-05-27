@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Plan — Wed May 20, 2026</title>
+  <style>
+/* Fitness Planner — shared stylesheet for all HTML outputs */
+
+:root {
+  --bg: #f5f5f4;
+  --card: #ffffff;
+  --text: #1c1917;
+  --muted: #78716c;
+  --border: #e7e5e4;
+  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+
+  --workout: #2563eb;
+  --workout-bg: #eff6ff;
+  --workout-border: #bfdbfe;
+
+  --meal: #16a34a;
+  --meal-bg: #f0fdf4;
+  --meal-border: #bbf7d0;
+
+  --recovery: #d97706;
+  --recovery-bg: #fffbeb;
+  --recovery-border: #fde68a;
+
+  --pr: #dc2626;
+  --pr-bg: #fef2f2;
+
+  --header-bg: #1c1917;
+  --header-text: #fafaf9;
+  --header-muted: #a8a29e;
+
+  --radius: 8px;
+  --radius-sm: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ── Header ─────────────────────────────────────── */
+
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 1.5rem 2rem;
+  border-bottom: 3px solid var(--workout);
+}
+.site-header.meal   { border-bottom-color: var(--meal); }
+.site-header.review { border-bottom-color: var(--recovery); }
+.site-header.log    { border-bottom-color: #7c3aed; }
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
+
+.header-meta {
+  color: var(--header-muted);
+  font-size: .875rem;
+  margin-left: auto;
+}
+
+.header-nav {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  margin-top: .5rem;
+  font-size: .8rem;
+}
+.header-nav a { color: var(--header-muted); text-decoration: none; }
+.header-nav a:hover { color: var(--header-text); }
+
+/* ── Layout ──────────────────────────────────────── */
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Cards ───────────────────────────────────────── */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: .75rem 1.25rem;
+  font-weight: 600;
+  font-size: .95rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.card-body { padding: 1.25rem; }
+
+.card.workout .card-header { background: var(--workout-bg); color: var(--workout); border-bottom-color: var(--workout-border); }
+.card.meal    .card-header { background: var(--meal-bg);    color: var(--meal);    border-bottom-color: var(--meal-border); }
+.card.recovery .card-header { background: var(--recovery-bg); color: var(--recovery); border-bottom-color: var(--recovery-border); }
+
+/* ── Badges ──────────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: .2em .6em;
+  border-radius: 99px;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+.badge.workout  { background: var(--workout-bg);  color: var(--workout); }
+.badge.meal     { background: var(--meal-bg);     color: var(--meal); }
+.badge.recovery { background: var(--recovery-bg); color: var(--recovery); }
+.badge.pr       { background: var(--pr-bg);       color: var(--pr); }
+.badge.rest     { background: var(--border);      color: var(--muted); }
+
+/* ── Tables ──────────────────────────────────────── */
+
+.table-wrap { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+
+th {
+  text-align: left;
+  padding: .5rem .75rem;
+  font-weight: 600;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+
+td {
+  padding: .6rem .75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) td { background: #fafaf9; }
+tr:hover td { background: var(--workout-bg); }
+
+/* ── Progress bars ───────────────────────────────── */
+
+.goal-list { display: flex; flex-direction: column; gap: .75rem; }
+
+.goal-row { display: flex; flex-direction: column; gap: .25rem; }
+
+.goal-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: .85rem;
+}
+.goal-label .goal-name { font-weight: 600; }
+.goal-label .goal-pct  { color: var(--muted); }
+
+.progress-track {
+  height: 8px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--workout);
+  border-radius: 99px;
+  transition: width .3s ease;
+}
+.progress-fill.meal { background: var(--meal); }
+
+/* ── Schedule grid ───────────────────────────────── */
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.day-cell {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: .5rem .4rem;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+.day-cell.workout-day { border-color: var(--workout-border); background: var(--workout-bg); }
+.day-cell.cook-day    { border-color: var(--meal-border);    background: var(--meal-bg); }
+.day-cell.both        { border-color: var(--meal-border);    background: linear-gradient(135deg, var(--workout-bg) 50%, var(--meal-bg) 50%); }
+.day-cell.rest        { opacity: .6; }
+
+.day-name {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+}
+.day-date { font-size: .75rem; color: var(--muted); }
+.day-event {
+  font-size: .75rem;
+  font-weight: 600;
+  margin-top: auto;
+  line-height: 1.3;
+}
+.day-event.workout { color: var(--workout); }
+.day-event.cook    { color: var(--meal); }
+.day-event.shop    { color: var(--recovery); }
+
+/* ── Recipe cards ────────────────────────────────── */
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.recipe-card {
+  background: var(--card);
+  border: 1px solid var(--meal-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.recipe-card h3 { font-size: .95rem; }
+.recipe-card a  { color: var(--meal); text-decoration: none; }
+.recipe-card a:hover { text-decoration: underline; }
+
+.recipe-meta {
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+/* ── Grocery checklist ───────────────────────────── */
+
+.checklist { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  font-size: .9rem;
+  padding: .4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.checklist li:last-child { border-bottom: none; }
+
+.checklist input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--meal);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.checklist label { cursor: pointer; flex: 1; }
+.checklist input:checked + label { text-decoration: line-through; color: var(--muted); }
+
+.checklist .item-note {
+  font-size: .78rem;
+  color: var(--muted);
+  display: block;
+}
+
+.checklist-section { margin-bottom: 1.5rem; }
+.checklist-section h3 {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  margin-bottom: .5rem;
+  padding-bottom: .25rem;
+  border-bottom: 2px solid var(--border);
+}
+
+/* ── Session ratings ─────────────────────────────── */
+
+.ratings-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: .75rem 0;
+}
+
+.rating-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .5rem .75rem;
+  min-width: 70px;
+}
+.rating-chip .chip-val {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.rating-chip .chip-label {
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
+  margin-top: .15rem;
+}
+
+/* ── Collapsibles ────────────────────────────────── */
+
+details { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+details + details { margin-top: .5rem; }
+
+summary {
+  padding: .75rem 1rem;
+  font-weight: 600;
+  font-size: .9rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--bg);
+}
+summary::before { content: "▶"; font-size: .65rem; color: var(--muted); transition: transform .2s; }
+details[open] summary::before { transform: rotate(90deg); }
+
+details .details-body { padding: 1rem; border-top: 1px solid var(--border); }
+
+/* ── Utility ─────────────────────────────────────── */
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: .75rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.muted { color: var(--muted); }
+.small  { font-size: .85rem; }
+
+.alert {
+  padding: .75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: .9rem;
+  border-left: 4px solid;
+}
+.alert.warning { background: var(--recovery-bg); border-color: var(--recovery); color: #92400e; }
+.alert.info    { background: var(--workout-bg);  border-color: var(--workout);  color: #1e3a8a; }
+
+.prep-steps { padding-left: 1.25rem; display: flex; flex-direction: column; gap: .4rem; font-size: .9rem; }
+
+/* ── Responsive ──────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .site-header { padding: 1rem; }
+  .header-inner { gap: .5rem; }
+  main { padding: 0 1rem 3rem; gap: 1.25rem; }
+
+  .week-grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+  }
+  .day-cell { min-height: 60px; padding: .3rem; }
+  .day-event { font-size: .65rem; }
+
+  .recipe-grid { grid-template-columns: 1fr; }
+  .ratings-row { gap: .5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="site-header workout">
+  <div class="header-inner">
+    <span class="badge workout">Session A</span>
+    <h1>Wed May 20 — 7:00am</h1>
+    <span class="header-meta">Squat · Pull · Carry</span>
+  </div>
+  <div class="header-nav">
+    <a href="../plans/2026-05-18.html">← week plan</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="alert info">
+    <strong>Re-baseline week.</strong> Squat and pull haven't been hit yet this week — today is the first read on both. Keep squat at RPE 6, log bar speed for Brzycki estimate. Pull-ups: dead hang, stop 1–2 reps short of failure each set.
+  </div>
+
+  <!-- ── Session ──────────────────────────────────────────── -->
+
+  <section class="card workout">
+    <div class="card-header">Session A — Squat + Pull + Carry</div>
+    <div class="card-body">
+
+      <p class="small muted" style="margin-bottom:.75rem">
+        <strong>Warm-up (5 min):</strong> Hip circles ×10 each direction · BW squat ×10 (2 sec pause at bottom) · Dead hang ×20 sec
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Exercise</th>
+              <th>Sets</th>
+              <th>Reps</th>
+              <th>Load</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Back squat <span class="muted small">(warm-up)</span></td>
+              <td>1</td>
+              <td>5</td>
+              <td>95 lb</td>
+              <td>Bar path drill — pause 1 sec at bottom</td>
+            </tr>
+            <tr>
+              <td><strong>Back squat</strong></td>
+              <td>3</td>
+              <td>5</td>
+              <td>135 lb</td>
+              <td>RPE 6 — re-baseline. Note bar speed on set 3 for 1RM estimate.</td>
+            </tr>
+            <tr>
+              <td><strong>Pull-up</strong></td>
+              <td>4</td>
+              <td>5</td>
+              <td>BW</td>
+              <td>Dead hang start. Stop 1–2 reps short of failure. Rest 90 sec between sets.</td>
+            </tr>
+            <tr>
+              <td><strong>DB Row</strong></td>
+              <td>3</td>
+              <td>10</td>
+              <td>24 kg/hand</td>
+              <td>Chest supported or brace on knee.</td>
+            </tr>
+            <tr>
+              <td><strong>Farmer Carry</strong></td>
+              <td>3</td>
+              <td>30 m</td>
+              <td>22 kg/hand</td>
+              <td>Stand tall, short steps. Rest 60 sec between lengths.</td>
+            </tr>
+            <tr>
+              <td>Plank</td>
+              <td>3</td>
+              <td>50 s</td>
+              <td>BW</td>
+              <td>Same as Monday target. Hold form throughout.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="small muted" style="margin-top:.75rem">Estimated duration: 40–45 min · Working sets: 17</p>
+    </div>
+  </section>
+
+  <!-- ── Goals being tracked ───────────────────────────────── -->
+
+  <section class="card">
+    <div class="card-header">Goals being tracked today</div>
+    <div class="card-body">
+      <div class="goal-list">
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Back squat</span>
+            <span class="goal-pct">re-baseline → target 250 lb (1.25× BW) · PR: 235 lb</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Pull-ups</span>
+            <span class="goal-pct">current: 6 unbroken · target: 10 unbroken · 60%</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width:60%"></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Nutrition reminder ────────────────────────────────── -->
+
+  <section class="card meal">
+    <div class="card-header">Training day nutrition</div>
+    <div class="card-body">
+      <p class="small" style="color:var(--meal)">Target: <strong>2,600 kcal · 160g protein</strong></p>
+      <p class="small muted" style="margin-top:.5rem">Front-load protein at breakfast and lunch — yesterday came in 15g short. A protein anchor at every meal (eggs, chicken, shake) keeps you on track before dinner.</p>
+    </div>
+  </section>
+
+</main>
+
+<script type="application/json" id="session-data">
+{
+  "date": "2026-05-20",
+  "plan_ref": "plans/2026-05-18.html",
+  "session_label": "Session A — Squat + Pull + Carry",
+  "planned": true,
+  "exercises": [
+    { "slug": "back-squat",    "sets": 3, "reps": 5,    "load_lb": 135,    "warmup_sets": 1 },
+    { "slug": "pull-up",       "sets": 4, "reps": 5,    "load": "BW" },
+    { "slug": "dumbbell-row",  "sets": 3, "reps": 10,   "load_kg_hand": 24 },
+    { "slug": "farmer-carry",  "sets": 3, "reps": "30m","load_kg_hand": 22 },
+    { "slug": "plank",         "sets": 3, "reps": "50s","load": "BW" }
+  ]
+}
+</script>
+
+</body>
+</html>

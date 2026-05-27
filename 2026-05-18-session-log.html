@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Log — Mon May 18, 2026</title>
+  <style>
+/* Fitness Planner — shared stylesheet for all HTML outputs */
+
+:root {
+  --bg: #f5f5f4;
+  --card: #ffffff;
+  --text: #1c1917;
+  --muted: #78716c;
+  --border: #e7e5e4;
+  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+
+  --workout: #2563eb;
+  --workout-bg: #eff6ff;
+  --workout-border: #bfdbfe;
+
+  --meal: #16a34a;
+  --meal-bg: #f0fdf4;
+  --meal-border: #bbf7d0;
+
+  --recovery: #d97706;
+  --recovery-bg: #fffbeb;
+  --recovery-border: #fde68a;
+
+  --pr: #dc2626;
+  --pr-bg: #fef2f2;
+
+  --header-bg: #1c1917;
+  --header-text: #fafaf9;
+  --header-muted: #a8a29e;
+
+  --radius: 8px;
+  --radius-sm: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ── Header ─────────────────────────────────────── */
+
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 1.5rem 2rem;
+  border-bottom: 3px solid var(--workout);
+}
+.site-header.meal   { border-bottom-color: var(--meal); }
+.site-header.review { border-bottom-color: var(--recovery); }
+.site-header.log    { border-bottom-color: #7c3aed; }
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
+
+.header-meta {
+  color: var(--header-muted);
+  font-size: .875rem;
+  margin-left: auto;
+}
+
+.header-nav {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  margin-top: .5rem;
+  font-size: .8rem;
+}
+.header-nav a { color: var(--header-muted); text-decoration: none; }
+.header-nav a:hover { color: var(--header-text); }
+
+/* ── Layout ──────────────────────────────────────── */
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Cards ───────────────────────────────────────── */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: .75rem 1.25rem;
+  font-weight: 600;
+  font-size: .95rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.card-body { padding: 1.25rem; }
+
+.card.workout .card-header { background: var(--workout-bg); color: var(--workout); border-bottom-color: var(--workout-border); }
+.card.meal    .card-header { background: var(--meal-bg);    color: var(--meal);    border-bottom-color: var(--meal-border); }
+.card.recovery .card-header { background: var(--recovery-bg); color: var(--recovery); border-bottom-color: var(--recovery-border); }
+
+/* ── Badges ──────────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: .2em .6em;
+  border-radius: 99px;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+.badge.workout  { background: var(--workout-bg);  color: var(--workout); }
+.badge.meal     { background: var(--meal-bg);     color: var(--meal); }
+.badge.recovery { background: var(--recovery-bg); color: var(--recovery); }
+.badge.pr       { background: var(--pr-bg);       color: var(--pr); }
+.badge.rest     { background: var(--border);      color: var(--muted); }
+
+/* ── Tables ──────────────────────────────────────── */
+
+.table-wrap { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+
+th {
+  text-align: left;
+  padding: .5rem .75rem;
+  font-weight: 600;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+
+td {
+  padding: .6rem .75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) td { background: #fafaf9; }
+tr:hover td { background: var(--workout-bg); }
+
+/* ── Progress bars ───────────────────────────────── */
+
+.goal-list { display: flex; flex-direction: column; gap: .75rem; }
+
+.goal-row { display: flex; flex-direction: column; gap: .25rem; }
+
+.goal-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: .85rem;
+}
+.goal-label .goal-name { font-weight: 600; }
+.goal-label .goal-pct  { color: var(--muted); }
+
+.progress-track {
+  height: 8px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--workout);
+  border-radius: 99px;
+  transition: width .3s ease;
+}
+.progress-fill.meal { background: var(--meal); }
+
+/* ── Schedule grid ───────────────────────────────── */
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.day-cell {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: .5rem .4rem;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+.day-cell.workout-day { border-color: var(--workout-border); background: var(--workout-bg); }
+.day-cell.cook-day    { border-color: var(--meal-border);    background: var(--meal-bg); }
+.day-cell.both        { border-color: var(--meal-border);    background: linear-gradient(135deg, var(--workout-bg) 50%, var(--meal-bg) 50%); }
+.day-cell.rest        { opacity: .6; }
+
+.day-name {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+}
+.day-date { font-size: .75rem; color: var(--muted); }
+.day-event {
+  font-size: .75rem;
+  font-weight: 600;
+  margin-top: auto;
+  line-height: 1.3;
+}
+.day-event.workout { color: var(--workout); }
+.day-event.cook    { color: var(--meal); }
+.day-event.shop    { color: var(--recovery); }
+
+/* ── Recipe cards ────────────────────────────────── */
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.recipe-card {
+  background: var(--card);
+  border: 1px solid var(--meal-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.recipe-card h3 { font-size: .95rem; }
+.recipe-card a  { color: var(--meal); text-decoration: none; }
+.recipe-card a:hover { text-decoration: underline; }
+
+.recipe-meta {
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+/* ── Grocery checklist ───────────────────────────── */
+
+.checklist { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  font-size: .9rem;
+  padding: .4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.checklist li:last-child { border-bottom: none; }
+
+.checklist input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--meal);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.checklist label { cursor: pointer; flex: 1; }
+.checklist input:checked + label { text-decoration: line-through; color: var(--muted); }
+
+.checklist .item-note {
+  font-size: .78rem;
+  color: var(--muted);
+  display: block;
+}
+
+.checklist-section { margin-bottom: 1.5rem; }
+.checklist-section h3 {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  margin-bottom: .5rem;
+  padding-bottom: .25rem;
+  border-bottom: 2px solid var(--border);
+}
+
+/* ── Session ratings ─────────────────────────────── */
+
+.ratings-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: .75rem 0;
+}
+
+.rating-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .5rem .75rem;
+  min-width: 70px;
+}
+.rating-chip .chip-val {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.rating-chip .chip-label {
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
+  margin-top: .15rem;
+}
+
+/* ── Collapsibles ────────────────────────────────── */
+
+details { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+details + details { margin-top: .5rem; }
+
+summary {
+  padding: .75rem 1rem;
+  font-weight: 600;
+  font-size: .9rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--bg);
+}
+summary::before { content: "▶"; font-size: .65rem; color: var(--muted); transition: transform .2s; }
+details[open] summary::before { transform: rotate(90deg); }
+
+details .details-body { padding: 1rem; border-top: 1px solid var(--border); }
+
+/* ── Utility ─────────────────────────────────────── */
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: .75rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.muted { color: var(--muted); }
+.small  { font-size: .85rem; }
+
+.alert {
+  padding: .75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: .9rem;
+  border-left: 4px solid;
+}
+.alert.warning { background: var(--recovery-bg); border-color: var(--recovery); color: #92400e; }
+.alert.info    { background: var(--workout-bg);  border-color: var(--workout);  color: #1e3a8a; }
+
+.prep-steps { padding-left: 1.25rem; display: flex; flex-direction: column; gap: .4rem; font-size: .9rem; }
+
+/* ── Responsive ──────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .site-header { padding: 1rem; }
+  .header-inner { gap: .5rem; }
+  main { padding: 0 1rem 3rem; gap: 1.25rem; }
+
+  .week-grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+  }
+  .day-cell { min-height: 60px; padding: .3rem; }
+  .day-event { font-size: .65rem; }
+
+  .recipe-grid { grid-template-columns: 1fr; }
+  .ratings-row { gap: .5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="site-header log">
+  <div class="header-inner">
+    <span class="badge workout">Session B</span>
+    <h1>Session Log</h1>
+    <span class="header-meta">Mon May 18, 2026 · Push + Hinge</span>
+  </div>
+  <div class="header-nav">
+    <a href="../plans/2026-05-18.html">← week plan</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="alert info">
+    <strong>Push-up goal reached.</strong> 15 unbroken push-ups — tier 30–39 target hit on first session of the block.
+  </div>
+
+  <!-- ── Ratings ──────────────────────────────────────── -->
+
+  <section class="card">
+    <div class="card-header">Session ratings</div>
+    <div class="card-body">
+      <div class="ratings-row">
+        <div class="rating-chip">
+          <span class="chip-val">6</span>
+          <span class="chip-label">Effort</span>
+        </div>
+        <div class="rating-chip">
+          <span class="chip-val">0.8</span>
+          <span class="chip-label">Completion</span>
+        </div>
+        <div class="rating-chip">
+          <span class="chip-val">1.5</span>
+          <span class="chip-label">Composite</span>
+        </div>
+      </div>
+      <p class="small muted" style="margin-top:.75rem">Composite = (effort/2 + energy + form×2 + completion×5) / 10. Skipped dead bug — 4 of 5 exercises completed.</p>
+    </div>
+  </section>
+
+  <!-- ── Actual Work ──────────────────────────────────── -->
+
+  <section class="card workout">
+    <div class="card-header">Actual work</div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Exercise</th>
+              <th>Sets</th>
+              <th>Reps</th>
+              <th>Load</th>
+              <th>RPE</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bench Press</strong></td>
+              <td>3</td>
+              <td>5</td>
+              <td>135 lb</td>
+              <td>8 ⚠️</td>
+              <td>Harder than planned RPE 6. Do not increase load next session.</td>
+            </tr>
+            <tr>
+              <td><strong>Deadlift</strong></td>
+              <td>3</td>
+              <td>5</td>
+              <td>155 lb</td>
+              <td>4</td>
+              <td>Very easy — significant room to load. Consider 185–205 lb next session.</td>
+            </tr>
+            <tr>
+              <td><strong>Dumbbell Row</strong></td>
+              <td>2</td>
+              <td>8</td>
+              <td>24 kg/hand</td>
+              <td>—</td>
+              <td>Completed as planned.</td>
+            </tr>
+            <tr>
+              <td><strong>Push-up</strong></td>
+              <td>2</td>
+              <td>15</td>
+              <td>BW</td>
+              <td>—</td>
+              <td>🎯 Goal reached — 15 unbroken. Tier 30–39 push target achieved.</td>
+            </tr>
+            <tr>
+              <td>Dead Bug</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td>—</td>
+              <td>Skipped.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Strength Observations ──────────────────────── -->
+
+  <section class="card">
+    <div class="card-header">Strength observations</div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Lift</th>
+              <th>Working Weight</th>
+              <th>Reps</th>
+              <th>RPE</th>
+              <th>Estimated 1RM (Brzycki)</th>
+              <th>Confidence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bench Press</td>
+              <td>135 lb</td>
+              <td>5</td>
+              <td>8</td>
+              <td>~152 lb</td>
+              <td>Low — RPE above threshold. Hold for re-test.</td>
+            </tr>
+            <tr>
+              <td>Deadlift</td>
+              <td>155 lb</td>
+              <td>5</td>
+              <td>4</td>
+              <td>—</td>
+              <td>Not estimated — RPE too low. Significant capacity untested.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Notes ─────────────────────────────────────────── -->
+
+  <section class="card">
+    <div class="card-header">Notes</div>
+    <div class="card-body">
+      <p style="font-size:.9rem">
+        Bench at RPE 8 against a planned RPE 6 — keep 135 lb next session and aim to get the
+        RPE down before adding load. Deadlift at RPE 4 is the opposite story: 155 lb is too
+        light, likely well under 60% of current max. Jump to 185–205 lb next deadlift session
+        to get a real baseline read. Push-up goal of 15 unbroken is done — update profile and
+        set next target. Dead bug skipped; add back next session.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Volume ─────────────────────────────────────────── -->
+
+  <section class="card">
+    <div class="card-header">Pattern volume — this session</div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Pattern</th><th>Sets logged</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Push</td><td>5</td></tr>
+            <tr><td>Hinge</td><td>3</td></tr>
+            <tr><td>Pull</td><td>2</td></tr>
+            <tr><td>Core</td><td>0 (dead bug skipped)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Response ──────────────────────────────────────── -->
+  <section class="card">
+    <div class="card-header">Response</div>
+    <div class="card-body">
+      <p class="small muted"><!-- System reads this section on the next REVIEW run --></p>
+    </div>
+  </section>
+
+</main>
+
+<script type="application/json" id="session-data">
+{
+  "date": "2026-05-18",
+  "plan_ref": "plans/2026-05-18.html",
+  "session_label": "Session B — Push + Hinge",
+  "completed": true,
+  "sets_by_pattern": {
+    "squat": 0,
+    "hinge": 3,
+    "push": 5,
+    "pull": 2,
+    "carry": 0,
+    "core": 0
+  },
+  "ratings": {
+    "effort": 6,
+    "energy_level": 3,
+    "form_quality": 3,
+    "completion_rate": 0.8
+  },
+  "composite_score": 1.5,
+  "exercises": [
+    { "slug": "bench-press", "sets": 3, "reps": 5, "load_lb": 135, "rpe": 8 },
+    { "slug": "deadlift",    "sets": 3, "reps": 5, "load_lb": 155, "rpe": 4 },
+    { "slug": "dumbbell-row","sets": 2, "reps": 8, "load_kg_hand": 24 },
+    { "slug": "push-up",     "sets": 2, "reps": 15, "load": "BW", "pr": true }
+  ],
+  "prs": [
+    { "exercise": "push-up", "value": 15, "unit": "unbroken reps", "goal_achieved": true }
+  ],
+  "flags": [
+    "bench-rpe-high",
+    "deadlift-underloaded"
+  ]
+}
+</script>
+
+</body>
+</html>

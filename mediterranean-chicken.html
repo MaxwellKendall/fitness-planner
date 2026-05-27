@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mediterranean Chicken — Week of May 18</title>
+  <style>
+/* Fitness Planner — shared stylesheet for all HTML outputs */
+
+:root {
+  --bg: #f5f5f4;
+  --card: #ffffff;
+  --text: #1c1917;
+  --muted: #78716c;
+  --border: #e7e5e4;
+  --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+
+  --workout: #2563eb;
+  --workout-bg: #eff6ff;
+  --workout-border: #bfdbfe;
+
+  --meal: #16a34a;
+  --meal-bg: #f0fdf4;
+  --meal-border: #bbf7d0;
+
+  --recovery: #d97706;
+  --recovery-bg: #fffbeb;
+  --recovery-border: #fde68a;
+
+  --pr: #dc2626;
+  --pr-bg: #fef2f2;
+
+  --header-bg: #1c1917;
+  --header-text: #fafaf9;
+  --header-muted: #a8a29e;
+
+  --radius: 8px;
+  --radius-sm: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ── Header ─────────────────────────────────────── */
+
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 1.5rem 2rem;
+  border-bottom: 3px solid var(--workout);
+}
+.site-header.meal   { border-bottom-color: var(--meal); }
+.site-header.review { border-bottom-color: var(--recovery); }
+.site-header.log    { border-bottom-color: #7c3aed; }
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
+
+.header-meta {
+  color: var(--header-muted);
+  font-size: .875rem;
+  margin-left: auto;
+}
+
+.header-nav {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  margin-top: .5rem;
+  font-size: .8rem;
+}
+.header-nav a { color: var(--header-muted); text-decoration: none; }
+.header-nav a:hover { color: var(--header-text); }
+
+/* ── Layout ──────────────────────────────────────── */
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Cards ───────────────────────────────────────── */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: .75rem 1.25rem;
+  font-weight: 600;
+  font-size: .95rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.card-body { padding: 1.25rem; }
+
+.card.workout .card-header { background: var(--workout-bg); color: var(--workout); border-bottom-color: var(--workout-border); }
+.card.meal    .card-header { background: var(--meal-bg);    color: var(--meal);    border-bottom-color: var(--meal-border); }
+.card.recovery .card-header { background: var(--recovery-bg); color: var(--recovery); border-bottom-color: var(--recovery-border); }
+
+/* ── Badges ──────────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: .2em .6em;
+  border-radius: 99px;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+.badge.workout  { background: var(--workout-bg);  color: var(--workout); }
+.badge.meal     { background: var(--meal-bg);     color: var(--meal); }
+.badge.recovery { background: var(--recovery-bg); color: var(--recovery); }
+.badge.pr       { background: var(--pr-bg);       color: var(--pr); }
+.badge.rest     { background: var(--border);      color: var(--muted); }
+
+/* ── Tables ──────────────────────────────────────── */
+
+.table-wrap { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+
+th {
+  text-align: left;
+  padding: .5rem .75rem;
+  font-weight: 600;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--muted);
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+
+td {
+  padding: .6rem .75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) td { background: #fafaf9; }
+tr:hover td { background: var(--workout-bg); }
+
+/* ── Progress bars ───────────────────────────────── */
+
+.goal-list { display: flex; flex-direction: column; gap: .75rem; }
+
+.goal-row { display: flex; flex-direction: column; gap: .25rem; }
+
+.goal-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: .85rem;
+}
+.goal-label .goal-name { font-weight: 600; }
+.goal-label .goal-pct  { color: var(--muted); }
+
+.progress-track {
+  height: 8px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--workout);
+  border-radius: 99px;
+  transition: width .3s ease;
+}
+.progress-fill.meal { background: var(--meal); }
+
+/* ── Schedule grid ───────────────────────────────── */
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.day-cell {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: .5rem .4rem;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+.day-cell.workout-day { border-color: var(--workout-border); background: var(--workout-bg); }
+.day-cell.cook-day    { border-color: var(--meal-border);    background: var(--meal-bg); }
+.day-cell.both        { border-color: var(--meal-border);    background: linear-gradient(135deg, var(--workout-bg) 50%, var(--meal-bg) 50%); }
+.day-cell.rest        { opacity: .6; }
+
+.day-name {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+}
+.day-date { font-size: .75rem; color: var(--muted); }
+.day-event {
+  font-size: .75rem;
+  font-weight: 600;
+  margin-top: auto;
+  line-height: 1.3;
+}
+.day-event.workout { color: var(--workout); }
+.day-event.cook    { color: var(--meal); }
+.day-event.shop    { color: var(--recovery); }
+
+/* ── Recipe cards ────────────────────────────────── */
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.recipe-card {
+  background: var(--card);
+  border: 1px solid var(--meal-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.recipe-card h3 { font-size: .95rem; }
+.recipe-card a  { color: var(--meal); text-decoration: none; }
+.recipe-card a:hover { text-decoration: underline; }
+
+.recipe-meta {
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+/* ── Grocery checklist ───────────────────────────── */
+
+.checklist { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  font-size: .9rem;
+  padding: .4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.checklist li:last-child { border-bottom: none; }
+
+.checklist input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--meal);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.checklist label { cursor: pointer; flex: 1; }
+.checklist input:checked + label { text-decoration: line-through; color: var(--muted); }
+
+.checklist .item-note {
+  font-size: .78rem;
+  color: var(--muted);
+  display: block;
+}
+
+.checklist-section { margin-bottom: 1.5rem; }
+.checklist-section h3 {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  margin-bottom: .5rem;
+  padding-bottom: .25rem;
+  border-bottom: 2px solid var(--border);
+}
+
+/* ── Session ratings ─────────────────────────────── */
+
+.ratings-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: .75rem 0;
+}
+
+.rating-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .5rem .75rem;
+  min-width: 70px;
+}
+.rating-chip .chip-val {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.rating-chip .chip-label {
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--muted);
+  margin-top: .15rem;
+}
+
+/* ── Collapsibles ────────────────────────────────── */
+
+details { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+details + details { margin-top: .5rem; }
+
+summary {
+  padding: .75rem 1rem;
+  font-weight: 600;
+  font-size: .9rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--bg);
+}
+summary::before { content: "▶"; font-size: .65rem; color: var(--muted); transition: transform .2s; }
+details[open] summary::before { transform: rotate(90deg); }
+
+details .details-body { padding: 1rem; border-top: 1px solid var(--border); }
+
+/* ── Utility ─────────────────────────────────────── */
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: .75rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.muted { color: var(--muted); }
+.small  { font-size: .85rem; }
+
+.alert {
+  padding: .75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: .9rem;
+  border-left: 4px solid;
+}
+.alert.warning { background: var(--recovery-bg); border-color: var(--recovery); color: #92400e; }
+.alert.info    { background: var(--workout-bg);  border-color: var(--workout);  color: #1e3a8a; }
+
+.prep-steps { padding-left: 1.25rem; display: flex; flex-direction: column; gap: .4rem; font-size: .9rem; }
+
+/* ── Responsive ──────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .site-header { padding: 1rem; }
+  .header-inner { gap: .5rem; }
+  main { padding: 0 1rem 3rem; gap: 1.25rem; }
+
+  .week-grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+  }
+  .day-cell { min-height: 60px; padding: .3rem; }
+  .day-event { font-size: .65rem; }
+
+  .recipe-grid { grid-template-columns: 1fr; }
+  .ratings-row { gap: .5rem; }
+}
+
+  </style>
+</head>
+<body>
+
+<header class="site-header meal">
+  <div class="header-inner">
+    <span class="badge meal">Recipe</span>
+    <h1>Mediterranean Chicken</h1>
+    <span class="header-meta">Week of May 18 · batch cook · 5 servings</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── Macros ──────────────────────────────────────────── -->
+
+  <section class="card meal">
+    <div class="card-header">Nutrition — per serving</div>
+    <div class="card-body">
+      <div class="ratings-row">
+        <div class="rating-chip">
+          <span class="chip-val">480</span>
+          <span class="chip-label">kcal</span>
+        </div>
+        <div class="rating-chip">
+          <span class="chip-val">52g</span>
+          <span class="chip-label">Protein</span>
+        </div>
+        <div class="rating-chip">
+          <span class="chip-val">22g</span>
+          <span class="chip-label">Carbs</span>
+        </div>
+        <div class="rating-chip">
+          <span class="chip-val">20g</span>
+          <span class="chip-label">Fat</span>
+        </div>
+        <div class="rating-chip">
+          <span class="chip-val">5</span>
+          <span class="chip-label">Servings</span>
+        </div>
+      </div>
+      <p class="small muted" style="margin-top:.75rem">52g protein per serving — pair with rice or potatoes to hit your 2,600 kcal training day target. Good for lunch or dinner Mon–Fri.</p>
+    </div>
+  </section>
+
+  <!-- ── Ingredients ─────────────────────────────────────── -->
+
+  <section class="card meal">
+    <div class="card-header">Ingredients</div>
+    <div class="card-body">
+
+      <div style="margin-bottom:1.25rem">
+        <h3 style="font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.5rem;padding-bottom:.25rem;border-bottom:0.5px solid var(--border)">Chicken</h3>
+        <ul class="checklist">
+          <li><input type="checkbox" id="i1"><label for="i1">3 lbs boneless skinless chicken thighs (or breasts)</label></li>
+          <li><input type="checkbox" id="i2"><label for="i2">3 tbsp olive oil</label></li>
+          <li><input type="checkbox" id="i3"><label for="i3">4 cloves garlic, minced</label></li>
+          <li><input type="checkbox" id="i4"><label for="i4">Juice of 1 lemon</label></li>
+          <li><input type="checkbox" id="i5"><label for="i5">1 tsp dried oregano</label></li>
+          <li><input type="checkbox" id="i6"><label for="i6">1 tsp smoked paprika</label></li>
+          <li><input type="checkbox" id="i7"><label for="i7">½ tsp cumin</label></li>
+          <li><input type="checkbox" id="i8"><label for="i8">½ tsp cinnamon</label></li>
+          <li><input type="checkbox" id="i9"><label for="i9">Salt and black pepper</label></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 style="font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.5rem;padding-bottom:.25rem;border-bottom:0.5px solid var(--border)">Vegetables (roast alongside)</h3>
+        <ul class="checklist">
+          <li><input type="checkbox" id="v1"><label for="v1">1 large zucchini, sliced into half-moons</label></li>
+          <li><input type="checkbox" id="v2"><label for="v2">1 red bell pepper, chunked</label></li>
+          <li><input type="checkbox" id="v3"><label for="v3">1 red onion, cut into wedges</label></li>
+          <li><input type="checkbox" id="v4"><label for="v4">1 cup cherry tomatoes</label></li>
+          <li><input type="checkbox" id="v5"><label for="v5">½ cup kalamata olives (optional)</label></li>
+          <li><input type="checkbox" id="v6"><label for="v6">100g feta cheese, crumbled (to finish)</label></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Instructions ────────────────────────────────────── -->
+
+  <section class="card meal">
+    <div class="card-header">Instructions — Saturday batch cook (~45 min active)</div>
+    <div class="card-body">
+
+      <div style="display:flex;flex-direction:column;gap:1rem">
+
+        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <div style="min-width:28px;height:28px;border-radius:50%;background:var(--meal-bg);border:1px solid var(--meal-border);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;color:var(--meal)">1</div>
+          <div>
+            <p style="font-size:.9rem"><strong>Marinate</strong> — Mix olive oil, garlic, lemon juice, oregano, paprika, cumin, cinnamon, salt, and pepper in a large bowl. Add chicken and coat well. Marinate at least 30 min (overnight in the fridge is better — prep Friday night).</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <div style="min-width:28px;height:28px;border-radius:50%;background:var(--meal-bg);border:1px solid var(--meal-border);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;color:var(--meal)">2</div>
+          <div>
+            <p style="font-size:.9rem"><strong>Preheat</strong> oven to 425°F. Line two large sheet pans with foil.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <div style="min-width:28px;height:28px;border-radius:50%;background:var(--meal-bg);border:1px solid var(--meal-border);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;color:var(--meal)">3</div>
+          <div>
+            <p style="font-size:.9rem"><strong>Arrange</strong> — Place chicken on one pan. Toss vegetables with a drizzle of olive oil, salt, and pepper and spread on the second pan.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <div style="min-width:28px;height:28px;border-radius:50%;background:var(--meal-bg);border:1px solid var(--meal-border);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;color:var(--meal)">4</div>
+          <div>
+            <p style="font-size:.9rem"><strong>Roast</strong> — 25–30 min until chicken is cooked through (internal temp 165°F) and vegetables are caramelized. Rotate pans halfway through.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1rem;align-items:flex-start">
+          <div style="min-width:28px;height:28px;border-radius:50%;background:var(--meal-bg);border:1px solid var(--meal-border);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;color:var(--meal)">5</div>
+          <div>
+            <p style="font-size:.9rem"><strong>Finish</strong> — Let chicken rest 5 min, then slice or shred. Combine with roasted vegetables, scatter feta over the top. Store in 5 containers.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Serving ideas ────────────────────────────────────── -->
+
+  <section class="card">
+    <div class="card-header">Serving ideas — hits 160g protein when paired</div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Pairing</th><th>Added cal</th><th>Added protein</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1 cup cooked rice</td><td>+200 kcal</td><td>+4g</td><td>Good on training days</td></tr>
+            <tr><td>1 cup cooked quinoa</td><td>+220 kcal</td><td>+8g</td><td>More protein than rice</td></tr>
+            <tr><td>Roasted potatoes (200g)</td><td>+160 kcal</td><td>+4g</td><td>Lower carb than rice</td></tr>
+            <tr><td>Pita bread (1 large)</td><td>+170 kcal</td><td>+6g</td><td>Classic — good post-workout</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>

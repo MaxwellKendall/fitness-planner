@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Log — Sun May 25, 2026</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header meal">
+  <div class="header-inner">
+    <span class="badge rest">Rest Day</span>
+    <h1>Sun May 25, 2026</h1>
+    <span class="header-meta">nutrition · recovery</span>
+  </div>
+</header>
+
+<main>
+
+  <section class="card meal">
+    <div class="card-header">Daily targets — rest day</div>
+    <div class="card-body">
+      <div class="goal-list">
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Protein</span>
+            <span class="goal-pct">~95–105g est. / 160g target</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill meal" style="width:63%"></div>
+          </div>
+        </div>
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Calories</span>
+            <span class="goal-pct">~2,100–2,400 est. / 2,300 target</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill meal" style="width:96%"></div>
+          </div>
+        </div>
+
+      </div>
+      <p class="small muted" style="margin-top:.75rem">Calories likely on target with burgers tonight. Protein will fall short — social day with low-protein add-ons (brownies, ice cream). Pattern note below.</p>
+    </div>
+  </section>
+
+  <section class="card meal">
+    <div class="card-header">Meals</div>
+    <div class="card-body">
+
+      <div style="border:1px solid var(--meal-border);border-radius:var(--radius);padding:1rem;margin-bottom:.75rem;background:var(--meal-bg);">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.25rem;">
+          <strong style="color:var(--meal)">Philly cheesesteak</strong>
+          <span class="badge meal">Lunch</span>
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:.85rem;">
+          <span>🔥 <strong>~900</strong> kcal</span>
+          <span>🥩 <strong>~55g</strong> protein</span>
+          <span>🍚 <strong>~65g</strong> carbs</span>
+          <span>🫒 <strong>~42g</strong> fat</span>
+          <span class="muted">confidence: medium</span>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--meal-border);border-radius:var(--radius);padding:1rem;margin-bottom:.75rem;background:var(--meal-bg);">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.25rem;">
+          <strong style="color:var(--meal)">Brownies + vanilla ice cream (small)</strong>
+          <span class="badge rest">Dessert</span>
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:.85rem;">
+          <span>🔥 <strong>~350</strong> kcal</span>
+          <span>🥩 <strong>~4g</strong> protein</span>
+          <span>🍚 <strong>~55g</strong> carbs</span>
+          <span>🫒 <strong>~14g</strong> fat</span>
+          <span class="muted">confidence: medium</span>
+        </div>
+      </div>
+
+      <div style="border:1px solid var(--meal-border);border-radius:var(--radius);padding:1rem;background:var(--meal-bg);">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.25rem;">
+          <strong style="color:var(--meal)">Burgers</strong>
+          <span class="badge meal">Dinner (planned)</span>
+        </div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:.85rem;">
+          <span>🔥 <strong>~700</strong> kcal</span>
+          <span>🥩 <strong>~45g</strong> protein</span>
+          <span>🍚 <strong>~30g</strong> carbs</span>
+          <span>🫒 <strong>~38g</strong> fat</span>
+          <span class="muted">confidence: medium · estimated 2 burgers</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-header">Daily summary</div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Metric</th><th>Logged</th><th>Target</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Protein</strong></td>
+              <td>~104g</td>
+              <td>160g</td>
+              <td><span class="badge recovery">⚠ ~56g short</span></td>
+            </tr>
+            <tr>
+              <td><strong>Calories</strong></td>
+              <td>~1,950 kcal</td>
+              <td>2,300 kcal (rest)</td>
+              <td><span class="badge meal">✓ close</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="card recovery">
+    <div class="card-header">⚠ Pattern flag — social eating</div>
+    <div class="card-body">
+      <p style="font-size:.9rem">This is the 5th logged day with a protein miss, and each one has a social component — hosting, going out, food served at someone's house. The food itself isn't the problem (a cheesesteak and burgers are high protein). The gap is no breakfast protein and dessert/sides displacing protein slots. Strategy for week 2: eat a protein-forward breakfast before any social meal so you're not relying on whatever gets served to hit your target.</p>
+    </div>
+  </section>
+
+</main>
+
+<script type="application/json" id="daily-log-data">
+{
+  "date": "2026-05-25",
+  "day_type": "rest",
+  "targets": { "protein_g": 160, "calories_training": 2600, "calories_rest": 2300 },
+  "meals": [
+    { "meal_name": "Philly cheesesteak", "calories_est": 900, "protein_g": 55, "carbs_g": 65, "fat_g": 42, "confidence": "medium" },
+    { "meal_name": "Brownies + vanilla ice cream (small)", "calories_est": 350, "protein_g": 4, "carbs_g": 55, "fat_g": 14, "confidence": "medium" },
+    { "meal_name": "Burgers (planned)", "calories_est": 700, "protein_g": 45, "carbs_g": 30, "fat_g": 38, "confidence": "medium" }
+  ],
+  "totals": { "calories_est": 1950, "protein_g": 104, "carbs_g": 150, "fat_g": 94 },
+  "flags": ["social-eating-pattern", "protein-miss"]
+}
+</script>
+
+</body>
+</html>
