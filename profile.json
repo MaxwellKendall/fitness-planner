@@ -110,10 +110,10 @@
       ]
     },
     "goblet-squat": {
-      "estimated_load_kg": 28,
+      "estimated_load_lb": 60,
       "observations": [
         {
-          "weight_kg": 28,
+          "weight_lb": 60,
           "reps": 8,
           "date": "2026-05-12",
           "notes": "solid depth, RPE 7 — superseded by barbell back squat data"
@@ -121,10 +121,10 @@
       ]
     },
     "dumbbell-rdl": {
-      "estimated_load_kg": 24,
+      "estimated_load_lb": 55,
       "observations": [
         {
-          "weight_kg": 24,
+          "weight_lb": 55,
           "reps": 8,
           "date": "2026-05-12",
           "notes": "per hand, felt controlled — superseded by barbell deadlift data"
@@ -132,10 +132,10 @@
       ]
     },
     "dumbbell-bench-press": {
-      "estimated_load_kg": 22,
+      "estimated_load_lb": 50,
       "observations": [
         {
-          "weight_kg": 22,
+          "weight_lb": 50,
           "reps": 8,
           "date": "2026-05-12",
           "notes": "per hand — superseded by barbell bench press data"
@@ -171,5 +171,5 @@
     "2026-05-16: RETURNING ATHLETE — several months off training. Historical PRs (squat 235, bench 225, deadlift 255 lb) are ~1 year old and not current capacity. Plan weeks 1–2 as re-baseline: lighter loads, technique focus, RPE 6–7 ceiling. Use working sets to estimate current 1RM via Brzycki before programming top sets."
   ],
 
-  "seen_sessions": ["2026-05-12"]
+  "seen_sessions": ["2026-05-12", "2026-05-27"]
 }
