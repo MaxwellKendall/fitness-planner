@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Log — Mon Jun 8, 2026</title>
+  <style>
+    /* ── Inlined from styles.css for mobile sharing ─────────────── */
+    :root {
+      --workout: #2563eb; --meal: #16a34a; --recovery: #d97706;
+      --workout-bg: #eff6ff; --meal-bg: #f0fdf4; --recovery-bg: #fffbeb;
+      --workout-border: #bfdbfe; --meal-border: #bbf7d0; --recovery-border: #fde68a;
+      --text: #0f172a; --muted: #64748b; --border: #e2e8f0; --surface: #f8fafc;
+      --radius: 10px; --shadow: 0 1px 3px rgba(0,0,0,.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--surface); color: var(--text); line-height: 1.55; }
+    main { max-width: 680px; margin: 0 auto; padding: 1rem 1rem 3rem; }
+
+    .site-header { padding: 1rem 1rem .75rem; border-bottom: 1px solid var(--border); background: #fff; }
+    .site-header.meal { border-left: 4px solid var(--meal); }
+    .site-header.recovery { border-left: 4px solid var(--recovery); }
+    .header-inner { display: flex; flex-direction: column; gap: .2rem; max-width: 680px; margin: 0 auto; }
+    .header-inner h1 { font-size: 1.25rem; font-weight: 700; }
+    .header-meta { font-size: .8rem; color: var(--muted); }
+    .header-nav { max-width: 680px; margin: .5rem auto 0; display: flex; gap: 1rem; font-size: .8rem; }
+    .header-nav a { color: var(--meal); text-decoration: none; }
+
+    .badge { display: inline-block; border-radius: 20px; padding: 2px 10px; font-size: .75rem; font-weight: 600; }
+    .badge.meal { background: var(--meal-bg); color: var(--meal); }
+    .badge.recovery { background: var(--recovery-bg); color: var(--recovery); }
+
+    .card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); margin-top: 1rem; overflow: hidden; }
+    .card.meal { border-left: 4px solid var(--meal); }
+    .card.recovery { border-left: 4px solid var(--recovery); }
+    .card-header { padding: .6rem 1rem; background: var(--surface); border-bottom: 1px solid var(--border); font-size: .85rem; font-weight: 600; }
+    .card-body { padding: 1rem; }
+
+    .goal-list { display: flex; flex-direction: column; gap: .75rem; }
+    .goal-row { display: flex; flex-direction: column; gap: .3rem; }
+    .goal-label { display: flex; justify-content: space-between; font-size: .85rem; }
+    .goal-name { font-weight: 600; }
+    .goal-pct { color: var(--muted); font-size: .8rem; }
+    .progress-track { height: 8px; background: var(--border); border-radius: 99px; overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 99px; background: var(--workout); }
+    .progress-fill.meal { background: var(--meal); }
+    .progress-fill.warning { background: var(--recovery); }
+    .progress-fill.danger { background: #dc2626; }
+
+    .ratings-row { display: flex; gap: .5rem; flex-wrap: wrap; }
+    .rating-chip { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: .4rem .6rem; text-align: center; min-width: 60px; }
+    .chip-val { display: block; font-size: 1.1rem; font-weight: 700; }
+    .chip-label { display: block; font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+
+    .alert { padding: .75rem 1rem; border-radius: var(--radius); font-size: .875rem; margin-top: 1rem; }
+    .alert.warning { background: var(--recovery-bg); border: 1px solid var(--recovery-border); color: #92400e; }
+    .alert.danger  { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
+
+    .meal-card { border: 1px solid var(--meal-border); border-radius: var(--radius); padding: 1rem; margin-bottom: .75rem; background: var(--meal-bg); }
+    .meal-card:last-child { margin-bottom: 0; }
+    .meal-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .25rem; }
+    .meal-name { font-weight: 600; color: var(--meal); }
+    .meal-desc { font-size: .8rem; color: var(--muted); margin-bottom: .5rem; }
+    .meal-stats { display: flex; gap: .75rem; flex-wrap: wrap; font-size: .82rem; }
+
+    table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    th { text-align: left; padding: .4rem .5rem; color: var(--muted); font-size: .75rem; text-transform: uppercase; letter-spacing: .04em; border-bottom: 2px solid var(--border); }
+    td { padding: .5rem; border-bottom: 1px solid var(--surface); }
+    tr:last-child td { border-bottom: none; }
+
+    .small { font-size: .8rem; }
+    .muted { color: var(--muted); }
+    .flag-danger { color: #dc2626; font-weight: 600; }
+    .flag-warning { color: var(--recovery); font-weight: 600; }
+    .flag-ok { color: var(--meal); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<header class="site-header recovery">
+  <div class="header-inner">
+    <span class="badge recovery">Daily Log</span>
+    <h1>Mon Jun 8, 2026</h1>
+    <span class="header-meta">rest day · nutrition · recovery</span>
+  </div>
+  <div class="header-nav">
+    <a href="../plans/2026-06-08.html" style="color:var(--recovery)">week plan →</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="alert warning">
+    <strong>⚠ Protein way off today.</strong> 1,050 cal of ice cream added almost no protein — you're sitting at ~107g vs. a 160g target. Heading into a training week, that matters. Anchor tomorrow's breakfast with eggs + something protein-heavy.
+  </div>
+
+  <!-- ── Targets ─────────────────────────────────────────── -->
+
+  <section class="card recovery">
+    <div class="card-header">📊 Daily targets — rest day</div>
+    <div class="card-body">
+      <div class="goal-list">
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Protein</span>
+            <span class="goal-pct">~107 g / 160 g target — <span class="flag-danger">53g short</span></span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill danger" style="width:67%"></div>
+          </div>
+        </div>
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Calories</span>
+            <span class="goal-pct">~2,575 kcal / 2,300 kcal target — <span class="flag-warning">+275 kcal over</span></span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill warning" style="width:100%"></div>
+          </div>
+        </div>
+
+      </div>
+      <p class="small muted" style="margin-top:.75rem">Protein target = 0.8 × 200 lb. Rest day calories: 2,300 kcal. Ice cream accounted for ~41% of today's calories with minimal protein return.</p>
+    </div>
+  </section>
+
+  <!-- ── Meals ──────────────────────────────────────────── -->
+
+  <section class="card meal">
+    <div class="card-header">🥗 Meals</div>
+    <div class="card-body">
+
+      <div class="meal-card">
+        <div class="meal-header">
+          <span class="meal-name">2 eggs + toast</span>
+          <span class="badge meal">Breakfast</span>
+        </div>
+        <p class="meal-desc">2 large eggs, 2 slices whole wheat toast. Quick and solid start — low carb, decent protein.</p>
+        <div class="meal-stats">
+          <span>🔥 <strong>300</strong> kcal</span>
+          <span>🥩 <strong>18g</strong> protein</span>
+          <span>🍚 <strong>29g</strong> carbs</span>
+          <span>🫒 <strong>12g</strong> fat</span>
+          <span class="muted">confidence: high</span>
+        </div>
+      </div>
+
+      <div class="meal-card">
+        <div class="meal-header">
+          <span class="meal-name">Ground beef and potatoes</span>
+          <span class="badge meal">Lunch</span>
+        </div>
+        <p class="meal-desc">~5 oz 80/20 ground beef with potatoes (roasted or pan-fried). Solid protein and carb combo.</p>
+        <div class="meal-stats">
+          <span>🔥 <strong>600</strong> kcal</span>
+          <span>🥩 <strong>32g</strong> protein</span>
+          <span>🍚 <strong>60g</strong> carbs</span>
+          <span>🫒 <strong>28g</strong> fat</span>
+          <span class="muted">confidence: medium</span>
+        </div>
+      </div>
+
+      <div class="meal-card">
+        <div class="meal-header">
+          <span class="meal-name">Nachos — ground chicken, cheese, guac</span>
+          <span class="badge meal">Dinner</span>
+        </div>
+        <p class="meal-desc">~4 oz lean ground chicken on tortilla chips with shredded cheese and guacamole. Good protein source, chips add quick carbs.</p>
+        <div class="meal-stats">
+          <span>🔥 <strong>625</strong> kcal</span>
+          <span>🥩 <strong>40g</strong> protein</span>
+          <span>🍚 <strong>42g</strong> carbs</span>
+          <span>🫒 <strong>32g</strong> fat</span>
+          <span class="muted">confidence: medium</span>
+        </div>
+      </div>
+
+      <div class="meal-card" style="border-color:#fecaca;background:#fef2f2;">
+        <div class="meal-header">
+          <span class="meal-name" style="color:#dc2626;">Ice cream — late night</span>
+          <span class="badge recovery">Late Night</span>
+        </div>
+        <p class="meal-desc">~1,050 cal of ice cream. User-provided estimate. Sugar + fat dense; almost no protein contribution.</p>
+        <div class="meal-stats">
+          <span>🔥 <strong>1,050</strong> kcal</span>
+          <span>🥩 <strong>~12g</strong> protein</span>
+          <span>🍚 <strong>~130g</strong> carbs</span>
+          <span>🫒 <strong>~50g</strong> fat</span>
+          <span class="muted">confidence: user-provided</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Sleep ──────────────────────────────────────────── -->
+
+  <section class="card recovery">
+    <div class="card-header">😴 Sleep — last night (Sun → Mon)</div>
+    <div class="card-body">
+      <div class="ratings-row">
+        <div class="rating-chip">
+          <span class="chip-val">—</span>
+          <span class="chip-label">Hours</span>
+        </div>
+        <div class="rating-chip">
+          <span class="chip-val">—</span>
+          <span class="chip-label">Quality</span>
+        </div>
+      </div>
+      <p class="small muted" style="margin-top:.75rem">Sleep not logged. Note: eating 1,050 calories of ice cream late at night may affect sleep quality — sugar spike can disrupt overnight recovery. Log sleep tomorrow if you want it tracked in REVIEW.</p>
+    </div>
+  </section>
+
+  <!-- ── Daily Summary ──────────────────────────────────── -->
+
+  <section class="card">
+    <div class="card-header">📋 Daily Summary</div>
+    <div class="card-body">
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Logged</th>
+              <th>Target</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Protein</strong></td>
+              <td>~107 g</td>
+              <td>160 g</td>
+              <td><span class="flag-danger">53g short (67%)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Calories</strong></td>
+              <td>~2,575 kcal</td>
+              <td>2,300 kcal (rest)</td>
+              <td><span class="flag-warning">+275 over</span></td>
+            </tr>
+            <tr>
+              <td><strong>Ice cream</strong></td>
+              <td>1,050 kcal</td>
+              <td>—</td>
+              <td><span class="flag-danger">41% of total cals, ~12g protein</span></td>
+            </tr>
+            <tr>
+              <td><strong>Sleep</strong></td>
+              <td>Not logged</td>
+              <td>7–9 hrs</td>
+              <td><span class="muted small">add tomorrow</span></td>
+            </tr>
+            <tr>
+              <td><strong>Day type</strong></td>
+              <td>Rest</td>
+              <td>—</td>
+              <td><span class="flag-ok">✓ no session</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted" style="margin-top:.75rem">Breakfast and lunch were solid. Dinner was good — ground chicken nachos is a decent protein source. The ice cream is the outlier: 1,050 calories with basically no protein. One bad night doesn't tank progress, but Tuesday is a training day — get 40g of protein at breakfast to start digging out of the hole.</p>
+    </div>
+  </section>
+
+</main>
+
+<script type="application/json" id="daily-log-data">
+{
+  "date": "2026-06-08",
+  "day_type": "rest",
+  "session_log_ref": null,
+  "targets": {
+    "protein_g": 160,
+    "calories_training": 2600,
+    "calories_rest": 2300
+  },
+  "meals": [
+    {
+      "meal_name": "2 eggs + toast",
+      "description": "2 large eggs and 2 slices whole wheat toast.",
+      "calories_est": 300,
+      "protein_g": 18,
+      "carbs_g": 29,
+      "fat_g": 12,
+      "confidence": "high",
+      "timestamp": "2026-06-08T08:00:00"
+    },
+    {
+      "meal_name": "Ground beef and potatoes",
+      "description": "~5 oz 80/20 ground beef with roasted or pan-fried potatoes.",
+      "calories_est": 600,
+      "protein_g": 32,
+      "carbs_g": 60,
+      "fat_g": 28,
+      "confidence": "medium",
+      "timestamp": "2026-06-08T12:30:00"
+    },
+    {
+      "meal_name": "Nachos — ground chicken, cheese, guac",
+      "description": "~4 oz lean ground chicken on tortilla chips with shredded cheese and guacamole.",
+      "calories_est": 625,
+      "protein_g": 40,
+      "carbs_g": 42,
+      "fat_g": 32,
+      "confidence": "medium",
+      "timestamp": "2026-06-08T18:30:00"
+    },
+    {
+      "meal_name": "Ice cream — late night",
+      "description": "Large amount of ice cream, user-estimated at 1,050 calories.",
+      "calories_est": 1050,
+      "protein_g": 12,
+      "carbs_g": 130,
+      "fat_g": 50,
+      "confidence": "user-provided",
+      "timestamp": "2026-06-08T21:30:00"
+    }
+  ],
+  "totals": {
+    "calories_est": 2575,
+    "protein_g": 102,
+    "carbs_g": 261,
+    "fat_g": 122
+  },
+  "sleep": {
+    "hours": null,
+    "quality": null,
+    "quality_max": 5,
+    "notes": "not logged",
+    "logged_at": "2026-06-08T21:00:00"
+  },
+  "flags": [
+    "protein_severely_low",
+    "calories_over_rest_target",
+    "high_sugar_late_night"
+  ],
+  "review_signals": {
+    "protein_ok": false,
+    "calories_ok": false,
+    "sleep_ok": null,
+    "protein_g": 102,
+    "calories_est": 2575,
+    "sleep_hours": null,
+    "sleep_quality": null
+  }
+}
+</script>
+
+</body>
+</html>

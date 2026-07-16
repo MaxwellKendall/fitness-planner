@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Log — 2026-07-12</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <span class="badge recovery">Body-Comp Baseline</span>
+      <h1>Daily Log — 2026-07-12</h1>
+      <span class="header-meta">First measured body-composition baseline</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="alert">
+      Baseline check-in for the recomp. First real waist measurement + progress photos logged today —
+      this is the mark future reviews track against.
+    </div>
+
+    <section class="card recovery">
+      <div class="card-header">Body Composition</div>
+      <div class="card-body">
+        <p>
+          <span class="rating-chip">Waist 38.5"</span>
+          <span class="rating-chip">Target ≤ 34"</span>
+          <span class="rating-chip">Gap 4.5"</span>
+        </p>
+        <p><strong>Weight:</strong> <span class="rating-chip">201 lb</span> — essentially flat vs. 200 lb at intake (2026-05-16).</p>
+        <p class="muted" style="font-size:.85rem;">
+          Waist is above the half-your-height threshold (36" at 6'0") — the recomp target. A lean
+          180 lb should land the waist near 34". Track the tape, not just the scale.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">Progress Photos — 2026-07-12</div>
+      <div class="card-body">
+        <ul style="padding-left:1.25rem;font-size:.9rem;">
+          <li>photos/2026-07-12-front.jpeg</li>
+          <li>photos/2026-07-12-side-a.jpeg</li>
+          <li>photos/2026-07-12-side-b.jpeg</li>
+          <li>photos/2026-07-12-face.jpeg</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script type="application/json" id="daily-log-data">
+  {
+    "date": "2026-07-12",
+    "type": "body-comp-baseline",
+    "body": {
+      "waist_in": 38.5,
+      "waist_target_in": 34,
+      "weight_lb": 201,
+      "weight_note": "flat vs. 200 lb at intake (2026-05-16)"
+    },
+    "photos": [
+      "photos/2026-07-12-front.jpeg",
+      "photos/2026-07-12-side-a.jpeg",
+      "photos/2026-07-12-side-b.jpeg",
+      "photos/2026-07-12-face.jpeg"
+    ],
+    "meals": [],
+    "sleep": null
+  }
+  </script>
+</body>
+</html>

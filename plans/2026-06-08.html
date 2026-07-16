@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 4 Training Plan — June 8–14, 2026</title>
+  <style>
+    /* ── Inlined from styles.css ─────────────────────────────── */
+    :root {
+      --workout: #2563eb; --meal: #16a34a; --recovery: #d97706;
+      --workout-bg: #eff6ff; --meal-bg: #f0fdf4; --recovery-bg: #fffbeb;
+      --workout-border: #bfdbfe; --meal-border: #bbf7d0; --recovery-border: #fde68a;
+      --text: #0f172a; --muted: #64748b; --border: #e2e8f0; --surface: #f8fafc;
+      --radius: 10px; --shadow: 0 1px 3px rgba(0,0,0,.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--surface); color: var(--text); line-height: 1.55; }
+    main { max-width: 680px; margin: 0 auto; padding: 1rem 1rem 3rem; }
+
+    .site-header { padding: 1rem 1rem .75rem; border-bottom: 1px solid var(--border); background: #fff; }
+    .site-header.workout { border-left: 4px solid var(--workout); }
+    .header-inner { display: flex; flex-direction: column; gap: .2rem; max-width: 680px; margin: 0 auto; }
+    .header-inner h1 { font-size: 1.25rem; font-weight: 700; }
+    .header-meta { font-size: .8rem; color: var(--muted); }
+    .header-nav { max-width: 680px; margin: .5rem auto 0; display: flex; gap: 1rem; font-size: .8rem; }
+    .header-nav a { color: var(--workout); text-decoration: none; }
+
+    .badge { display: inline-block; border-radius: 20px; padding: 2px 10px; font-size: .75rem; font-weight: 600; }
+    .badge.workout { background: var(--workout-bg); color: var(--workout); }
+    .badge.recovery { background: var(--recovery-bg); color: var(--recovery); }
+    .badge.rest { background: #f1f5f9; color: #475569; }
+
+    .card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); margin-top: 1rem; overflow: hidden; }
+    .card.workout { border-left: 4px solid var(--workout); }
+    .card-header { padding: .6rem 1rem; background: var(--surface); border-bottom: 1px solid var(--border); font-size: .85rem; font-weight: 600; }
+    .card-body { padding: 1rem; }
+
+    .alert { padding: .75rem 1rem; border-radius: var(--radius); font-size: .875rem; margin-top: 1rem; }
+    .alert.info { background: var(--workout-bg); border: 1px solid var(--workout-border); color: #1e40af; }
+    .alert.warning { background: var(--recovery-bg); border: 1px solid var(--recovery-border); color: #92400e; }
+
+    /* Week grid */
+    .week-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: .25rem; }
+    .day-cell { text-align: center; padding: .5rem .2rem; border-radius: 8px; display: flex; flex-direction: column; gap: .2rem; background: var(--surface); border: 1px solid var(--border); }
+    .day-cell.workout-day { background: var(--workout-bg); border-color: var(--workout-border); }
+    .day-cell.rest { background: #fff; }
+    .day-cell.today { border: 2px solid var(--recovery); }
+    .day-name { font-size: .65rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; }
+    .day-date { font-size: .75rem; font-weight: 600; }
+    .day-event { font-size: .65rem; font-weight: 600; }
+    .day-event.workout { color: var(--workout); }
+
+    /* Table */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    th { text-align: left; padding: .4rem .5rem; color: var(--muted); font-size: .75rem; text-transform: uppercase; letter-spacing: .04em; border-bottom: 2px solid var(--border); white-space: nowrap; }
+    td { padding: .5rem; border-bottom: 1px solid var(--surface); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+
+    .goal-list { display: flex; flex-direction: column; gap: .75rem; }
+    .goal-row { display: flex; flex-direction: column; gap: .3rem; }
+    .goal-label { display: flex; justify-content: space-between; font-size: .85rem; }
+    .goal-name { font-weight: 600; }
+    .goal-pct { color: var(--muted); font-size: .8rem; }
+    .progress-track { height: 8px; background: var(--border); border-radius: 99px; overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 99px; background: var(--workout); }
+
+    .small { font-size: .8rem; }
+    .muted { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+<header class="site-header workout">
+  <div class="header-inner">
+    <span class="badge workout">Week 4</span>
+    <h1>June 8 – 14, 2026</h1>
+    <span class="header-meta">B/A/B rotation · Tue/Thu/Sat · back after a missed week</span>
+  </div>
+  <div class="header-nav">
+    <a href="2026-06-01.html">← week 3</a>
+  </div>
+</header>
+
+<main>
+
+  <div class="alert warning">
+    <strong>Returning after a missed week — hold Week 3 loads, don't add.</strong> It's been ~12 days since your last session (May 27). The loads below mirror the Week 3 plan exactly. They'll feel manageable. Don't chase numbers today — re-establish the groove and you'll be back on track by Saturday.
+  </div>
+
+  <!-- Week grid -->
+  <section class="card">
+    <div class="card-header">Week at a glance</div>
+    <div class="card-body">
+      <div class="week-grid">
+        <div class="day-cell rest today">
+          <span class="day-name">Mon</span>
+          <span class="day-date">Jun 8</span>
+          <span class="day-event" style="color:var(--recovery);font-size:.65rem">Today · Rest</span>
+        </div>
+        <div class="day-cell workout-day">
+          <span class="day-name">Tue</span>
+          <span class="day-date">Jun 9</span>
+          <span class="day-event workout">Session B</span>
+        </div>
+        <div class="day-cell rest">
+          <span class="day-name">Wed</span>
+          <span class="day-date">Jun 10</span>
+          <span class="day-event" style="color:var(--muted)">Rest</span>
+        </div>
+        <div class="day-cell workout-day">
+          <span class="day-name">Thu</span>
+          <span class="day-date">Jun 11</span>
+          <span class="day-event workout">Session A</span>
+        </div>
+        <div class="day-cell rest">
+          <span class="day-name">Fri</span>
+          <span class="day-date">Jun 12</span>
+          <span class="day-event" style="color:var(--muted)">Rest</span>
+        </div>
+        <div class="day-cell workout-day">
+          <span class="day-name">Sat</span>
+          <span class="day-date">Jun 13</span>
+          <span class="day-event workout">Session B</span>
+        </div>
+        <div class="day-cell rest">
+          <span class="day-name">Sun</span>
+          <span class="day-date">Jun 14</span>
+          <span class="day-event" style="color:var(--muted)">Rest</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Session B — Tue Jun 9 & Sat Jun 13 -->
+  <section class="card workout">
+    <div class="card-header">Session B — Push + Hinge &nbsp;<span class="badge rest">Tue Jun 9 · Sat Jun 13</span></div>
+    <div class="card-body">
+
+      <p class="small muted" style="margin-bottom:.75rem">
+        <strong>Warm-up (5 min):</strong> Push-up ×5 slow tempo (3 sec descent) · Scapular retraction ×10 · Hip hinge drill ×10
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bench press <span class="muted small">(warm-up)</span></td>
+              <td>1</td><td>5</td><td>95 lb</td>
+              <td>Scapular retraction cue. Should feel very easy.</td>
+            </tr>
+            <tr>
+              <td><strong>Bench press</strong></td>
+              <td>3</td><td>5</td><td>150 lb</td>
+              <td>Same as Week 3 plan — don't add load. Missed week means prove it first. RPE 6–7 target.</td>
+            </tr>
+            <tr>
+              <td>Deadlift <span class="muted small">(warm-up)</span></td>
+              <td>1</td><td>5</td><td>135 lb</td>
+              <td>Lats tight, bar over mid-foot.</td>
+            </tr>
+            <tr>
+              <td><strong>Deadlift</strong></td>
+              <td>3</td><td>5</td><td>215 lb</td>
+              <td>Backing off 5 lb from Week 3's 220 lb target after the gap. Hit 215 clean on Tue → go 220 on Sat.</td>
+            </tr>
+            <tr>
+              <td><strong>DB Row</strong></td>
+              <td>3</td><td>10</td><td>24 kg/hand</td>
+              <td>Controlled tempo. Squeeze at the top.</td>
+            </tr>
+            <tr>
+              <td>Push-up</td>
+              <td>2</td><td>10</td><td>BW</td>
+              <td>3 sec descent. Maintenance.</td>
+            </tr>
+            <tr>
+              <td><strong>Dead Bug</strong></td>
+              <td>3</td><td>8/side</td><td>BW</td>
+              <td style="color:var(--recovery);font-weight:600">⚠ Do not skip. 5 minutes. Do it before you leave.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted" style="margin-top:.75rem">Estimated duration: 40–45 min · Working sets: 15</p>
+    </div>
+  </section>
+
+  <!-- Session A — Thu Jun 11 -->
+  <section class="card workout">
+    <div class="card-header">Session A — Squat + Pull + Carry &nbsp;<span class="badge rest">Thu Jun 11</span></div>
+    <div class="card-body">
+
+      <p class="small muted" style="margin-bottom:.75rem">
+        <strong>Warm-up (5 min):</strong> Hip circles ×10 each direction · BW squat ×10 (2 sec pause) · Dead hang ×20 sec
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Back squat <span class="muted small">(warm-up)</span></td>
+              <td>1</td><td>5</td><td>95 lb</td>
+              <td>Bar path drill. Pause 1 sec at bottom.</td>
+            </tr>
+            <tr>
+              <td><strong>Back squat</strong></td>
+              <td>3</td><td>5</td><td>150 lb</td>
+              <td>Last logged: 145 lb (May 27). Up 5 lb — conservative given the gap. If bar speed is excellent, note it for next Session A. RPE target: 6–7.</td>
+            </tr>
+            <tr>
+              <td><strong>Pull-up</strong></td>
+              <td>4</td><td>5</td><td>BW</td>
+              <td>Dead hang start. 5 clean reps every set. Stop set at RPE 8.</td>
+            </tr>
+            <tr>
+              <td><strong>DB Row</strong></td>
+              <td>3</td><td>10</td><td>24 kg/hand</td>
+              <td>Chest supported or brace on knee. Squeeze at the top.</td>
+            </tr>
+            <tr>
+              <td><strong>Farmer Carry</strong></td>
+              <td>3</td><td>30 m</td><td>24 kg/hand</td>
+              <td>Tall posture, short steps. Stay at 24 — no reason to push weight after a missed week.</td>
+            </tr>
+            <tr>
+              <td>Plank</td>
+              <td>3</td><td>50 s</td><td>BW</td>
+              <td>No sagging hips. Squeeze glutes.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted" style="margin-top:.75rem">Estimated duration: 40–45 min · Working sets: 16</p>
+    </div>
+  </section>
+
+  <!-- Goals -->
+  <section class="card">
+    <div class="card-header">Goals — Week 4 snapshot</div>
+    <div class="card-body">
+      <div class="goal-list">
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Back Squat</span>
+            <span class="goal-pct">150 lb → target 250 lb · ~13 weeks remaining</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width:60%"></div></div>
+        </div>
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Bench Press</span>
+            <span class="goal-pct">150 lb → target 200 lb · hold weight this week</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width:75%"></div></div>
+        </div>
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Deadlift</span>
+            <span class="goal-pct">215–220 lb → target 350 lb · re-establish after gap</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width:62%"></div></div>
+        </div>
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Pull-ups</span>
+            <span class="goal-pct">4–5 reps/set → target 10 unbroken</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width:48%"></div></div>
+        </div>
+
+        <div class="goal-row">
+          <div class="goal-label">
+            <span class="goal-name">Body composition</span>
+            <span class="goal-pct">200 lb → target 180 lb · ~13 weeks</span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Week 4 priorities -->
+  <section class="card">
+    <div class="card-header">Week 4 priorities</div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Priority</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><strong>Show up all 3 days.</strong> That's the whole game this week. Tue / Thu / Sat — non-negotiable.</td></tr>
+            <tr><td>2</td><td><strong>Hold the loads — don't grind.</strong> 12-day gap means prove you can hit the same numbers cleanly before adding weight.</td></tr>
+            <tr><td>3</td><td><strong>Dead bugs every Session B.</strong> Anterior core is the weak link in the deadlift — 5 minutes, every time.</td></tr>
+            <tr><td>4</td><td><strong>Protein 140g+ minimum each day.</strong> Yesterday was 107g — close the gap Tuesday. Eggs at breakfast, protein-dense lunch.</td></tr>
+            <tr><td>5</td><td><strong>Deadlift 215 → 220 progression within the week.</strong> Tuesday at 215, Saturday at 220 if Tuesday felt solid.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Volume summary -->
+  <section class="card">
+    <div class="card-header">Volume summary</div>
+    <div class="card-body">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Pattern</th><th>Sets this week</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Squat</td><td>6</td><td>✅ on track</td></tr>
+            <tr><td>Hinge</td><td>6</td><td>✅ on track</td></tr>
+            <tr><td>Push</td><td>8</td><td>✅ on track</td></tr>
+            <tr><td>Pull</td><td>10</td><td>✅ on track</td></tr>
+            <tr><td>Carry</td><td>3</td><td>✅ steady</td></tr>
+            <tr><td>Core</td><td>9 (plank + dead bug)</td><td>✅ on track</td></tr>
+            <tr><td><strong>Total</strong></td><td><strong>42</strong></td><td>Within 42–54 target ✅</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script type="application/json" id="plan-data">
+{
+  "week_start": "2026-06-08",
+  "week_number": 4,
+  "rotation": "B/A/B",
+  "note": "returning after missed Week 3 — hold Week 3 loads",
+  "sessions": [
+    { "date": "2026-06-09", "label": "Session B", "type": "push-hinge" },
+    { "date": "2026-06-11", "label": "Session A", "type": "squat-pull-carry" },
+    { "date": "2026-06-13", "label": "Session B", "type": "push-hinge" }
+  ],
+  "loading_targets": {
+    "back-squat":   { "load_lb": 150, "sets": 3, "reps": 5 },
+    "bench-press":  { "load_lb": 150, "sets": 3, "reps": 5 },
+    "deadlift":     { "load_lb": 215, "sets": 3, "reps": 5, "note": "215 Tue → 220 Sat if clean" },
+    "pull-up":      { "reps": 5, "sets": 4, "load": "BW" },
+    "dumbbell-row": { "load_kg_hand": 24, "sets": 3, "reps": 10 },
+    "farmer-carry": { "load_kg_hand": 24, "sets": 3, "distance_m": 30 }
+  }
+}
+</script>
+
+</body>
+</html>

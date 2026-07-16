@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session A — Sat Jun 13</title>
+  <style>
+    :root {
+      --blue: #2563eb; --blue-bg: #eff6ff; --blue-border: #bfdbfe;
+      --amber: #d97706; --amber-bg: #fffbeb; --amber-border: #fde68a;
+      --muted: #64748b; --border: #e2e8f0; --surface: #f8fafc;
+      --radius: 10px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--surface); color: #0f172a; line-height: 1.55;
+    }
+    .header {
+      padding: 1rem 1rem .75rem;
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+      border-left: 4px solid var(--blue);
+    }
+    .header-inner { max-width: 680px; margin: 0 auto; }
+    .badge { display: inline-block; border-radius: 20px; padding: 2px 10px; font-size: .75rem; font-weight: 600; background: var(--blue-bg); color: var(--blue); margin-bottom: .3rem; }
+    .badge.rest { background: #f1f5f9; color: #475569; }
+    h1 { font-size: 1.3rem; font-weight: 700; }
+    .sub { font-size: .8rem; color: var(--muted); margin-top: .15rem; }
+
+    main { max-width: 680px; margin: 0 auto; padding: 1rem 1rem 3rem; }
+
+    .alert {
+      padding: .75rem 1rem; border-radius: var(--radius); font-size: .875rem; margin-bottom: 1rem;
+      background: var(--blue-bg); border: 1px solid var(--blue-border); color: #1e40af;
+    }
+
+    .card {
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: 0 1px 3px rgba(0,0,0,.08); margin-bottom: 1rem; overflow: hidden;
+    }
+    .card-header {
+      padding: .6rem 1rem; background: var(--surface); border-bottom: 1px solid var(--border);
+      font-size: .85rem; font-weight: 600;
+    }
+    .card-body { padding: 1rem; }
+
+    .warmup {
+      background: var(--surface); border-radius: 8px; padding: .6rem .8rem;
+      font-size: .82rem; color: var(--muted); margin-bottom: 1rem; border: 1px solid var(--border);
+    }
+
+    table { width: 100%; border-collapse: collapse; font-size: .875rem; }
+    th {
+      text-align: left; padding: .45rem .5rem; color: var(--muted);
+      font-size: .72rem; text-transform: uppercase; letter-spacing: .04em;
+      border-bottom: 2px solid var(--border); white-space: nowrap;
+    }
+    td { padding: .55rem .5rem; border-bottom: 1px solid var(--surface); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    .load { font-weight: 700; color: var(--blue); white-space: nowrap; }
+    .note-cell { font-size: .8rem; color: var(--muted); }
+    .must-do { color: var(--amber); font-weight: 700; font-size: .82rem; }
+
+    .footer-note { font-size: .8rem; color: var(--muted); margin-top: .75rem; }
+
+    .set-tracker { display: grid; gap: .4rem; margin-top: .75rem; }
+    .set-box {
+      border: 2px solid var(--border); border-radius: 8px; padding: .5rem;
+      text-align: center; font-size: .75rem; color: var(--muted);
+    }
+    .set-box .set-num { font-size: 1rem; font-weight: 700; color: #0f172a; display: block; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div><span class="badge">Session A</span> <span class="badge rest">Sat Jun 13</span></div>
+    <h1>Squat + Pull + Carry</h1>
+    <p class="sub">Squat · Pull-up · Row · Farmer Carry · Plank · ~40 min</p>
+  </div>
+</div>
+
+<main>
+
+  <div class="alert">
+    <strong>Up 5 lb from Monday.</strong> You hit 155 lb at RPE 7 on June 8 — go to 160 lb today. If it moves clean, that's the new baseline. Farmer carry and plank are back in — you skipped them Monday.
+  </div>
+
+  <div class="warmup">
+    <strong>Warm-up (5 min):</strong> Hip circles ×10 each direction · BW squat ×10 (2 sec pause at bottom) · Dead hang ×20 sec
+  </div>
+
+  <div class="card">
+    <div class="card-header">🏋️ Main work</div>
+    <div class="card-body">
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Exercise</th>
+              <th>Sets</th>
+              <th>Reps</th>
+              <th>Load</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span style="color:var(--muted);">Back squat (warm-up)</span></td>
+              <td>1</td>
+              <td>5</td>
+              <td><span class="load">95 lb</span></td>
+              <td class="note-cell">Bar path drill. Pause 1 sec at bottom.</td>
+            </tr>
+            <tr>
+              <td><strong>Back squat</strong></td>
+              <td>3</td>
+              <td>5</td>
+              <td><span class="load">160 lb</span></td>
+              <td class="note-cell">Up 5 lb from Monday's 155 lb. RPE 6–7 target. If rep 5 slows sharply, note it but finish the set.</td>
+            </tr>
+            <tr>
+              <td><strong>Pull-up</strong></td>
+              <td>4</td>
+              <td>5</td>
+              <td><span class="load">BW</span></td>
+              <td class="note-cell">Dead hang start every rep. Goal is 5 clean reps all 4 sets — Monday you got 5/5/5/3. Try to hold 5 on the last set today.</td>
+            </tr>
+            <tr>
+              <td><strong>DB Row</strong></td>
+              <td>3</td>
+              <td>10</td>
+              <td><span class="load">95 lb</span></td>
+              <td class="note-cell">Chest supported or brace on knee. Squeeze at the top. Same as Monday.</td>
+            </tr>
+            <tr style="background:#fffbeb;">
+              <td><strong>Farmer Carry</strong></td>
+              <td>3</td>
+              <td>30 m</td>
+              <td><span class="load">24 kg/hand</span></td>
+              <td class="must-do">⚠ Skipped Monday — do it today. Tall posture, short steps, don't shrug.</td>
+            </tr>
+            <tr style="background:#fffbeb;">
+              <td><strong>Plank</strong></td>
+              <td>3</td>
+              <td>50 s</td>
+              <td><span class="load">BW</span></td>
+              <td class="must-do">⚠ Skipped Monday — finish with this. Squeeze glutes, no sagging hips.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="footer-note">Estimated duration: 40–45 min · Working sets: 16</p>
+    </div>
+  </div>
+
+  <!-- Set tracker -->
+  <div class="card">
+    <div class="card-header">✅ Squat sets</div>
+    <div class="card-body">
+      <div class="set-tracker" style="grid-template-columns:repeat(3,1fr);">
+        <div class="set-box"><span class="set-num">1</span>160 lb × 5</div>
+        <div class="set-box"><span class="set-num">2</span>160 lb × 5</div>
+        <div class="set-box"><span class="set-num">3</span>160 lb × 5</div>
+      </div>
+      <p class="footer-note" style="margin-top:.6rem;">Est. 1RM at 160 lb × 5 reps = ~180 lb</p>
+    </div>
+  </div>
+
+</main>
+
+</body>
+</html>
