@@ -133,21 +133,36 @@
       ]
     },
     "goblet-squat": {
-      "estimated_load_kg": 28,
+      "estimated_load_lb": 60,
       "observations": [
-        { "weight_kg": 28, "reps": 8, "date": "2026-05-12", "notes": "superseded by barbell back squat data" }
+        {
+          "weight_lb": 60,
+          "reps": 8,
+          "date": "2026-05-12",
+          "notes": "solid depth, RPE 7 — superseded by barbell back squat data"
+        }
       ]
     },
     "dumbbell-rdl": {
-      "estimated_load_kg": 24,
+      "estimated_load_lb": 55,
       "observations": [
-        { "weight_kg": 24, "reps": 8, "date": "2026-05-12", "notes": "superseded by barbell deadlift data" }
+        {
+          "weight_lb": 55,
+          "reps": 8,
+          "date": "2026-05-12",
+          "notes": "per hand, felt controlled — superseded by barbell deadlift data"
+        }
       ]
     },
     "dumbbell-bench-press": {
-      "estimated_load_kg": 22,
+      "estimated_load_lb": 50,
       "observations": [
-        { "weight_kg": 22, "reps": 8, "date": "2026-05-12", "notes": "superseded by barbell bench press data" }
+        {
+          "weight_lb": 50,
+          "reps": 8,
+          "date": "2026-05-12",
+          "notes": "per hand — superseded by barbell bench press data"
+        }
       ]
     }
   },
