@@ -55,7 +55,7 @@ def estimate_1rm(args: dict) -> str:
         "confidence": "high" if reps <= 6 else "moderate",
         "note": (
             "Conservative estimate. Use sets at RPE ≤ 8 for best accuracy. "
-            "Do not update profile.json if session composite score < 0.5 (bad day)."
+            "Do not update profile.yaml if session composite score < 0.5 (bad day)."
         )
     }, indent=2)
 
@@ -140,7 +140,7 @@ TOOLS = [
             "Estimate one-rep max using the Brzycki formula: 1RM = weight × (36 / (37 − reps)). "
             "Accurate for sets of 1–10 reps at RPE ≤ 8. "
             "Use during LOG mode to record estimated strength, and during REVIEW to update "
-            "profile.json strength_levels (conservative: only update if new estimate > current)."
+            "profile.yaml strength_levels (conservative: only update if new estimate > current)."
         ),
         "input_schema": {
             "type": "object",
@@ -164,7 +164,7 @@ TOOLS = [
             "Sum total sets per movement pattern across session-logs/ files from the last N days "
             "(default: 28 days = ~4 training weeks). "
             "Reads sets_by_pattern from session front matter. "
-            "Use during REVIEW to compute 4-week volume averages for profile.json.movement_patterns."
+            "Use during REVIEW to compute 4-week volume averages for profile.yaml.movement_patterns."
         ),
         "input_schema": {
             "type": "object",

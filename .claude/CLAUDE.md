@@ -1,7 +1,7 @@
 # Fitness Planner — Reference
 
 You are a personal training and programming assistant. All generated output files are **HTML**.
-Modes are implemented as composable slash commands in `.claude/commands/`.
+Modes are implemented as composable slash commands in `.claude/skills/`.
 
 ---
 
@@ -9,7 +9,7 @@ Modes are implemented as composable slash commands in `.claude/commands/`.
 
 ```
 config.yaml              # user intent — athlete profile, schedule, equipment — never modify
-profile.json             # system-generated fitness state — you update this
+profile.yaml             # system-generated fitness state — you update this
 styles.css               # shared stylesheet linked by all HTML outputs
 tools.py                 # 1RM estimator + rolling volume calculator
 exercise-library/        # reference cards, one .md file per exercise — keyed by slug
@@ -17,7 +17,7 @@ plans/                   # weekly training plans: YYYY-MM-DD.html (Monday date)
 meals/                   # weekly meal plans: YYYY-MM-DD.html (Monday date)
 session-logs/            # completed session logs: YYYY-MM-DD.html (session date)
 reviews/                 # progress reviews: YYYY-MM-DD.html (review date)
-.claude/commands/        # slash command skills: plan.md, log.md, review.md, adjust.md
+.claude/skills/          # slash command skills: plan, log, review, adjust
 ```
 
 ---
@@ -26,7 +26,7 @@ reviews/                 # progress reviews: YYYY-MM-DD.html (review date)
 
 1. `config.yaml` — never override; only the user edits it
 2. `session-logs/` — actual completed work, ground truth for progress
-3. `profile.json` — derived state, regenerable from session logs + config
+3. `profile.yaml` — derived state, regenerable from session logs + config
 4. `exercise-library/` — stable reference for selection and substitution
 5. General exercise science knowledge — fill gaps the repo doesn't cover
 
@@ -181,7 +181,7 @@ deload:
 1RM = weight × (36 / (37 − reps))
 ```
 
-Valid for 1–10 reps at RPE ≤ 8. Use `tools.py:estimate_1rm`. Store in `profile.json.strength_levels`.
+Valid for 1–10 reps at RPE ≤ 8. Use `tools.py:estimate_1rm`. Store in `profile.yaml.strength_levels`.
 
 ---
 
@@ -195,7 +195,7 @@ Sessions scoring < 0.5 are bad days — do not update 1RM estimates from them.
 
 ---
 
-## profile.json Schema
+## profile.yaml Schema
 
 ```json
 {
@@ -256,7 +256,7 @@ Sessions scoring < 0.5 are bad days — do not update 1RM estimates from them.
 
 ## Meal Planning — Grocery Planner Reference
 
-Recipe source: `../../grocery-planner/`
+Recipe source: `../../grocery-plan/`
 
 | File | Purpose |
 |---|---|
@@ -272,7 +272,7 @@ Sunday is a rest day (Sabbath) — never schedule cooking or shopping on Sunday.
 
 ## Deduplication and Idempotence
 
-- `profile.json.seen_sessions` — REVIEW skips sessions already listed
+- `profile.yaml.seen_sessions` — REVIEW skips sessions already listed
 - Session logs are immutable once written; corrections require manual editing
 - Plan files (keyed by Monday date) are idempotent — re-running /plan overwrites safely
 - Exercise slugs are canonical: `goblet-squat`, not "Goblet Squat"

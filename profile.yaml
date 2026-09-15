@@ -1,0 +1,426 @@
+generated_at: "2026-09-12"
+training_week: 18
+weeks_since_deload: 4
+age_bracket: "30-39"
+
+athlete_state:
+  weight_lb: 195
+  target_weight_lb: 180
+  height_ft: 6
+  as_of: "2026-09-12"
+  note: "195 lb and 36.0\" waist self-reported 2026-09-12 (evening, not morning-fasted — athlete re-weighing in the morning). Trend since the 07-12 baseline (201 lb / 38.5\"): -6 lb, -2.5\" of waist over 9 weeks. Weight is drifting down slowly (-1 lb in the 5 weeks since 08-08) while waist keeps moving (-0.5\" same window) — still the recomp pattern, waist leading the scale. Weigh morning-fasted for a consistent trend."
+
+active_goals:
+  squat:
+    target: "250 lb back squat (1.25× bodyweight)"
+    current_lb: 208
+    historical_pr_lb: 235
+    unit: lbs
+    note: "Updated 2026-08-08: verified 185×5 @ RPE 8 on 07-14 (first non-plan-derived data point), replacing the 186 lb reconstructed estimate. 83% of tier target, 88% of historical PR."
+  hinge:
+    target: "350 lb deadlift (1.75× bodyweight)"
+    current_lb: 248
+    historical_pr_lb: 255
+    unit: lbs
+    note: "CONFIDENCE FLAG 2026-08-08: 248 is still the plan-derived (unverified) estimate — held here per never-regress rule, but two real verified sets since (185×5 RPE6 → 208 on 07-18; 195×5 → 219 on 08-03) both land well below it. Treat 248 as optimistic; retest with a real top set. Against the verified 219 lb, that's 63% of tier target."
+  push:
+    target: "200 lb incline bench press (1.0× bodyweight)"
+    current_lb: 174
+    historical_pr_lb: 225
+    unit: lbs
+    note: "CORRECTED 2026-07-30: athlete has always trained incline bench, not flat — all prior 'Bench Press' history (135→155 lb, RPE data, this 174 lb estimate) was mislabeled. Goal now tracks incline-bench-press explicitly; flat bench is untested. 225 lb historical PR predates this log and its flat-vs-incline status is unverified. Reconfirmed 2026-08-03 with a 135×5 working set (est. 152, consistent). 87% of tier target."
+  pull:
+    target: "10 unbroken pull-ups"
+    current: 6
+    unit: reps
+    note: "Plans held pull-up at 4×5 BW; best verified single-set unbroken remains 6 (2026-05-12). 60% of target."
+  body_composition:
+    target: "180 lb, waist ≤ 34\" (athletic-lean for 6ft male)"
+    current_lb: 195
+    waist_in: 36.0
+    unit: lbs
+    as_of: "2026-09-12"
+    note: "2026-09-12: 195 lb, waist 36.0\" (self-reported, evening — morning re-weigh pending). Down 6 lb and 2.5\" of waist since the 07-12 baseline (201 lb / 38.5\"). Pace has slowed vs. the first four weeks but has not stalled: -1 lb and -0.5\" in the 5 weeks since 08-08. Waist is now exactly half of height (72\" × 0.50) — the standard health threshold — and 2.0\" from the 34\" target; 15 lb from target weight. Photos taken 2026-09-12 (3 shots: front + 2 side) — see patterns note, files not yet saved to photos/."
+  cardio:
+    target: "5K under 25 min"
+    current_min: null
+    unit: min
+    note: "Still not baseline-tested."
+  mobility:
+    target: "hip mobility pass; no chronic postural compensation"
+    current: "in progress"
+  injury_prevention:
+    target: "resilient lower back and right adductor — pain-free squatting, hinging and explosive movement"
+    current: "right adductor/groin: first clean loaded squat session 2026-09-05 (155×5×4, zero sensation) — delayed-response check never logged. Lower back: quiet since 07-18."
+    note: "Two separate issues. (1) LOWER BACK — minor lumbar tweak 07-14, awareness-only 07-18, no mentions since good mornings were introduced; holds at 2 mentions, below the 3-mention escalation threshold. (2) RIGHT ADDUCTOR/GROIN — the dominant constraint on this program since 08-07 and PAST the escalation threshold (see injuries block below)."
+  timeline_weeks_remaining: 0
+
+injuries:
+  right_adductor:
+    status: "possibly resolving — unconfirmed"
+    first_flagged: "2026-08-07"
+    mentions: 5
+    escalation: "PAST THRESHOLD — repo rule is 3+ mentions → propose a config.yaml.constraints.injuries entry. Flagged in the 08-17, 08-24 and 08-31 plans; config.yaml.constraints.injuries is STILL EMPTY. This system never edits config.yaml — the athlete must add it (suggested: {area: right_adductor, note: \"avoid explosive hip-rotational loading; squat pattern gated until cleared\"})."
+    history:
+      - {date: "2026-08-07", context: "front squat", note: "first occurrence"}
+      - {date: "2026-08-08", context: "tennis — forceful push-off jumping a fence", note: "re-aggravated"}
+      - {date: "2026-08-17", context: "unresolved after a full week off (08-10 – 08-16)", note: "sore getting into a squat position; explosive rotational loading (throwing) reproduces it"}
+      - {date: "~2026-08-25", context: "sprinting during a run", note: "mild-but-noticeable pull; 3rd distinct real-world context"}
+      - {date: "2026-09-05", context: "back squat 155×5×4 @ RPE 6", note: "ZERO sensation during or after the session — first clean loaded squat in 5 weeks"}
+    open_question: "The 09-05 session was clean during the session, but every prior flare of this injury showed up as a 24–48h DELAYED response — and that reading (Sun 09-06 / Mon 09-07) was never logged. Until it is, 'resolved' is an assumption, not a finding. Ask the athlete directly."
+    professional_eval: "declined twice (as of 2026-08-24). Pattern — fine day-to-day, reproduces under explosive load, persists 5+ weeks — is the kind self-management does not reliably fix. Worth reconsidering."
+
+long_term_vision:
+  doc: "goals/age-40-vision.html"
+  written: "2026-07-12"
+  optimized_for: longevity
+  measurement: "gym-testable proxies only (no lab)"
+  emphasis: "balanced strength + endurance"
+  target_age: 40
+  birth_month: May
+  target_date: "2030-05"
+  north_star: "At 40, optimized for longevity: top-tier aerobic base, functional sub-max strength, grip, balance, and a lean waist — all self-testable and pain-free. Best shape of my life, built to last."
+  age_40_targets:
+    cardio: {5k_minutes: 23, zone2_hold_minutes: 60, resting_hr_bpm: 55, zone2_hours_per_week: 3}
+    strength_for_reps_rpe7: {back-squat_lb: 225, deadlift_lb: 270, bench-press_lb: 180}
+    grip_carry: {dead_hang_seconds: 120, farmer_carry: "bodyweight total (2x90 lb) x 60m"}
+    pull_ups_unbroken: 12
+    balance_mobility: {single_leg_eyes_closed_seconds: 30, overhead_squat: pass, daily_mobility_min: 10}
+    body: {bodyweight_lb: 180, waist_in_max: 34}
+  guardrails:
+    - "Never true-max — test strength with reps at RPE 7, not 1RM attempts"
+    - "Deload every 6 weeks now, every 5 at 40"
+    - "Daily mobility + weekly balance"
+    - "Cardio is a co-equal pillar (config lists it optional — override toward longevity)"
+  note: "Longevity-optimized, defined with user 2026-07-12. Turns 40 in May 2030 (~3 yr 10 mo runway). Current lifts are already near the age-40 strength targets; growth areas are cardio, grip, balance, leanness. Every plan/review should be calculated toward these."
+
+strength_levels:
+  back-squat:
+    estimated_1rm_lb: 208
+    historical_pr_lb: 235
+    status: "progressing — verified with a real top set 2026-07-14 (185×5 @ RPE 8); 88% of historical PR"
+    confidence: "moderate — first verified (non-plan-derived) data point for this lift"
+    observations:
+      - weight_lb: 235
+        reps: 1
+        date: "2025-05-01"
+        notes: "historical PR, ~1 year ago"
+      - weight_lb: 135
+        reps: 5
+        rpe: 6
+        date: "2026-05-20"
+        estimated_1rm_lb: 170
+        verified: true
+      - weight_lb: 145
+        reps: 5
+        rpe: 7
+        date: "2026-05-27"
+        estimated_1rm_lb: 163
+        verified: true
+      - weight_lb: 155
+        reps: 5
+        rpe: 7
+        date: "2026-06-08"
+        estimated_1rm_lb: 174
+        verified: true
+      - weight_lb: 165
+        reps: 5
+        rpe: 7
+        date: "2026-06-19"
+        estimated_1rm_lb: 186
+        verified: false
+        source: plan-as-written
+      - weight_lb: 185
+        reps: 5
+        rpe: 8
+        date: "2026-07-14"
+        estimated_1rm_lb: 208
+        verified: true
+        notes: "unplanned session, real top set — first verified squat data point, exceeds prior plan-derived 186 estimate"
+      - weight_lb: 155
+        reps: 5
+        rpe: 6
+        date: "2026-09-05"
+        estimated_1rm_lb: 174
+        verified: true
+        notes: "first barbell squat in 5 weeks (adductor gating); RPE 6 submaximal by design — below the 208 headline, does NOT contradict it. Off-plan: programmed 2×5 @ 95 lb behind a movement screen, ran 4×5 @ 155 lb with the gates skipped."
+  front-squat:
+    estimated_1rm_lb: 141
+    historical_pr_lb: null
+    status: "new — first data point, 2026-08-01 audible session"
+    confidence: "moderate — single verified working set, no RPE reported"
+    observations:
+      - weight_lb: 125
+        reps: 5
+        date: "2026-08-01"
+        estimated_1rm_lb: 141
+        verified: true
+        notes: "Full Body audible session; exercise-library/front-squat.md scaffolded, awaiting athlete review"
+  incline-bench-press:
+    estimated_1rm_lb: 174
+    historical_pr_lb: 225
+    status: "progressing — verified floor is 135 lb clean-form (07-30); 155 lb pending strict-form re-verification"
+    confidence: "low — 174 est. 1RM rests on a 155×5 data point (07-22) now suspected to be non-strict form"
+    note: "CORRECTED 2026-07-30: this is the lift previously mislabeled 'bench-press' in every prior log entry — athlete has always trained incline, never flat. Renamed here; flat bench (slug bench-press) has no history of its own. FORM FLAG (2026-07-30): real-time discovery during today's session that 155 lb breaks strict form (glutes lift off bench) while 135 lb is clean — casts doubt on whether the 07-22 155×5 RPE 8 data point (and thus the 174 lb estimated 1RM) was strict-form. Treat 174 lb as unverified until 155 lb is re-tested with glutes pinned to the bench."
+    observations:
+      - weight_lb: 225
+        reps: 1
+        date: "2025-05-01"
+        notes: "historical PR, ~1 year ago — flat-vs-incline status unverified, predates this log"
+      - weight_lb: 135
+        reps: 5
+        rpe: 7
+        date: "2026-05-23"
+        estimated_1rm_lb: 152
+        verified: true
+      - weight_lb: 155
+        reps: 5
+        rpe: 7
+        date: "2026-06-16"
+        estimated_1rm_lb: 174
+        verified: false
+        source: plan-as-written
+      - weight_lb: 155
+        reps: 5
+        rpe: 8
+        date: "2026-07-22"
+        estimated_1rm_lb: 174
+        verified: true
+        notes: "ran heavier than planned RPE 7; all 4x5 completed clean. Confirms rather than raises the 174 estimate."
+      - weight_lb: 135
+        reps: 5
+        date: "2026-08-03"
+        estimated_1rm_lb: 152
+        verified: true
+        notes: "lighter working set, consistent with the established 174 estimate"
+  bench-press:
+    estimated_1rm_lb: 152
+    historical_pr_lb: null
+    status: "new lift — first trained in this program 2026-08-26; two consistent verified data points"
+    confidence: "moderate — both sets at 135 lb, submaximal (RPE 7 then RPE 6), so true capacity is above this"
+    note: "FLAT bench, distinct from incline-bench-press. Every pre-08-26 'Bench Press' entry in this repo was actually incline (see the 07-30 correction). The 225 lb historical PR is NOT carried here — its flat-vs-incline status is unverified. Trend signal: the same 135×5 went from RPE 7 (08-26) to RPE 6 (09-05) in ten days — getting easier at fixed load."
+    observations:
+      - weight_lb: 135
+        reps: 5
+        rpe: 7
+        date: "2026-08-26"
+        estimated_1rm_lb: 152
+        verified: true
+        notes: "flat bench debut, ran exactly as planned"
+      - weight_lb: 135
+        reps: 5
+        rpe: 6
+        date: "2026-09-05"
+        estimated_1rm_lb: 152
+        verified: true
+        notes: "same load and reps, a full RPE point easier"
+
+  deadlift:
+    estimated_1rm_lb: 248
+    historical_pr_lb: 255
+    status: "CONFIDENCE FLAG (2026-08-08): headline 248 rests entirely on an unverified plan-as-written data point. Two real verified sets since (185×5 @ RPE 6 → 208; 195×5 → 219) both land well below 248. Do not program off 248 — retest with an actual top set before trusting it."
+    confidence: "low — headline still plan-derived; verified data points now contradict it"
+    observations:
+      - weight_lb: 255
+        reps: 1
+        date: "2025-05-01"
+        notes: "historical PR, ~1 year ago"
+      - weight_lb: 195
+        reps: 5
+        rpe: 7
+        date: "2026-05-23"
+        estimated_1rm_lb: 219
+        verified: true
+      - weight_lb: 220
+        reps: 5
+        rpe: 7
+        date: "2026-06-02"
+        estimated_1rm_lb: 248
+        verified: false
+        source: plan-as-written
+      - weight_lb: 185
+        reps: 5
+        rpe: 6
+        date: "2026-07-18"
+        estimated_1rm_lb: 208
+        verified: true
+        notes: "explicit RPE 6 cap — verified floor, not a max-effort test. Well below the 248 plan-derived headline."
+      - weight_lb: 195
+        reps: 5
+        date: "2026-08-03"
+        estimated_1rm_lb: 219
+        verified: true
+        notes: "working set, no RPE reported. Second consecutive verified point below the 248 headline."
+  pull-up:
+    estimated_1rm_bw: true
+    max_unbroken: 6
+    observations:
+      - reps: 6
+        date: "2026-05-12"
+        notes: "clean reps, stopped before failure"
+        verified: true
+      - reps: 5
+        date: "2026-06-08"
+        rpe: 7
+        notes: "5,5,5,3 across 4 sets"
+        verified: true
+  goblet-squat:
+    estimated_load_lb: 60
+    observations:
+      - weight_lb: 60
+        reps: 8
+        date: "2026-05-12"
+        notes: "solid depth, RPE 7 — superseded by barbell back squat data"
+  dumbbell-rdl:
+    estimated_load_lb: 55
+    observations:
+      - weight_lb: 55
+        reps: 8
+        date: "2026-05-12"
+        notes: "per hand, felt controlled — superseded by barbell deadlift data"
+  dumbbell-bench-press:
+    estimated_load_lb: 50
+    observations:
+      - weight_lb: 50
+        reps: 8
+        date: "2026-05-12"
+        notes: "per hand — superseded by barbell bench press data"
+
+# 28-day window 2026-08-15 → 2026-09-12. LOGGED SETS ONLY — counts come from 2 session logs
+# (08-26, 09-05). The athlete reports additional training in this window that was never logged
+# (confirmed: Saturday 08-30 ran as planned and was never logged; 2 runs incl. sprinting week of
+# 08-24). Treat every number below as a FLOOR, not actual work performed.
+movement_patterns:
+  squat:  {recent_sets_28d: 4,  trend: decreasing,   last_session: "2026-09-05"}
+  hinge:  {recent_sets_28d: 0,  trend: undertrained, last_session: "2026-08-03"}
+  push:   {recent_sets_28d: 10, trend: decreasing,   last_session: "2026-09-05"}
+  pull:   {recent_sets_28d: 6,  trend: decreasing,   last_session: "2026-09-05"}
+  carry:  {recent_sets_28d: 2,  trend: increasing,   last_session: "2026-08-26"}
+  core:   {recent_sets_28d: 2,  trend: stable,       last_session: "2026-08-26"}
+  # cardio is NOT tracked here but is now a real part of training (running, tennis) — see patterns.
+
+body_measurements:
+  - date: "2026-07-12"
+    weight_lb: 201
+    waist_in: 38.5
+    note: "first measured baseline (time of day unspecified)"
+  - date: "2026-07-13"
+    weight_lb: 197
+    waist_in: null
+    note: "morning, fasted — 4 lb below yesterday; normal day-to-day variance, not fat loss. Use morning-fasted as the standard going forward."
+  - date: "2026-08-08"
+    weight_lb: 196
+    waist_in: 36.5
+    note: "morning. Waist down 2\" from baseline in ~4 weeks (38.5\" → 36.5\") while weight is nearly flat (-1 lb vs. 07-13) — recomp signal, not scale-weight signal. Photos: photos/2026-08-08-front-a.png, -front-b.png, -side-a.png."
+  - date: "2026-09-12"
+    weight_lb: 195
+    waist_in: 36.0
+    time_of_day: evening
+    verified: false
+    note: "Self-reported check-in, evening (\"still about 195\") — not morning-fasted, so treat weight as approximate; athlete re-weighing the morning of 09-13. Waist 36.0\", down 0.5\" from 08-08. Five-week delta is small but directionally correct in both metrics. Photos taken this day (front, side, side-turned) — not yet filed in photos/."
+
+recovery_state:
+  estimated_fatigue: moderate
+  fatigue_confidence: low
+  last_high_intensity_session: "2026-07-22"
+  last_logged_session: "2026-09-05"
+  training_gap_days_logged: 7
+  flagged_for_deload: false
+  last_deload_week: "2026-08-10"
+  deload_note: "The 08-10 travel week (no gym) absorbed the deload that was due then. weeks_since_deload counted from 08-17 = 4; next deload due week of 2026-09-21 per config's 6-week frequency. Fatigue is 'moderate' by the formula (last logged session effort 6, 7 days ago) but confidence is LOW — the athlete reports unlogged training in this window, so both the gap and the load are unknown. Ask before programming a heavy week."
+
+prs:
+  - exercise: back-squat
+    value_lb: 235
+    date: "2025-05-01"
+    notes: "historical PR ~1 year ago; not current capacity"
+  - exercise: bench-press
+    value_lb: 225
+    date: "2025-05-01"
+    notes: "historical PR ~1 year ago; not current capacity"
+  - exercise: deadlift
+    value_lb: 255
+    date: "2025-05-01"
+    notes: "historical PR ~1 year ago; not current capacity"
+  - exercise: push-up
+    value: 15
+    unit: "unbroken reps"
+    date: "2026-05-18"
+    notes: "Tier 30-39 push-up goal met"
+
+patterns:
+  - "2026-05-16: INITIAL STATE — profile seeded from first session log (2026-05-12). Carry pattern absent — add farmer carries or suitcase carries starting week 2."
+  - "2026-05-16: CONFIG UPDATE — full barbell gym confirmed. Goals updated to Tier 30-39 barbell targets. Recomp goal: 200 → 180 lb over 16 weeks."
+  - "2026-05-16: RETURNING ATHLETE — several months off training. Historical PRs (squat 235, bench 225, deadlift 255 lb) are ~1 year old. Plan weeks 1–2 as re-baseline: lighter loads, RPE 6–7 ceiling."
+  - "2026-07-12: REVIEW + BACKFILL — logging gap (not a training gap). Athlete confirmed all planned sessions were completed. Backfilled 20 reconstructed session logs (2026-05-29 → 2026-07-10) from plans as-written; loads = prescribed, RPE assumed 7. July dates estimated (Mon/Wed/Fri)."
+  - "2026-07-12: STRENGTH — plan-derived current estimates: squat 186, bench 174, deadlift 248 lb (all RECONSTRUCTED, low confidence). Deadlift near historical PR — verify with a real top set before trusting."
+  - "2026-07-12: DELOAD OVERDUE — ~9 weeks continuous training, 8 since last deload (config: every 6). Schedule a deload week now."
+  - "2026-07-12: NUTRITION — protein under 120 g on 4 of 6 logged days (target 160 g). Consistent shortfall is the top recomp lever. Sleep tracked only twice; daily logging lapsed after 06-08."
+  - "2026-07-12: WEIGHT UNTRACKED — no weigh-in since intake (200 lb). Body-composition progress unmeasurable until user logs current weight; progress photos taken today."
+  - "2026-07-16: DELOAD CORRECTION — athlete reports a deload taken week of 2026-06-29. The 07-12 backfill reconstructed that week's logs from plans as-written and missed it, producing a false 'deload overdue' flag. weeks_since_deload reset to 2; next deload due week of 2026-08-10. Reconstructed logs for 06-29/07-01/07-03 overstate loads for that week — treat with extra skepticism."
+  - "2026-07-16: PAIN WATCH — lower back, 1st mention: minor lumbar tweak during 07-14 squats (3×5 @ 185, RPE 8). New injury_prevention goal added; good mornings introduced as lumbar-resilience accessory (library card scaffolded — user to review). Saturday 07-18 deadlift reduced to RPE 6 as a precaution. Escalate to config injury constraint at 3+ mentions."
+  - "2026-07-30: DATA CORRECTION — athlete clarified all prior 'Bench Press' training (135→155 lb progression, 07-22 verified 174 lb est. 1RM, 225 lb historical PR) was actually incline bench press, mislabeled throughout. strength_levels renamed bench-press → incline-bench-press; active_goals.push now targets incline explicitly (200 lb, 1.0× BW). Flat bench (exercise-library/bench-press.md) has no verified history of its own. Past session-log HTML files (05-23, 06-16, 07-22) still say 'Bench Press' as originally logged — session logs are immutable; not retroactively edited. incline-bench-press.md scaffolded and awaiting athlete review."
+  - "2026-08-08: SESSIONS FOLDED — 7 session logs (07-14 through 08-03) had been marked seen_sessions by /log but never folded into strength_levels/movement_patterns; processed them in this review. Squat headline updated 186→208 (first verified, non-plan-derived data point). Deadlift headline held at 248 (never regress) but flagged low-confidence — two new verified points (208 @ RPE6, 219) both land well below it; retest before programming off it. front-squat added as a new lift (141 lb est., single data point). Also folded a new activity type: jiu jitsu (07-24 sparring, 07-31 drilling) — resumed after ~6 months off, not currently reflected in config.yaml.schedule; consider as an added recovery cost when planning lifting days."
+  - "2026-08-08: VOLUME DROP — last-28-day set totals are down sharply vs. the 07-12 review (squat 18→8, hinge 18→12, push 30→17, pull 60→20, core 36→2) and carry is back to 0 (undertrained). Partly explained by 2 of 7 sessions being jiu jitsu (0 lifting sets) and a lighter cycle overall. Re-add carry work (farmer/suitcase carries) next week."
+  - "2026-08-08: BODY COMPOSITION — weight 196 lb, waist 36.5\" this morning. Waist down 2\" since 07-12 baseline (38.5\"→36.5\", now under the 36\" half-height threshold) while weight is nearly flat — the waist trend is outrunning the scale, a good recomp signal. Progress photos filed: photos/2026-08-08-front-a.png, -front-b.png, -side-a.png."
+  - "2026-08-08: DELOAD DUE — weeks_since_deload now 6 (last deload week of 06-29), matching config's 6-week frequency. Next deload due week of 2026-08-10 (2 days out). Volume is already light this cycle, so cost of deloading now is low — recommend taking it as scheduled."
+  - "2026-08-08: NUTRITION/SLEEP TRACKING GAP — no daily-logs entries since 2026-07-15 (24 days). Can't correlate the waist/weight change with protein or sleep this cycle; resume daily logging to keep the recomp trend interpretable."
+  - "2026-08-08: PAIN WATCH — lower back mention count holds at 2 (07-14 minor tweak, 07-18 awareness-only) — no new mentions since good mornings were introduced. No escalation to config constraint needed yet (threshold is 3+)."
+  - "2026-08-08: ADHERENCE SELF-REPORT — athlete reports eating well and training ~3x/week as the norm; daily-logs gap since 07-15 reflects a logging lapse, not an adherence lapse. Self-reported, not verified by logs — encourage resumed daily logging to confirm, but stop reading the untracked-nutrition flag as evidence of poor adherence. This week (of 08-03) is a known exception at 2x lifting due to one hard BJJ round + tennis (08-08 night)."
+  - "2026-08-08: CAUSALITY CORRECTION — athlete attributes the waist improvement (38.5\"→36.5\") to nutrition quality, not BJJ. Read the waist trend as diet-driven going forward, not an artifact of the jiu jitsu conditioning."
+  - "2026-08-08: BJJ → TENNIS — athlete is discontinuing jiu jitsu and replacing it with tennis as the secondary conditioning activity going forward (first tennis session 2026-08-08 night). Drop the 'factor in jiu jitsu fatigue' guidance from the 08-08 review; substitute tennis as the non-lifting conditioning activity in future recovery/volume reasoning."
+  - "2026-08-08: ⚠ VACATION WEEK FLAGGED — week of 2026-08-10 through 08-16, athlete is traveling with NO gym access. Explicit priority for that week: protect the waist-loss trend, which the athlete attributes to nutrition, not training — so nutrition discipline while traveling matters more than any workaround training. Secondary priority: bodyweight/tennis movement to keep momentum, but this is NOT a week to force barbell substitutes. When /plan or /adjust next targets 2026-08-10, build a no-equipment/travel plan (bodyweight + tennis, no barbell) and skip the grocery/cook-window meal-plan structure entirely (no home kitchen while traveling) in favor of eating-out nutrition guidance aimed at the existing protein target. This also conveniently absorbs the deload already due that week — see recovery_state.deload_note."
+  - "2026-08-08: VACATION PLAN UPDATED — athlete is at the beach and opted for early-AM running over tennis this week, plus ad-hoc lunges/squats/push-ups instead of the fixed bodyweight circuit (no prescribed sets/reps). plans/2026-08-10.html updated same-day; tennis kept as an optional extra. Running is a novel stimulus (soft beach sand, unfamiliar volume) — watch for shin/calf soreness. If running becomes a recurring fixture rather than a one-off vacation activity, it'll need a cardio dimension added to movement_patterns, which currently only tracks squat/hinge/push/pull/carry/core."
+  - "2026-08-08: RUNNING BASELINE (self-report) — comfortable easy pace ~10:00/mi; holds sub-60:00 for a 10K (9:39/mi) at an annual April race while 'basically just maintaining' (not a dedicated running block). cardio active_goal currently targets 5K under 25 min but is untested — this 10K data point is a much stronger fitness signal than what's on file. Set a for-fun mile time-trial goal this week (Wed 08-12): sub-8:30 solid, sub-8:00 stretch. Update the cardio goal from this data next review if a real time gets logged, and consider whether the 5K target is now too conservative."
+  - "2026-08-08: GYM ACCESS UPDATE — corrected: despite the 'no gym access' vacation flag, the athlete's FULL gym (barbell, rack, dumbbells, pull-up bar, bench) is available Monday AM and all day Saturday — not just a bare barbell as first assumed. plans/2026-08-10.html rebuilt with real library exercises: Monday = deadlift + incline bench + pull-up (deload loads, well under current estimates); Saturday = back squat + farmer carry (deload), finally giving the carry pattern real volume after weeks at 0. No barbell access Tue–Fri; ad-hoc bodyweight covers those days. Deload discipline (light loads, no retests) still applies even though equipment isn't the limiting factor — save honest top sets, especially the flagged 248 lb deadlift, for the week of 08-17."
+  - "2026-09-12: BODY COMPOSITION CHECK-IN — 195 lb, waist 36.0\" (self-reported, evening; morning re-weigh pending 09-13). Nine-week trend from the 07-12 baseline: 201→195 lb, 38.5\"→36.0\". The last five weeks are slower than the first four (-1 lb, -0.5\" vs. -5 lb, -2.0\") — consistent with a smaller deficit, a lighter training cycle, or both, but not a stall. Waist now sits at exactly half of height. Three progress photos taken 09-12 but NOT yet saved to photos/ — ask the athlete to drop them in as photos/2026-09-12-front-a.png, -side-a.png, -side-b.png so they pair with the 06-13 / 07-12 / 08-08 series."
+  - "2026-09-12: REVIEW OVERDUE — profile has not been regenerated since the 08-08 review. Two session logs since (08-26, 09-05) are in seen_sessions but not folded into strength_levels or movement_patterns, and training_week / weeks_since_deload / timeline_weeks_remaining are all stale by five weeks. 09-05 carries a live injury_watch (right adductor, 24-48h delayed-response check never recorded) and an off-plan squat at 155x5 @ RPE 6. Run /review before the next /plan."
+  - "2026-09-12: REVIEW — window 2026-08-08 → 2026-09-12 (5 weeks). Only 2 session logs exist in it (08-26, 09-05), both folded in here for the first time. Athlete states plainly that more training happened than was logged; the 08-31 plan independently confirms Saturday 08-30 ran as planned and was never logged, and the 08-24 plan records two runs that week including the sprint that flared the adductor. EVERY volume number in this review is a logged-only floor. Do not read the low set counts as low adherence — read them as a logging gap."
+  - "2026-09-12: ⚠ ADDUCTOR ESCALATION UNRESOLVED — right adductor/groin is now at 5 mentions spanning 08-07 → 09-05, far past this repo's 3-mention threshold, and config.yaml.constraints.injuries is STILL EMPTY. It has been flagged in three consecutive plans (08-17, 08-24, 08-31) without action. This system cannot edit config.yaml. Until the athlete adds the entry, every /plan run re-derives the constraint from prose instead of applying a hard filter — one missed re-read and a squat day gets programmed straight into it. Highest-priority housekeeping item on the board."
+  - "2026-09-12: ADDUCTOR — CLEAN SESSION, UNCONFIRMED OUTCOME. 09-05 back squat 155×5×4 @ RPE 6 with zero sensation is the first clean loaded squat in five weeks and genuinely good news. But it ran 63% heavier and double the sets vs. the programmed 2×5 @ 95 lb, with the movement screen and goblet ramp skipped — and the 24–48h delayed response (the signal missed on every previous flare) was never logged. Ask the athlete how 09-06/09-07 felt before treating the adductor as resolved or releasing the squat gate."
+  - "2026-09-12: STRENGTH — no PRs, no regressions, one new lift. bench-press (FLAT) enters strength_levels at 152 lb est. from two verified 135×5 sets; notably the same load dropped from RPE 7 (08-26) to RPE 6 (09-05) in ten days, which is a real ease-of-load signal even without a heavier top set. back-squat 09-05 (155×5 @ RPE 6 → 174) recorded as a submaximal confirmation; headline holds at 208. The 248 lb deadlift headline remains UNVERIFIED and untouched — hinge volume was 0 for the entire 28-day window, so it went another cycle without a retest. It is now the oldest unresolved data-quality flag in the profile."
+  - "2026-09-12: VOLUME — logged 24 sets across 28 days vs. a config target of ~150 (3×/wk at 14–18 sets). Hinge at 0 and squat at 4 are both downstream of the adductor gate, not of effort. Push:pull ratio 10:6 = 1.67:1, over the 1.2:1 ceiling — but on a 16-set sample that is noise, not an imbalance worth correcting. Carry moved 0 → 2 sets (08-26 farmer carry, clean, no adductor sensation), the first carry volume since 07-10."
+  - "2026-09-12: BODY COMP HELD — 195 lb / 36.0\" waist (09-12 evening self-report, morning re-weigh pending). Fat loss continued through a 5-week stretch of heavily gated, low-logged-volume training, which supports the athlete's earlier read that the waist trend is nutrition-driven rather than training-driven. See reviews/2026-09-12-check-in.html."
+  - "2026-09-12: ⚠ TIMELINE EXPIRED — config's 16-week horizon ran out around 2026-08-31 (now training week 18). timeline_weeks_remaining set to 0. Goal targets are unchanged and unmet: squat 83%, incline bench 87%, pull-up 60%, weight 29%, waist 56%. PROPOSAL, awaiting athlete decision: extend the horizon by 8 weeks to 2026-11-09 and keep every target as-is — the 5-week adductor gate, not the goals, is what consumed the runway. Requires a config.yaml.goals.timeline_weeks edit by the athlete."
+  - "2026-09-12: ⚠ TOOLING BUG — tools.py:rolling_volume is dead code against this repo. It globs session-logs/*.md and parses YAML front matter, but every session log is .html with a JSON block, so it returns sessions_counted: 0 and empty totals for any window. Volume in this review was computed manually. Any past review that trusted this function silently saw zero volume."
+  - "2026-09-12: CARDIO NOW REAL BUT UNTRACKED — running (beach week, plus 2 runs the week of 08-24) and tennis are recurring, and sprinting is what flared the adductor on ~08-25. movement_patterns has no cardio dimension and active_goals.cardio (5K under 25 min) is still untested, while the self-reported sub-60:00 10K suggests that target is too soft. The one activity meaningfully advancing the age-40 longevity vision is the one this system does not measure."
+  - "2026-09-12: NUTRITION/SLEEP BLACKOUT — no daily-logs entries since 2026-07-15, now 59 days. The four REVIEW correlation checks (protein near sessions, sleep before hard days, training-day calories, 3+ low-protein days) could not run at all. Given that the athlete attributes the waist trend to nutrition, this is the highest-value missing data in the repo after the adductor."
+
+seen_sessions:
+  - "2026-05-12"
+  - "2026-05-18"
+  - "2026-05-20"
+  - "2026-05-23"
+  - "2026-05-27"
+  - "2026-05-29"
+  - "2026-05-31"
+  - "2026-06-02"
+  - "2026-06-04"
+  - "2026-06-07"
+  - "2026-06-08"
+  - "2026-06-09"
+  - "2026-06-11"
+  - "2026-06-13"
+  - "2026-06-16"
+  - "2026-06-19"
+  - "2026-06-20"
+  - "2026-06-22"
+  - "2026-06-24"
+  - "2026-06-26"
+  - "2026-06-29"
+  - "2026-07-01"
+  - "2026-07-03"
+  - "2026-07-06"
+  - "2026-07-08"
+  - "2026-07-10"
+  - "2026-07-14"
+  - "2026-07-18"
+  - "2026-07-22"
+  - "2026-07-24"
+  - "2026-07-31"
+  - "2026-08-01"
+  - "2026-08-03"
+  - "2026-08-07"
+  - "2026-08-08"
+  - "2026-08-26"
+  - "2026-09-05"
