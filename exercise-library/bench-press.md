@@ -8,9 +8,15 @@ equipment: [barbell, bench, rack]
 difficulty: 3
 fatigue_cost: 4
 technique_demand: 4
-substitutes: [dumbbell-bench-press, push-up, floor-press]
-tags: [compound, horizontal_push, barbell, powerbuilding, goal_lift]
+substitutes: [incline-bench-press, dumbbell-bench-press, push-up, floor-press]
+tags: [compound, horizontal_push, barbell, powerbuilding]
 ---
+
+> **Untested as of 2026-07-30.** Every prior "Bench Press" session log entry and the 174 lb
+> estimated 1RM were actually incline bench press (athlete confirmed 2026-07-30) — see
+> [incline-bench-press.md](incline-bench-press.md) for that history. Flat bench has no verified
+> data point yet. The Tier 30–39 Push goal (200 lb, 1.0× BW) now tracks incline bench instead;
+> this card is kept for reference if flat bench gets tested later.
 
 ## Cues
 - Set up: 5 points of contact — both feet flat on floor, both glutes on bench, upper back on bench.
@@ -22,11 +28,11 @@ tags: [compound, horizontal_push, barbell, powerbuilding, goal_lift]
 - Press along the same arc path back to lockout. Bar over wrists, wrists over elbows throughout.
 
 ## Programming Notes
-Tier 30–39 target: 1.0× BW bench press (200 lb at 200 lb bodyweight). Historical PR 225 lb is
-~1 year old — do not use it as a training baseline. Re-establish with conservative loads (RPE 6–7,
-3–5 sets of 5 reps) over weeks 1–3. Estimate current 1RM via Brzycki from a working set of 5+
-reps at RPE ≤ 8. Pair with deadlift on Session B days; avoid pressing to failure on the same day
-as heavy overhead work if that's added later.
+If flat bench is ever tested, treat it as a brand-new lift with no history — do not assume any
+relationship to the incline numbers (155 lb working weight, 174 lb est. 1RM). The historical PR of
+225 lb (~1 year old, pre-dates this training log) is also unverified as flat vs. incline — treat
+with skepticism either way. Start conservative (RPE 6–7, 3–5 sets of 5) and let a real working set
+set the baseline via Brzycki.
 
 ## Warm-up Protocol
 Shoulder circles × 10, push-up × 5 slow tempo (3 sec down), then barbell:
