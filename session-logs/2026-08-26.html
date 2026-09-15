@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Log — 2026-08-26</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header log">
+    <div class="header-inner">
+      <span class="badge" style="background:#ede9fe;color:#7c3aed">Session A</span>
+      <h1>2026-08-26</h1>
+      <span class="header-meta">40 min · effort 7/10 · completion 100%</span>
+    </div>
+    <div class="header-nav">
+      <a href="../plans/2026-08-24.html">← training plan</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Session ratings -->
+    <section class="card">
+      <div class="card-header">Session Ratings</div>
+      <div class="card-body">
+        <div class="ratings-row">
+          <div class="rating-chip">
+            <span class="chip-val">7</span>
+            <span class="chip-label">Effort RPE</span>
+          </div>
+          <div class="rating-chip">
+            <span class="chip-val">4</span>
+            <span class="chip-label">Energy</span>
+          </div>
+          <div class="rating-chip">
+            <span class="chip-val">4</span>
+            <span class="chip-label">Form</span>
+          </div>
+          <div class="rating-chip">
+            <span class="chip-val">100%</span>
+            <span class="chip-label">Completion</span>
+          </div>
+        </div>
+        <p class="muted small" style="margin-top:.5rem"><em>Energy and form defaulted to 4/5 —
+        not explicitly reported, nothing flagged as off.</em></p>
+      </div>
+    </section>
+
+    <!-- PR alert -->
+    <div class="alert info">
+      <strong>First verified data point:</strong> Bench Press (flat) estimated 1RM ~152 lb
+      (Brzycki from 135 lb × 5 reps, RPE 7). Flat bench has no prior history in this program —
+      everything previously logged as "Bench Press" was incline (see
+      <a href="../exercise-library/incline-bench-press.md">incline-bench-press.md</a>). Not
+      compared against the old 225 lb historical PR, since that PR's flat-vs-incline status is
+      itself unverified.
+    </div>
+
+    <!-- Actual work -->
+    <section class="card workout">
+      <div class="card-header">Actual Work</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th><th>Est. 1RM</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Bench Press (warm-up)</td><td>3</td><td>10, 5, 5</td><td>45, 70, 100 lb</td><td>—</td><td>As planned</td></tr>
+              <tr>
+                <td>Bench Press</td><td>4</td><td>5</td><td>135 lb</td>
+                <td><span class="badge pr">~152 lb</span></td>
+                <td>RPE 7 — first test of this lift, ran exactly as planned</td>
+              </tr>
+              <tr><td>Dumbbell Bench Press (warm-up)</td><td>1</td><td>10</td><td>25 lb</td><td>—</td><td>As planned</td></tr>
+              <tr><td>Dumbbell Bench Press</td><td>3</td><td>8</td><td>45 lb</td><td>—</td><td>RPE 7, per side, as planned</td></tr>
+              <tr><td>Pull-up (warm-up)</td><td>1</td><td>20 s hang + 2</td><td>bodyweight</td><td>—</td><td>As planned</td></tr>
+              <tr><td>Pull-up</td><td>3</td><td>5</td><td>bodyweight</td><td>—</td><td>RPE 7, as planned</td></tr>
+              <tr><td>Farmer Carry</td><td>2</td><td>30 m</td><td>50 lb/hand</td><td>—</td><td>RPE 7, no groin/adductor sensation</td></tr>
+              <tr><td>Plank</td><td>2</td><td>45 s</td><td>bodyweight</td><td>—</td><td>RPE 7, as planned</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sets by pattern -->
+    <section class="card">
+      <div class="card-header">Volume by Pattern</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Pattern</th><th>Sets</th></tr></thead>
+            <tbody>
+              <tr><td>Squat</td><td>0</td></tr>
+              <tr><td>Hinge</td><td>0</td></tr>
+              <tr><td>Push</td><td>7</td></tr>
+              <tr><td>Pull</td><td>3</td></tr>
+              <tr><td>Carry</td><td>2</td></tr>
+              <tr><td>Core</td><td>2</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted small" style="margin-top:.5rem"><em>Warm-up sets excluded from pattern
+        counts, consistent with this week's plan volume summary.</em></p>
+      </div>
+    </section>
+
+    <!-- Notes -->
+    <section class="card">
+      <div class="card-header">Notes</div>
+      <div class="card-body">
+        <p>Full session completed exactly as planned, RPE 7 throughout. Flat bench press debut —
+        first time this exact lift has been trained/logged in this program (all prior "Bench
+        Press" entries were actually incline). No groin/adductor sensation during farmer carry or
+        otherwise, despite the standing caution on that area this week.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Machine-readable metadata for /review parsing -->
+  <script type="application/json" id="session-data">
+  {
+    "date": "2026-08-26",
+    "plan_ref": "plans/2026-08-24.html",
+    "session_label": "Session A",
+    "duration_minutes": 40,
+    "sets_by_pattern": {"squat": 0, "hinge": 0, "push": 7, "pull": 3, "carry": 2, "core": 2},
+    "ratings": {"effort": 7, "energy_level": 4, "form_quality": 4, "completion_rate": 1.0},
+    "estimated_1rms": [{"exercise": "bench-press", "estimated_lb": 152, "from_weight_lb": 135, "reps": 5, "rpe": 7, "verified": true, "notes": "first data point for this lift"}]
+  }
+  </script>
+</body>
+</html>

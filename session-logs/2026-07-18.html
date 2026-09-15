@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Log — 2026-07-18</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header log">
+    <div class="header-inner">
+      <span class="badge" style="background:#ede9fe;color:#7c3aed">Deadlift Focus</span>
+      <h1>2026-07-18</h1>
+      <span class="header-meta">~40 min · effort 6/10 · completion 86%</span>
+    </div>
+    <div class="header-nav">
+      <a href="../plans/2026-07-13.html">← training plan</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Session ratings -->
+    <section class="card">
+      <div class="card-header">Session Ratings</div>
+      <div class="card-body">
+        <div class="ratings-row">
+          <div class="rating-chip">
+            <span class="chip-val">6</span>
+            <span class="chip-label">Effort RPE</span>
+          </div>
+          <div class="rating-chip">
+            <span class="chip-val">3</span>
+            <span class="chip-label">Energy</span>
+          </div>
+          <div class="rating-chip">
+            <span class="chip-val">4</span>
+            <span class="chip-label">Form</span>
+          </div>
+          <div class="rating-chip">
+            <span class="chip-val">86%</span>
+            <span class="chip-label">Completion</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="alert info">
+      <strong>Verified data point (not a PR):</strong> Deadlift estimated 1RM ~208 lb (Brzycki from
+      5×185 lb @ RPE 6) — deliberately capped for the back-tweak precaution, so this is a verified
+      floor, well below the reconstructed 248 lb estimate. First verified deadlift data since 05-23.
+      Verification top set moves to next week if the back stays quiet.
+    </div>
+
+    <!-- Actual work -->
+    <section class="card workout">
+      <div class="card-header">Actual Work</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th><th>Est. 1RM</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Deadlift (warm-up)</td><td>2</td><td>5</td><td>135, 165 lb</td>
+                <td>—</td>
+                <td>As planned</td>
+              </tr>
+              <tr>
+                <td>Deadlift</td><td>3</td><td>5</td><td>185 lb</td>
+                <td>~208 lb</td>
+                <td>RPE 6 cap held — slight lumbar awareness, no pain</td>
+              </tr>
+              <tr>
+                <td>Good Morning</td><td>3</td><td>10</td><td>45 lb (empty bar)</td>
+                <td>—</td>
+                <td>First session of new lumbar-resilience accessory; back OK</td>
+              </tr>
+              <tr>
+                <td>Push-up</td><td>3</td><td>12</td><td>bodyweight</td>
+                <td>—</td>
+                <td>Controlled tempo</td>
+              </tr>
+              <tr>
+                <td>Pull-up</td><td>3</td><td>5</td><td>bodyweight</td>
+                <td>—</td>
+                <td>Dead-hang start</td>
+              </tr>
+              <tr>
+                <td>Farmer Carry</td><td>0</td><td>—</td><td>—</td>
+                <td>—</td>
+                <td><strong>Skipped</strong> (2×40 m planned)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sets by pattern -->
+    <section class="card">
+      <div class="card-header">Volume by Pattern</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Pattern</th><th>Sets</th></tr></thead>
+            <tbody>
+              <tr><td>Squat</td><td>0</td></tr>
+              <tr><td>Hinge</td><td>6</td></tr>
+              <tr><td>Push</td><td>3</td></tr>
+              <tr><td>Pull</td><td>3</td></tr>
+              <tr><td>Carry</td><td>0</td></tr>
+              <tr><td>Core</td><td>0</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes -->
+    <section class="card">
+      <div class="card-header">Notes</div>
+      <div class="card-body">
+        <p>Completed as planned except farmer carries (skipped). Lower back: slight awareness during
+        deadlifts and good mornings but no pain — the RPE 6 cap did its job, all reps pain-free.
+        This is the <strong>2nd recorded lower-back mention</strong> (1st: 2026-07-14 squats);
+        escalates to a config injury constraint at 3+ mentions. Good mornings debuted at the empty
+        bar and felt fine. If the back stays quiet through next week, run the deadlift verification
+        top set the week of 2026-07-20.</p>
+        <p>Carry pattern got 0 sets this session — it was the only carry work planned this week,
+        worth catching up next week (dead-hang/grip is an age-40 growth area).</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Machine-readable metadata for /review parsing -->
+  <script type="application/json" id="session-data">
+  {
+    "date": "2026-07-18",
+    "plan_ref": "plans/2026-07-13.html",
+    "session_label": "Deadlift Focus",
+    "duration_minutes": 40,
+    "sets_by_pattern": {"squat": 0, "hinge": 6, "push": 3, "pull": 3, "carry": 0, "core": 0},
+    "ratings": {"effort": 6, "energy_level": 3, "form_quality": 4, "completion_rate": 0.857},
+    "estimated_1rms": [{"exercise": "deadlift", "estimated_lb": 208, "from_weight_lb": 185, "reps": 5, "rpe": 6, "verified": true, "note": "RPE 6 cap — verified floor, not a max-effort estimate"}],
+    "pain_flags": [{"area": "lower_back", "severity": "awareness_only", "exercise": "deadlift", "reported": "2026-07-18", "mention_count": 2}],
+    "skipped": [{"exercise": "farmer-carry", "planned_sets": 2}]
+  }
+  </script>
+</body>
+</html>

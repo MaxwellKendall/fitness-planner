@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Log — 2026-07-14</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header log">
+    <div class="header-inner">
+      <span class="badge" style="background:#ede9fe;color:#7c3aed">Unplanned — Squat + Pull</span>
+      <h1>2026-07-14</h1>
+      <span class="header-meta">~45 min · effort 8/10 · completion 100%</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- Session ratings -->
+    <section class="card">
+      <div class="card-header">Session Ratings</div>
+      <div class="card-body">
+        <div class="ratings-row">
+          <div class="rating-chip">
+            <span class="chip-val">8</span>
+            <span class="chip-label">Effort RPE</span>
+          </div>
+          <div class="rating-chip">
+            <span class="chip-val">3</span>
+            <span class="chip-label">Energy</span>
+          </div>
+          <div class="rating-chip">
+            <span class="chip-val">3</span>
+            <span class="chip-label">Form</span>
+          </div>
+          <div class="rating-chip">
+            <span class="chip-val">100%</span>
+            <span class="chip-label">Completion</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="alert info">
+      <strong>Potential PR:</strong> Back Squat estimated 1RM ~208 lb (Brzycki from 5×185 lb @ RPE 8) —
+      first verified data point above the reconstructed 186 lb estimate. Confirm in /review.
+    </div>
+
+    <!-- Actual work -->
+    <section class="card workout">
+      <div class="card-header">Actual Work</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th><th>Est. 1RM</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Back Squat</td><td>3</td><td>5</td><td>185 lb</td>
+                <td><span class="badge pr">~208 lb</span></td>
+                <td>RPE 8 — heaviest verified squat work this cycle</td>
+              </tr>
+              <tr>
+                <td>Pull-up</td><td>4</td><td>5</td><td>bodyweight</td>
+                <td>—</td>
+                <td>Matches recent plan scheme</td>
+              </tr>
+              <tr>
+                <td>Barbell Row</td><td>3</td><td>10</td><td>95 lb</td>
+                <td>—</td>
+                <td>Recalled from memory (session logged 07-16)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sets by pattern -->
+    <section class="card">
+      <div class="card-header">Volume by Pattern</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Pattern</th><th>Sets</th></tr></thead>
+            <tbody>
+              <tr><td>Squat</td><td>3</td></tr>
+              <tr><td>Hinge</td><td>0</td></tr>
+              <tr><td>Push</td><td>0</td></tr>
+              <tr><td>Pull</td><td>7</td></tr>
+              <tr><td>Carry</td><td>0</td></tr>
+              <tr><td>Core</td><td>0</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes -->
+    <section class="card">
+      <div class="card-header">Notes</div>
+      <div class="card-body">
+        <p>Unplanned session — no weekly plan existed for the week of 2026-07-13. Logged two days
+        after the fact from athlete recall; loads and rep schemes confirmed by athlete, exact RPE on
+        pull-ups and rows not recorded. Average-energy day but squat work was the heaviest verified
+        this cycle. Note: profile flags a deload as overdue (8 weeks since last, config says every 6) —
+        squatting at RPE 8 while overdue is worth surfacing in the next /review.</p>
+        <p><strong>Pain note (added 2026-07-16):</strong> athlete reported a very minor lower-back tweak
+        during the squat sets — "tiny tiny bit," lumbar area. Athlete attributes it to erector weakness
+        after time off rather than a technique fault. First recorded mention of this pain area.
+        Remedy in progress: light barbell good mornings introduced week of 07-13.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Machine-readable metadata for /review parsing -->
+  <script type="application/json" id="session-data">
+  {
+    "date": "2026-07-14",
+    "plan_ref": null,
+    "session_label": "Unplanned — Squat + Pull",
+    "duration_minutes": 45,
+    "sets_by_pattern": {"squat": 3, "hinge": 0, "push": 0, "pull": 7, "carry": 0, "core": 0},
+    "ratings": {"effort": 8, "energy_level": 3, "form_quality": 3, "completion_rate": 1.0},
+    "estimated_1rms": [{"exercise": "back-squat", "estimated_lb": 208, "from_weight_lb": 185, "reps": 5, "rpe": 8, "verified": true}],
+    "pain_flags": [{"area": "lower_back", "severity": "minor", "exercise": "back-squat", "reported": "2026-07-16"}]
+  }
+  </script>
+</body>
+</html>

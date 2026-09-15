@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Log — 2026-09-05</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header log">
+    <div class="header-inner">
+      <span class="badge" style="background:#ede9fe;color:#7c3aed">Squat Return</span>
+      <h1>2026-09-05</h1>
+      <span class="header-meta">~35 min · effort 6/10 · completion 71%</span>
+    </div>
+    <div class="header-nav">
+      <a href="../plans/2026-08-31.html">← training plan</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="card">
+      <div class="card-header">Session Ratings</div>
+      <div class="card-body">
+        <div class="ratings-row">
+          <div class="rating-chip"><span class="chip-val">6</span><span class="chip-label">Effort RPE</span></div>
+          <div class="rating-chip"><span class="chip-val">4</span><span class="chip-label">Energy</span></div>
+          <div class="rating-chip"><span class="chip-val">4</span><span class="chip-label">Form</span></div>
+          <div class="rating-chip"><span class="chip-val">71%</span><span class="chip-label">Completion</span></div>
+        </div>
+        <p class="small muted">
+          Effort reported as RPE 6 across all three lifts. Energy and form defaulted to 4/5 — not
+          explicitly reported, nothing flagged as off. Composite score <strong>1.86</strong>
+          (well above the 0.5 bad-day threshold) — this session's data is usable.
+          Duration estimated from the work performed, not reported.
+        </p>
+      </div>
+    </section>
+
+    <div class="alert info">
+      <strong>First fully clean loaded squat session in five weeks.</strong> Back squat 155 lb × 5 × 4
+      with <strong>zero adductor/groin sensation</strong> during or after. That's the outcome the
+      whole gated ladder was built to find, and it arrived in one step instead of three. The right
+      adductor has been the limiting constraint on this program since 2026-07-14 — this is the first
+      real evidence it may be behind you.
+    </div>
+
+    <div class="alert warning">
+      <strong>Ran well above the plan, with the gates skipped.</strong> Programmed: an unloaded
+      movement screen, then a goblet ramp, then <em>2 sets of 5 at 95 lb</em> only if both were clean.
+      Actual: <strong>4 sets of 5 at 155 lb</strong>, no screen, no ramp — 63% more load and double
+      the sets, on a first squat after five weeks with no squat volume.
+      <br><br>
+      It came back completely clean, which is genuinely good news and real information. Worth being
+      precise about what it does and doesn't tell you, though: the plan's stop-rules were never
+      about the sets hurting during the session — they were about the <strong>24–48 hour delayed
+      response</strong>, which is the signal that's been missed on every previous flare of this
+      injury. That reading is still pending. Check the adductor Sunday and Monday morning and log it.
+    </div>
+
+    <section class="card workout">
+      <div class="card-header">Actual Work</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th><th>Est. 1RM</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Back Squat</strong></td><td>4</td><td>5</td><td>155 lb</td>
+                <td>~174 lb</td>
+                <td>RPE 6 — no adductor sensation at any point. Off-plan: programmed as 2×5 @ 95 lb behind a screen + goblet ramp. First barbell squat since 2026-07-14</td>
+              </tr>
+              <tr>
+                <td>Bench Press</td><td>3</td><td>5</td><td>135 lb</td>
+                <td>~152 lb</td>
+                <td>RPE 6 — as planned. Same load and reps as 08-26 but a full RPE point easier</td>
+              </tr>
+              <tr>
+                <td>Pull-up</td><td>3</td><td>5</td><td>bodyweight</td>
+                <td>—</td>
+                <td>RPE 6. Max unbroken test not attempted</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small muted">
+          Brzycki estimates via <code>tools.py:estimate_1rm</code>, both at 5 reps (confidence: high).
+          <strong>Neither is a PR, and neither should be read as a ceiling</strong> — both sets were
+          RPE 6, roughly 4 reps in reserve, and Brzycki assumes near-maximal effort. True capacity on
+          both lifts is meaningfully above these numbers. See the analysis below.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">What The Numbers Mean</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Lift</th><th>Today</th><th>Profile headline</th><th>Read</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Back Squat</td><td>~174 lb (155×5 @ RPE 6)</td><td>208 lb (185×5 @ RPE 8, 07-14)</td>
+                <td><strong>Confirms, doesn't contradict.</strong> 174 &lt; 208, but today was RPE 6 against RPE 8 — a submaximal set produces a lower Brzycki number by design. Headline stays 208 per the never-regress rule. That 155 moved at RPE 6 after five weeks of zero squat volume is the encouraging part</td>
+              </tr>
+              <tr>
+                <td>Bench Press</td><td>~152 lb (135×5 @ RPE 6)</td><td>152 lb (135×5 @ RPE 7, 08-26)</td>
+                <td><strong>Same number, real progress underneath it.</strong> Identical load and reps, one full RPE point easier than ten days ago. Brzycki can't see that — it's an argument for pushing the load, not for the estimate moving</td>
+              </tr>
+              <tr>
+                <td>Pull-up</td><td>not tested</td><td>6 unbroken (05-12)</td>
+                <td><strong>Still unresolved.</strong> The 6 remains a submaximal working set ("stopped 2 short of failure") mislabeled as a max. The Pull-ups goal keeps reading 60% of 10 off a number that was never a test</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">Volume by Pattern</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Pattern</th><th>Sets</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>Squat</td><td>4</td><td>First squat volume since 2026-08-01</td></tr>
+              <tr><td>Hinge</td><td>0</td><td>Zero for the week — Friday's good mornings and Saturday's DB RDL both lost</td></tr>
+              <tr><td>Push</td><td>3</td><td></td></tr>
+              <tr><td>Pull</td><td>3</td><td></td></tr>
+              <tr><td>Carry</td><td>0</td><td>Was pulled from the plan, then not done</td></tr>
+              <tr><td>Core</td><td>0</td><td>Banded lateral walk not done</td></tr>
+              <tr><td><strong>Total</strong></td><td><strong>10</strong></td><td>Week total ~28 sets vs. the 42–54 target</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">Notes</div>
+      <div class="card-body">
+        <p>
+          Three lifts, all at RPE 6, all straightforward. The session was cut down to bench, squat and
+          pull-ups — no movement screen, no goblet ramp, no banded lateral walk, no farmer carry, and
+          no pull-up max test.
+        </p>
+        <p>
+          <strong>The adductor was completely clean.</strong> No sensation during any of the four
+          squat sets, nothing immediately after. Against five weeks of gated programming and four
+          separate flares since 07-14 (front squat, tennis push-off, sprinting), a clean 155×5×4 is
+          the strongest positive signal this injury has produced.
+        </p>
+        <p>
+          Two open items carried forward: the <strong>24–48h delayed response</strong> is the reading
+          that actually matters and is still pending, and the <strong>pull-up max test</strong> is now
+          deferred a second time — that benchmark has been wrong since May.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="application/json" id="session-data">
+  {
+    "date": "2026-09-05",
+    "plan_ref": "plans/2026-08-31.html",
+    "session_label": "Squat Return",
+    "duration_minutes": 35,
+    "duration_estimated": true,
+    "sets_by_pattern": {"squat": 4, "hinge": 0, "push": 3, "pull": 3, "carry": 0, "core": 0},
+    "ratings": {"effort": 6, "energy_level": 4, "form_quality": 4, "completion_rate": 0.71},
+    "composite_score": 1.86,
+    "estimated_1rms": [
+      {"exercise": "back-squat", "estimated_lb": 174, "from_weight_lb": 155, "reps": 5, "rpe": 6, "verified": true,
+       "notes": "submaximal (RPE 6) — below the 208 headline by design, does not contradict it. First barbell squat since 07-14, zero adductor sensation"},
+      {"exercise": "bench-press", "estimated_lb": 152, "from_weight_lb": 135, "reps": 5, "rpe": 6, "verified": true,
+       "notes": "matches the 08-26 estimate exactly but one RPE point easier — same load got lighter"}
+    ],
+    "off_plan": true,
+    "off_plan_notes": "Back squat run at 155 lb x 5 x 4 instead of the programmed 2 x 5 @ 95 lb; movement screen, goblet ramp, banded lateral walk, farmer carry and pull-up max test all skipped",
+    "injury_watch": {"area": "right_adductor", "during_session": "clean — no sensation", "delayed_response": "pending 24-48h check"}
+  }
+  </script>
+</body>
+</html>

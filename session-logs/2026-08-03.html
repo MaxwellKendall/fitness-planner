@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Log — 2026-08-03</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header log">
+    <div class="header-inner">
+      <span class="badge" style="background:#ede9fe;color:#7c3aed">Hinge + Push</span>
+      <h1>2026-08-03</h1>
+      <span class="header-meta">45 min · effort 6/10 · completion 100%</span>
+    </div>
+    <div class="header-nav">
+      <a href="../plans/2026-08-03.html">← training plan</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Session ratings -->
+    <section class="card">
+      <div class="card-header">Session Ratings</div>
+      <div class="card-body">
+        <div class="ratings-row">
+          <div class="rating-chip">
+            <span class="chip-val">6</span>
+            <span class="chip-label">Effort RPE</span>
+          </div>
+          <div class="rating-chip">
+            <span class="chip-val">3</span>
+            <span class="chip-label">Energy</span>
+          </div>
+          <div class="rating-chip">
+            <span class="chip-val">3</span>
+            <span class="chip-label">Form</span>
+          </div>
+          <div class="rating-chip">
+            <span class="chip-val">100%</span>
+            <span class="chip-label">Completion</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="alert warning">
+      <strong>Deadlift verification came in below the standing estimate:</strong> top set 195×5 at
+      RPE 6 (lighter than the planned RPE 7 — there may have been more in the tank) gives a Brzycki
+      estimate of ~219 lb. profile.yaml currently carries an unverified, plan-derived estimate of
+      248 lb. This is a downward correction, not a PR — flagging for /review rather than treating as
+      confirmed capacity. Historical PR remains 255 lb (~1 year old).
+    </div>
+
+    <!-- Actual work -->
+    <section class="card workout">
+      <div class="card-header">Actual Work</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th><th>Est. 1RM</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Deadlift (warm-up)</td><td>2</td><td>5, 3</td><td>100, 145 lb</td><td>—</td><td>RPE 6</td></tr>
+              <tr><td>Deadlift</td><td>1</td><td>5</td><td>195 lb</td><td>~219 lb</td><td>RPE 6 — verification top set, lighter than planned RPE 7</td></tr>
+              <tr><td>Deadlift (backoff)</td><td>1</td><td>5</td><td>165 lb</td><td>~186 lb</td><td>RPE 6 — as planned</td></tr>
+              <tr><td>Incline Bench Press (warm-up)</td><td>3</td><td>10, 5, 5</td><td>45, 70, 100 lb</td><td>—</td><td>RPE 6</td></tr>
+              <tr><td>Incline Bench Press</td><td>4</td><td>5</td><td>135 lb</td><td>~152 lb</td><td>RPE 7 — as planned</td></tr>
+              <tr><td>Plank</td><td>2</td><td>~30 s</td><td>bodyweight</td><td>—</td><td>RPE 6 — shorter than the planned 45 s</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sets by pattern (hidden data for REVIEW) -->
+    <section class="card">
+      <div class="card-header">Volume by Pattern</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Pattern</th><th>Sets</th></tr></thead>
+            <tbody>
+              <tr><td>Squat</td><td>0</td></tr>
+              <tr><td>Hinge</td><td>4</td></tr>
+              <tr><td>Push</td><td>7</td></tr>
+              <tr><td>Pull</td><td>0</td></tr>
+              <tr><td>Carry</td><td>0</td></tr>
+              <tr><td>Core</td><td>2</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes / response -->
+    <section class="card">
+      <div class="card-header">Notes</div>
+      <div class="card-body">
+        <p>Regular/average session across the board. All 13 planned sets completed as prescribed, loads
+        matched the plan. Deadlift top set felt like RPE 6 rather than the planned 7 — worth a heavier
+        top set next time it's programmed. Plank cut short at ~30s per set versus the planned 45s.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Machine-readable metadata for /review parsing -->
+  <script type="application/json" id="session-data">
+  {
+    "date": "2026-08-03",
+    "plan_ref": "plans/2026-08-03.html",
+    "session_label": "Hinge + Push",
+    "duration_minutes": 45,
+    "sets_by_pattern": {"squat": 0, "hinge": 4, "push": 7, "pull": 0, "carry": 0, "core": 2},
+    "ratings": {"effort": 6, "energy_level": 3, "form_quality": 3, "completion_rate": 1.0},
+    "estimated_1rms": [
+      {"exercise": "deadlift", "estimated_lb": 219, "from_weight_lb": 195, "reps": 5},
+      {"exercise": "incline-bench-press", "estimated_lb": 152, "from_weight_lb": 135, "reps": 5}
+    ]
+  }
+  </script>
+</body>
+</html>

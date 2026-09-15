@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Log — 2026-08-08</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header log">
+    <div class="header-inner">
+      <span class="badge" style="background:#ede9fe;color:#7c3aed">Tennis (recreational) — Adductor Re-aggravated</span>
+      <h1>2026-08-08</h1>
+      <span class="header-meta">90 min · not a planned lifting day</span>
+    </div>
+    <div class="header-nav">
+      <a href="../plans/2026-08-03.html">← training plan</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="alert warning">
+      <strong>Pain mention — right groin/adductor (2nd, escalated):</strong> root cause is Tuesday
+      08-04's hard 30-min BJJ live roll — that's the actual origin, not tennis or squatting. It first
+      became noticeable during Friday 08-07's front squats (mention #1), then during 90 minutes of
+      tennis today the athlete jumped a fence to retrieve a ball, planting and pushing off the same
+      right leg. That specific explosive push-off — not tennis as an activity generally — is what
+      re-aggravated the area. By the next morning (Sunday 08-09) the athlete reported nearly limping;
+      as of Sunday it remains sore. Athlete has declined a professional evaluation. No config.yaml
+      injury constraint exists for this yet (2 mentions so far); escalate to /review as a candidate if
+      it recurs again or hasn't resolved by the next squat/hinge session.
+    </div>
+
+    <!-- Session breakdown -->
+    <section class="card workout">
+      <div class="card-header">Session Breakdown</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Activity</th><th>Duration</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Tennis</td><td>90 min</td><td>Recreational, outside the training program</td></tr>
+              <tr><td>Fence jump</td><td>1 incident, early in the session</td><td>Pushed off planted right leg to clear a fence retrieving a ball — re-aggravated the right groin/adductor tightness from 08-07. Played the remaining ~60 minutes without apparent limitation at the time — soreness became prominent afterward rather than stopping play in the moment.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sets by pattern -->
+    <section class="card">
+      <div class="card-header">Volume by Pattern</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Pattern</th><th>Sets</th></tr></thead>
+            <tbody>
+              <tr><td>Squat</td><td>0</td></tr>
+              <tr><td>Hinge</td><td>0</td></tr>
+              <tr><td>Push</td><td>0</td></tr>
+              <tr><td>Pull</td><td>0</td></tr>
+              <tr><td>Carry</td><td>0</td></tr>
+              <tr><td>Core</td><td>0</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small muted">Not resistance training — set-based pattern volume doesn't apply.
+        Logged for injury tracking and recovery context only.</p>
+      </div>
+    </section>
+
+    <!-- Notes -->
+    <section class="card">
+      <div class="card-header">Notes</div>
+      <div class="card-body">
+        <p>Right groin/adductor tightness first noticed 08-07 during front squats (mild at the time,
+        athlete continued the session normally). Re-aggravated 08-08 during recreational tennis via a
+        forceful push-off on the same leg jumping a fence. Progression: 08-07 "just tight" →
+        08-08 evening/08-09 morning "nearly limping" → 08-09 "sore." Athlete has explicitly declined
+        a professional evaluation. No lower-body loading planned again until Wednesday 08-12 at the
+        earliest (next scheduled lift per this week's plan) — that session should be reassessed against
+        how this is trending, not assumed clear by default.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Machine-readable metadata for /review parsing -->
+  <script type="application/json" id="session-data">
+  {
+    "date": "2026-08-08",
+    "plan_ref": "plans/2026-08-03.html",
+    "session_label": "Tennis (recreational) — Adductor Re-aggravated",
+    "activity_type": "tennis",
+    "duration_minutes": 90,
+    "sets_by_pattern": {"squat": 0, "hinge": 0, "push": 0, "pull": 0, "carry": 0, "core": 0},
+    "pain_flags": [{"area": "right_adductor", "severity": "moderate", "reported": "2026-08-08", "mention_count": 2, "root_cause": "Tuesday 2026-08-04 hard 30-min BJJ live roll — not tennis or squatting", "description": "re-aggravated via forceful push-off jumping a fence early in a tennis session (the explosive push-off, not tennis generally, is the risk factor); played the remaining ~60 min without apparent limitation at the time. Soreness (athlete's own characterization: sore, not a tear feeling) became prominent afterward, nearly limping by the next morning, still sore as of 2026-08-09. Professional evaluation declined by athlete."}],
+    "notes": "Recreational tennis, 90 min. Right adductor/groin originated from Tuesday 08-04's hard BJJ live roll, first noticed 08-07 during front squat, re-aggravated today by a fence-jump push-off early in the session (explosive push-off is the risk factor, not tennis rallying itself); athlete played the remaining ~60 min without apparent limitation in the moment. Soreness (not tear-like per athlete) became prominent afterward — near-limping overnight, sore as of 2026-08-09."
+  }
+  </script>
+</body>
+</html>

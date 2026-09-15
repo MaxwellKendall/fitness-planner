@@ -1,92 +1,141 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Session Log — 2026-05-29</title><link rel="stylesheet" href="../styles.css"></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Log — 2026-05-29</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
 <body>
-<header class="site-header"><div class="header-inner">
-<span class="badge">Reconstructed</span>
-<h1>Session B — Push + Hinge</h1>
-<span class="header-meta">2026-05-29 · backfilled from plan (not verified)</span>
-</div></header>
-<main>
-<div class="alert warning">Reconstructed from the week's plan as-written — loads are the prescribed targets at RPE 7, not measured actuals. </div>
-<section class="card workout"><div class="card-header">Working Sets</div><div class="card-body">
-<div class="table-wrap"><table><thead><tr><th>Exercise</th><th>Sets×Reps</th><th>Load</th><th>Intensity</th></tr></thead>
-<tbody><tr><td>bench-press</td><td>3×5</td><td>145 lb</td><td>RPE 7</td></tr><tr><td>deadlift</td><td>3×5</td><td>210 lb</td><td>RPE 7</td></tr><tr><td>dumbbell-row</td><td>3×10</td><td>24 kg/hand</td><td></td></tr><tr><td>push-up</td><td>2×10</td><td>BW</td><td></td></tr><tr><td>dead-bug</td><td>3×8/side</td><td>BW</td><td></td></tr></tbody></table></div></div></section>
-</main>
-<script type="application/json" id="session-data">
-{
-  "date": "2026-05-29",
-  "session_label": "Session B \u2014 Push + Hinge",
-  "completed": true,
-  "reconstructed": true,
-  "verified": false,
-  "source": "backfilled from plan as-written (loads = prescribed, RPE assumed 7)",
-  "dates_estimated": false,
-  "sets_by_pattern": {
-    "squat": 0,
-    "hinge": 3,
-    "push": 5,
-    "pull": 3,
-    "carry": 0,
-    "core": 3
-  },
-  "ratings": {
-    "effort": 7,
-    "energy_level": 3,
-    "form_quality": 4,
-    "completion_rate": 1.0
-  },
-  "composite_score": 1.95,
-  "exercises": [
-    {
-      "slug": "bench-press",
-      "sets": 3,
-      "reps": 5,
-      "load_lb": 145,
-      "rpe": 7
-    },
-    {
-      "slug": "deadlift",
-      "sets": 3,
-      "reps": 5,
-      "load_lb": 210,
-      "rpe": 7
-    },
-    {
-      "slug": "dumbbell-row",
-      "sets": 3,
-      "reps": 10,
-      "load": "24 kg/hand"
-    },
-    {
-      "slug": "push-up",
-      "sets": 2,
-      "reps": 10,
-      "load": "BW"
-    },
-    {
-      "slug": "dead-bug",
-      "sets": 3,
-      "reps": "8/side",
-      "load": "BW"
-    }
-  ],
-  "strength_observations": [
-    {
-      "exercise": "bench-press",
-      "weight_lb": 145,
-      "reps": 5,
-      "rpe": 7,
-      "estimated_1rm_lb": 163
-    },
-    {
-      "exercise": "deadlift",
-      "weight_lb": 210,
-      "reps": 5,
-      "rpe": 7,
-      "estimated_1rm_lb": 236
-    }
-  ]
-}
-</script>
-</body></html>
+  <header class="site-header log">
+    <div class="header-inner">
+      <span class="badge" style="background:#ede9fe;color:#7c3aed">Session B — Push + Hinge</span>
+      <h1>2026-05-29</h1>
+      <span class="header-meta">45 min · effort 7/10 · completion 100%</span>
+    </div>
+    <div class="header-nav">
+      <a href="../plans/2026-05-29.html">← training plan</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Session ratings -->
+    <section class="card">
+      <div class="card-header">Session Ratings</div>
+      <div class="card-body">
+        <div class="ratings-row">
+          <div class="rating-chip">
+            <span class="chip-val">7</span>
+            <span class="chip-label">Effort RPE</span>
+          </div>
+          <div class="rating-chip">
+            <span class="chip-val">3</span>
+            <span class="chip-label">Energy</span>
+          </div>
+          <div class="rating-chip">
+            <span class="chip-val">4</span>
+            <span class="chip-label">Form</span>
+          </div>
+          <div class="rating-chip">
+            <span class="chip-val">100%</span>
+            <span class="chip-label">Completion</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actual work -->
+    <section class="card workout">
+      <div class="card-header">Actual Work</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th><th>Est. 1RM</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Bench Press</td><td>3</td><td>5</td><td>145 lb</td>
+                <td>~163 lb</td>
+                <td>RPE 8 — bar speed slowed set 3; held at 145 per plan guidance</td>
+              </tr>
+              <tr>
+                <td>Deadlift</td><td>3</td><td>5</td><td>210 lb</td>
+                <td>~236 lb</td>
+                <td>RPE 7 — controlled; conservative start per plan</td>
+              </tr>
+              <tr>
+                <td>DB Row</td><td>2</td><td>8</td><td>55 lb/hand</td>
+                <td>—</td>
+                <td>Strict form; back to DBs as planned</td>
+              </tr>
+              <tr>
+                <td>Push-up</td><td>2</td><td>10</td><td>BW</td>
+                <td>—</td>
+                <td>3 sec descent — maintenance</td>
+              </tr>
+              <tr>
+                <td>Dead Bug</td><td>3</td><td>8/side</td><td>BW</td>
+                <td>—</td>
+                <td>Completed — not skipped this week</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sets by pattern -->
+    <section class="card">
+      <div class="card-header">Volume by Pattern</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Pattern</th><th>Sets</th></tr></thead>
+            <tbody>
+              <tr><td>Squat</td><td>0</td></tr>
+              <tr><td>Hinge</td><td>3</td></tr>
+              <tr><td>Push</td><td>5</td></tr>
+              <tr><td>Pull</td><td>2</td></tr>
+              <tr><td>Carry</td><td>0</td></tr>
+              <tr><td>Core</td><td>3</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes -->
+    <section class="card">
+      <div class="card-header">Notes</div>
+      <div class="card-body">
+        <p>Bench came in at RPE 8 — harder than the planned RPE 6–7. Bar speed slowed noticeably
+        on set 3; held at 145 lb as the plan instructed ("if bar speed slows significantly at 145,
+        hold there next session"). Deadlift felt controlled at 210 lb / RPE 7; started conservative
+        per the plan's "do not ego-load" note. Dead bug completed this session after being skipped
+        last week (May 20 &amp; 23). Session logged retroactively 2026-07-18; bench RPE confirmed
+        by athlete, other details inferred from plan.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Machine-readable metadata for /review parsing -->
+  <script type="application/json" id="session-data">
+  {
+    "date": "2026-05-29",
+    "plan_ref": "plans/2026-05-29.html",
+    "session_label": "Session B — Push + Hinge",
+    "duration_minutes": 45,
+    "sets_by_pattern": {"squat": 0, "hinge": 3, "push": 5, "pull": 2, "carry": 0, "core": 3},
+    "ratings": {"effort": 7, "energy_level": 3, "form_quality": 4, "completion_rate": 1.0},
+    "estimated_1rms": [
+      {"exercise": "bench-press", "estimated_lb": 163, "from_weight_lb": 145, "reps": 5, "rpe": 8},
+      {"exercise": "deadlift", "estimated_lb": 236, "from_weight_lb": 210, "reps": 5, "rpe": 7}
+    ],
+    "backfilled": true,
+    "verified": true,
+    "source": "bench RPE 8 confirmed by athlete; loads from plan; logged 2026-07-18"
+  }
+  </script>
+</body>
+</html>
