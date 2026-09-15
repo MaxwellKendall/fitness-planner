@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 16 Meal Plan</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header meal">
+    <div class="header-inner">
+      <span class="badge meal">Week 16</span>
+      <h1>Meal Plan</h1>
+      <span class="header-meta">Mon Aug 24 – Sun Aug 30, 2026 · Recomp focus · 157 g protein/day</span>
+    </div>
+    <div class="header-nav">
+      <a href="../plans/2026-08-24.html">training plan →</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="alert info">
+      <strong>Mid-week plan:</strong> generated Wednesday 2026-08-26. Mon–Tue already passed
+      untracked. This covers dinners from tonight forward, plus Saturday's bulk cook for next week.
+      Protein target recalculated to 157 g/day (0.8 × 196 lb, your most recent logged weight from
+      2026-08-08 — config.yaml's baseline weight is unchanged at 200 lb, but the profile's actual
+      measurement is more current).
+    </div>
+
+    <!-- 7-day schedule grid -->
+    <section class="card">
+      <div class="card-header meal">Weekly Schedule</div>
+      <div class="card-body">
+        <div class="week-grid">
+          <div class="day-cell rest">
+            <span class="day-name">Mon</span>
+            <span class="day-date">24</span>
+            <span class="day-event">untracked</span>
+          </div>
+          <div class="day-cell rest">
+            <span class="day-name">Tue</span>
+            <span class="day-date">25</span>
+            <span class="day-event">untracked</span>
+          </div>
+          <div class="day-cell both">
+            <span class="day-name">Wed</span>
+            <span class="day-date">26</span>
+            <span class="day-event workout">7:00am bench session</span>
+            <span class="day-event cook">refresh · fajita bowls + chili</span>
+          </div>
+          <div class="day-cell">
+            <span class="day-name">Thu</span>
+            <span class="day-date">27</span>
+            <span class="day-event cook">leftovers (fajita bowls / chili)</span>
+          </div>
+          <div class="day-cell workout-day">
+            <span class="day-name">Fri</span>
+            <span class="day-date">28</span>
+            <span class="day-event workout">7:00am screen + pull/carry</span>
+          </div>
+          <div class="day-cell both">
+            <span class="day-name">Sat</span>
+            <span class="day-date">29</span>
+            <span class="day-event shop">🛒 grocery</span>
+            <span class="day-event workout">workout (make-up session)</span>
+            <span class="day-event cook">bulk cook 2hr</span>
+          </div>
+          <div class="day-cell rest">
+            <span class="day-name">Sun</span>
+            <span class="day-date">30</span>
+            <span class="day-event cook">leftovers (Sabbath — no cooking)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daily targets -->
+    <section class="card meal">
+      <div class="card-header">Daily Nutrition Targets</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Day</th><th>Type</th><th>Calories</th><th>Protein</th></tr></thead>
+            <tbody>
+              <tr><td>Wed Aug 26</td><td>Training (bench)</td><td>2,600 kcal</td><td>157 g</td></tr>
+              <tr><td>Thu Aug 27</td><td>Rest</td><td>2,300 kcal</td><td>157 g</td></tr>
+              <tr><td>Fri Aug 28</td><td>Training (screen + pull)</td><td>2,600 kcal</td><td>157 g</td></tr>
+              <tr><td>Sat Aug 29</td><td>Training (make-up session)</td><td>2,600 kcal</td><td>157 g</td></tr>
+              <tr><td>Sun Aug 30</td><td>Rest (Sabbath)</td><td>2,300 kcal</td><td>157 g</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><em>No daily-logs entries exist since 2026-07-15, so there's no recent read on actual protein
+        or sleep — the last review flagged protein under 120 g on 4 of 6 logged days as the top recomp
+        lever. Front-load protein at breakfast (eggs, Greek yogurt — both on hand) since dinners alone
+        won't close a 157 g/day target.</em></p>
+      </div>
+    </section>
+
+    <!-- Wednesday midweek refresh -->
+    <section class="card meal">
+      <div class="card-header">Wednesday — Midweek Refresh (~1 hour)</div>
+      <div class="card-body">
+        <div class="recipe-grid">
+          <div class="recipe-card">
+            <h3><a href="../../grocery-plan/recipes/chicken-fajita-tortilla-bowls.md">Chicken Fajita Tortilla Bowls</a></h3>
+            <div class="recipe-meta">
+              <span>6 servings</span>
+              <span class="badge meal">protein 4/5</span>
+              <span>nutrition 4/5</span>
+              <span>effort 2/5</span>
+            </div>
+          </div>
+          <div class="recipe-card">
+            <h3><a href="../../grocery-plan/recipes/white-chili.md">White Chicken Chili</a></h3>
+            <div class="recipe-meta">
+              <span>4 servings</span>
+              <span class="badge meal">protein 4/5</span>
+              <span>nutrition 4/5</span>
+              <span>effort 2/5</span>
+            </div>
+          </div>
+        </div>
+        <h3 class="section-title" style="margin-top:1.25rem">Prep order</h3>
+        <ol class="prep-steps">
+          <li>Fajita bowls tonight (20 min active cook) — covers Wed dinner and Thu lunch leftovers</li>
+          <li>White chicken chili — a rotisserie chicken shortcuts the 40 min simmer; covers Thu dinner
+          and doubles as a post-Friday-lifting meal</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Saturday bulk cook -->
+    <section class="card meal">
+      <div class="card-header">Saturday — Bulk Cook (~2 hours)</div>
+      <div class="card-body">
+        <div class="recipe-grid">
+          <div class="recipe-card">
+            <h3><a href="../../grocery-plan/recipes/easy-baked-chicken-and-zucchini-recipe.md">Easy Baked Chicken &amp; Zucchini</a></h3>
+            <div class="recipe-meta">
+              <span>4 servings</span>
+              <span class="badge meal">protein 4/5</span>
+              <span>nutrition 4/5</span>
+              <span>effort 3/5</span>
+            </div>
+          </div>
+          <div class="recipe-card">
+            <h3><a href="../../grocery-plan/recipes/roasted-cod-with-potatoes-and-lemon.md">Roasted Cod with Potatoes &amp; Lemon</a></h3>
+            <div class="recipe-meta">
+              <span>4 servings</span>
+              <span class="badge meal">protein 5/5</span>
+              <span>nutrition 4/5</span>
+              <span>effort 3/5</span>
+            </div>
+          </div>
+          <div class="recipe-card">
+            <h3><a href="../../grocery-plan/recipes/ground-turkey-zucchini-casserole-healthy-comfort-food.md">Ground Turkey Zucchini Casserole</a></h3>
+            <div class="recipe-meta">
+              <span>4 servings</span>
+              <span class="badge meal">protein 4/5</span>
+              <span>nutrition 4/5</span>
+              <span>effort 2/5</span>
+            </div>
+          </div>
+        </div>
+        <h3 class="section-title" style="margin-top:1.25rem">Prep order</h3>
+        <ol class="prep-steps">
+          <li>Roasted cod first — fastest cook (30 min), best fresh rather than reheated; eat same day</li>
+          <li>Easy baked chicken &amp; zucchini next (oven, 30 min, mostly hands-off) — covers weekday lunches</li>
+          <li>Turkey zucchini casserole last (stovetop brown, then bake 30–35 min) — covers the rest of
+          next week's Mon–Wed lunches</li>
+          <li>Sunday is Sabbath — no cooking, eat from Saturday's batch</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Grocery checklist -->
+    <section class="card">
+      <div class="card-header">Grocery Run — Saturday Morning</div>
+      <div class="card-body">
+        <div class="alert warning" style="margin-bottom:1rem">
+          <code>pantry.yaml</code> was last updated 2026-08-14 — some items on the 08-02 receipt
+          (onions, lemons, limes) are 3+ weeks old and likely used up; this list assumes they need
+          restocking. Staples (oil, salt, pepper, garlic, chicken/beef stock) are marked stocked and
+          skipped below. No raw chicken, ground turkey, or fish is currently on hand.
+        </div>
+        <div class="checklist-section">
+          <h3>Meat &amp; Seafood</h3>
+          <ul class="checklist">
+            <li><input type="checkbox" id="item-1"><label for="item-1">Boneless chicken breast/thighs ~2.5 lb <span class="item-note">for: fajita bowls (1.5 lb), easy baked chicken &amp; zucchini (1 lb)</span></label></li>
+            <li><input type="checkbox" id="item-2"><label for="item-2">Rotisserie chicken ×1 (or 2½–3 cups cooked shredded chicken) <span class="item-note">for: white chicken chili shortcut</span></label></li>
+            <li><input type="checkbox" id="item-3"><label for="item-3">Ground turkey 1 lb <span class="item-note">for: turkey zucchini casserole</span></label></li>
+            <li><input type="checkbox" id="item-4"><label for="item-4">White fish fillets ×4 (6–8 oz each, cod or similar firm white fish) <span class="item-note">for: roasted cod with potatoes &amp; lemon</span></label></li>
+          </ul>
+        </div>
+        <div class="checklist-section">
+          <h3>Produce</h3>
+          <ul class="checklist">
+            <li><input type="checkbox" id="item-5"><label for="item-5">Yellow onions ×4 <span class="item-note">for: fajita bowls, chili, easy baked chicken &amp; zucchini, turkey casserole — the 2 on hand from 08-02 are 3+ weeks old</span></label></li>
+            <li><input type="checkbox" id="item-6"><label for="item-6">Bell peppers ×3 <span class="item-note">for: fajita bowls</span></label></li>
+            <li><input type="checkbox" id="item-7"><label for="item-7">Zucchini ×3 <span class="item-note">for: turkey casserole (2), easy baked chicken &amp; zucchini (1)</span></label></li>
+            <li><input type="checkbox" id="item-8"><label for="item-8">Jalapeño ×2 <span class="item-note">for: chili (1), fajita bowls topping (1, optional)</span></label></li>
+            <li><input type="checkbox" id="item-9"><label for="item-9">Fresh cilantro ×2 bunches <span class="item-note">for: fajita bowls (vinaigrette + garnish), chili garnish</span></label></li>
+            <li><input type="checkbox" id="item-10"><label for="item-10">Lettuce, 1 head <span class="item-note">for: fajita bowls topping</span></label></li>
+            <li><input type="checkbox" id="item-11"><label for="item-11">Lime ×2 <span class="item-note">for: fajita vinaigrette, chili — verify the 2 on hand from 08-02 are still good first</span></label></li>
+            <li><input type="checkbox" id="item-12"><label for="item-12">Lemon ×1 <span class="item-note">for: roasted cod</span></label></li>
+            <li><input type="checkbox" id="item-13"><label for="item-13">Fresh thyme, 1 small pack <span class="item-note">for: roasted cod (4 sprigs)</span></label></li>
+            <li><input type="checkbox" id="item-14"><label for="item-14">Garlic — verify enough cloves on hand <span class="item-note">recipes need ~13 cloves total across the week; staple garlic is marked stocked but check if it's whole bulbs or a jar</span></label></li>
+          </ul>
+        </div>
+        <div class="checklist-section">
+          <h3>Dairy</h3>
+          <ul class="checklist">
+            <li><input type="checkbox" id="item-15"><label for="item-15">Cotija cheese ½ cup <span class="item-note">for: fajita bowls</span></label></li>
+            <li><input type="checkbox" id="item-16"><label for="item-16">Mozzarella, shredded 1 cup <span class="item-note">for: turkey zucchini casserole</span></label></li>
+            <li><input type="checkbox" id="item-17"><label for="item-17">Eggs, Greek yogurt — already on hand, verify enough for breakfast protein <span class="item-note">key to hitting 157 g/day, since dinners alone won't close the gap</span></label></li>
+          </ul>
+        </div>
+        <div class="checklist-section">
+          <h3>Dry &amp; Canned Goods</h3>
+          <ul class="checklist">
+            <li><input type="checkbox" id="item-18"><label for="item-18">Rice, 1.5 cups dry <span class="item-note">for: fajita bowls</span></label></li>
+            <li><input type="checkbox" id="item-19"><label for="item-19">Cannellini beans ×2 (15 oz cans) <span class="item-note">for: white chicken chili</span></label></li>
+            <li><input type="checkbox" id="item-20"><label for="item-20">Diced green chiles ×2 (4 oz cans) <span class="item-note">for: white chicken chili</span></label></li>
+            <li><input type="checkbox" id="item-21"><label for="item-21">Diced tomatoes ×1 (14 oz can) <span class="item-note">for: turkey zucchini casserole</span></label></li>
+            <li><input type="checkbox" id="item-22"><label for="item-22">Corn kernels, frozen or fresh, ~4 cups total <span class="item-note">for: fajita bowls (3 cups), chili (1 cup)</span></label></li>
+            <li><input type="checkbox" id="item-23"><label for="item-23">Chicken broth, low-sodium, verify 4 cups on hand <span class="item-note">for: chili — chicken stock is marked stocked, confirm quantity</span></label></li>
+          </ul>
+        </div>
+        <p class="muted small" style="margin-top:1rem"><em>Already on hand, no need to buy: mission
+        flour tortillas (fajita bowls), yukon gold potatoes — substitute for the russets called for in
+        the cod recipe, and grass-fed butter — substitute for the recipe's unsalted butter.</em></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 16 Training Plan</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header workout">
+    <div class="header-inner">
+      <span class="badge workout">Week 16</span>
+      <h1>Training Plan</h1>
+      <span class="header-meta">Mon Aug 24 – Sun Aug 30, 2026 · Tier 30–39 · ~40 sets + gated squat screen (3 sessions)</span>
+    </div>
+    <div class="header-nav">
+      <a href="2026-08-17.html">← prev week</a>
+      <a href="../meals/2026-08-24.html">meal plan →</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="alert warning">
+      <strong>Right adductor/groin — now a 4th data point, still unresolved:</strong> Friday's session
+      (and its planned movement screen) was skipped entirely, so that diagnostic never ran. Instead,
+      real-world data arrived on its own: two runs this week both felt fine, but sprinting on the
+      second run brought on a mild-but-noticeable pull on the right adductor. That's meaningful —
+      sprinting is a harder, more explosive test of that area (fast single-leg hip flexion/extension)
+      than anything in this training plan, and it's now recurred across three distinct real-world
+      contexts (07-14 front squat, 08-08 tennis push-off, and now sprinting) over several weeks without
+      fully resolving. Saturday's session below has been adjusted accordingly — see its adjustment
+      note. This has crossed this repo's 3+-mentions threshold for a while now; it's worth adding a
+      permanent <code>config.yaml.constraints.injuries</code> entry yourself (this system never edits
+      that file for you), and worth seriously reconsidering the professional evaluation you've declined
+      twice so far — "feels fine day-to-day, reproduces under explosive load, persists for weeks" is
+      exactly the pattern that self-management alone doesn't reliably resolve.
+    </div>
+
+    <div class="alert info">
+      <strong>Mid-week start, 3-session week:</strong> Monday 08-24 has no session log — looks like it
+      was skipped, the same pattern as last week. Per your call, this week still gets a 3rd session
+      (Saturday) to make up the volume rather than dropping to 2. Today (Wednesday) opens with bench
+      press per your request — see the note on that below, since it's a new lift with no history in
+      this program yet.
+    </div>
+
+    <!-- Active goals -->
+    <section class="card">
+      <div class="card-header workout">Active Goals — Tier 30–39</div>
+      <div class="card-body">
+        <div class="goal-list">
+          <div class="goal-row">
+            <div class="goal-label">
+              <span class="goal-name">Back Squat</span>
+              <span class="goal-pct">current: 208 lb (verified 07-14) · target: 250 lb — paused pending adductor screen</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 83%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label">
+              <span class="goal-name">Deadlift</span>
+              <span class="goal-pct">current: ~248 lb (low confidence, unverified) · target: 350 lb — paused pending adductor screen</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 71%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label">
+              <span class="goal-name">Incline Bench Press</span>
+              <span class="goal-pct">current: 174 lb (pending 155 lb strict-form re-verification) · target: 200 lb</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 87%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label">
+              <span class="goal-name">Bench Press (flat) — new this week</span>
+              <span class="goal-pct">current: untested · no tier target of its own yet — establishing a baseline</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 0%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label">
+              <span class="goal-name">Pull-ups</span>
+              <span class="goal-pct">current: 6 unbroken · target: 10</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 60%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label">
+              <span class="goal-name">Body Composition</span>
+              <span class="goal-pct">current: 196 lb, waist 36.5" (as of 08-08) · target: 180 lb, waist ≤ 34"</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 20%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label">
+              <span class="goal-name">5K</span>
+              <span class="goal-pct">current: untested · target: under 25 min</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 0%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label">
+              <span class="goal-name">Injury Prevention</span>
+              <span class="goal-pct">current: right adductor/groin, status unknown since 08-08 · target: pain-free squat + hinge, explosive rotation tolerated</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 20%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wednesday -->
+    <section class="card workout">
+      <div class="card-header">Wednesday, 2026-08-26 — Bench Press (new) + Pull + Carry + Core (7:00am)</div>
+      <div class="card-body">
+        <div class="alert info">
+          <strong>Flat bench, first time in this program.</strong> Everything logged as "Bench Press"
+          before 2026-07-30 was actually incline (see <a href="../exercise-library/incline-bench-press.md">incline-bench-press.md</a>)
+          — flat bench itself has zero verified history, and the 225 lb historical PR predates this
+          log with its flat-vs-incline status unverified too. Treating this as a brand-new lift per
+          <a href="../exercise-library/bench-press.md">bench-press.md</a>: conservative weight,
+          technique focus, RPE 6–7, and let today's actual working set set the Brzycki baseline via
+          <code>/log</code> rather than assuming any relationship to the incline numbers.
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Bench Press (warm-up)</td><td>3</td><td>10, 5, 5</td><td>45, 70, 100 lb</td><td>Bar, then 50% / 75% of working weight — shoulder circles + 5 slow push-ups first</td></tr>
+              <tr><td>Bench Press</td><td>4</td><td>5</td><td>135 lb</td><td>RPE 6–7 — first test of this lift. 5-point setup, bar to lower chest, no bounce. Stop the set if it feels harder than RPE 7; better to under-shoot on session 1</td></tr>
+              <tr><td>Dumbbell Bench Press (warm-up)</td><td>1</td><td>10</td><td>25 lb</td><td>Light set, per side</td></tr>
+              <tr><td>Dumbbell Bench Press</td><td>3</td><td>8</td><td>45 lb</td><td>RPE 6–7 — per side, accessory push volume without re-stressing the new flat-bench pattern too hard on day 1</td></tr>
+              <tr><td>Pull-up (warm-up)</td><td>1</td><td>20 s hang + 2</td><td>bodyweight</td><td>Dead hang, scapular pulls, 2 easy reps</td></tr>
+              <tr><td>Pull-up</td><td>3</td><td>5</td><td>bodyweight</td><td>RPE 6–7 — keeps push:pull balanced today</td></tr>
+              <tr><td>Farmer Carry</td><td>2</td><td>30 m</td><td>50 lb/hand</td><td>RPE 6 — carry pattern re-added (undertrained in 28-day volume as of last review). Upright loaded gait, low hip-flexion demand, but stop immediately on any groin/hip pull given the adductor caution</td></tr>
+              <tr><td>Plank</td><td>2</td><td>45 s</td><td>bodyweight</td><td>RPE 6</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><em>14 working sets · ~40 min. No squat or hinge work today — that stays gated behind Friday's screen.</em></p>
+      </div>
+    </section>
+
+    <!-- Friday -->
+    <section class="card workout" data-adjusted="true">
+      <div class="card-header">
+        Friday, 2026-08-28 — Movement Screen + Incline Bench + Pull + Carry + Core (7:00am)
+        <span class="badge rest" style="margin-left:auto">skipped</span>
+      </div>
+      <div class="card-body">
+        <div class="alert warning">
+          <strong>Skipped — this session did not happen.</strong> Left below as a record of what was
+          planned. Its movement screen never ran; two runs (including sprinting) this week produced
+          real-world data on the adductor instead — see the top-of-page alert and Saturday's adjustment.
+        </div>
+        <div class="alert warning">
+          <strong>Movement screen — do this block first, in order, before anything else.</strong>
+          Same gated screen as last Friday, rerun because there's no data on how the area has responded
+          since. Each step gates the next: stop at the first one that reproduces the sore/soft sensation
+          from squatting, or any pull/pinch, and skip straight to the work below at bodyweight-only
+          intensity for the rest of the session. Do not push through to "see how bad it is."
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>90/90 Hip Switch</td><td>2</td><td>45 s/side</td><td>bodyweight</td><td>No-load mobility check <strong>first</strong>. Reproduces the sensation → stop here, today becomes Incline Bench + Pull + Carry + Core only.</td></tr>
+              <tr><td>Bodyweight Squat</td><td>2</td><td>5</td><td>bodyweight</td><td>Full depth, slow and controlled. Only if the hip switch was clean. Same stop rule.</td></tr>
+              <tr><td>Lateral Lunge</td><td>1</td><td>6/side</td><td>bodyweight</td><td>Controlled, not explosive. A pull here means straight-line squatting may be fine while rotational/lateral loading still isn't.</td></tr>
+              <tr><td>Goblet Squat</td><td>1</td><td>8</td><td>25 lb</td><td>Only if all three checks above were completely clean. One light diagnostic set, RPE ≤ 5 — do not add a second set today even if it feels great</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><em>Up to 4 screen sets, 0 if you stop at step 1 — genuinely optional past the first row. ~10 min.</em></p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Incline Bench Press (warm-up)</td><td>3</td><td>10, 5, 5</td><td>45, 70, 100 lb</td><td>Bar, then 50% / 75% of working weight</td></tr>
+              <tr><td>Incline Bench Press</td><td>4</td><td>5</td><td>135 lb</td><td>RPE 7 — holding here again; still pending a strict-form retest at 155 lb before pushing higher</td></tr>
+              <tr><td>Barbell Row (warm-up)</td><td>1</td><td>10</td><td>45 lb</td><td>Technique-focus, bent-over hinge stance</td></tr>
+              <tr><td>Barbell Row</td><td>3</td><td>8</td><td>95 lb</td><td>RPE 6 — holding last week's weight since there's no log confirming that session ran clean. Stop immediately if anything pulls in the groin/hip during the hinge stance</td></tr>
+              <tr><td>Farmer Carry</td><td>2</td><td>30 m</td><td>50 lb/hand</td><td>RPE 6 gut-check — stop immediately on any groin/hip pull</td></tr>
+              <tr><td>Plank</td><td>3</td><td>45 s</td><td>bodyweight</td><td>RPE 6</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><em>12 working sets + up to 4 screen sets · ~35–40 min.</em></p>
+      </div>
+    </section>
+
+    <!-- Saturday -->
+    <section class="card workout" data-adjusted="true">
+      <div class="card-header">
+        Saturday, 2026-08-30 — Full Body: Push + Hinge + Pull + Carry + Core (make-up session)
+        <span class="badge recovery" style="margin-left:auto">adjusted</span>
+      </div>
+      <div class="card-body">
+        <div class="alert warning">
+          <strong>Adjusted:</strong> right adductor felt a mild pull sprinting on Thursday's run, and
+          Friday's session (including its movement screen) was skipped — so today isn't the day to also
+          layer on a diagnostic squat check. Barbell Row is swapped for <strong>Dumbbell Row</strong>
+          (single-arm, one-hand/one-knee supported) — per its own exercise card, this is the lower
+          hip-hinge-demand substitute, since the bent-over barbell stance is still a static hinge hold.
+          Farmer Carry is held at last week's 50 lb/hand rather than progressing to 55 — small load
+          increases aren't worth it while this is actively flaring. Bench Press is unchanged; it's
+          upper-body and unrelated to the adductor. Stop immediately and end the session on anything
+          more than a mild pull in the groin/hip on any exercise today.
+        </div>
+        <div class="alert info">
+          Added to make up for Monday's skipped session, per your call to keep this a 3-session week.
+          Second bench exposure of the week, kept a touch lighter in volume than Wednesday since it's
+          still a brand-new movement pattern. If Wednesday's 135 lb felt like RPE 8+ rather than 6–7,
+          drop to 125 lb here instead of repeating 135.
+        </div>
+        <div class="alert info">
+          <strong>Hinge added, per your request for full-body lower work today.</strong> Dumbbell
+          Romanian Deadlift, not a squat variant — every squat in the library (back/front/goblet) lists
+          adductors as a secondary muscle, while DB RDL doesn't list adductors at all and its own card
+          notes it's "appropriate for most injury profiles." Kept light and technique-focused as a
+          reintroduction after 3+ weeks with no hinge volume. Same rule as everything else today: stop
+          if it's a groin pull rather than a hamstring/glute stretch.
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Bench Press (warm-up)</td><td>2</td><td>5, 5</td><td>70, 100 lb</td><td>50% / 75% of working weight — already have Wednesday's data, so a shorter warm-up is fine</td></tr>
+              <tr><td>Bench Press</td><td>3</td><td>5</td><td>135 lb</td><td>RPE 7 — hold Wednesday's weight (or drop to 125 lb if Wednesday ran heavier than planned)</td></tr>
+              <tr><td>Dumbbell RDL (warm-up)</td><td>1</td><td>8</td><td>20 lb/hand</td><td>Bodyweight hip-hinge drill first, then this light set — push hips back, not down</td></tr>
+              <tr><td>Dumbbell RDL</td><td>3</td><td>8</td><td>35 lb/hand</td><td>RPE 6 — first hinge work in 3+ weeks, kept conservative. Slight knee bend, hinge to a hamstring stretch, neutral back. Stop if it's a groin pull rather than a hamstring stretch</td></tr>
+              <tr><td>Pull-up (warm-up)</td><td>1</td><td>20 s hang + 2</td><td>bodyweight</td><td>Dead hang, scapular pulls, 2 easy reps</td></tr>
+              <tr><td>Pull-up</td><td>4</td><td>5</td><td>bodyweight</td><td>RPE 7 — primary pull lift today</td></tr>
+              <tr><td>Dumbbell Row (warm-up)</td><td>1</td><td>8</td><td>20 lb</td><td>Per arm — light set, scapular retractions first</td></tr>
+              <tr><td>Dumbbell Row</td><td>2</td><td>8</td><td>40 lb</td><td>RPE 6 — per arm, first session on this substitute. One-hand/one-knee supported, lower hip-hinge demand than barbell row while the adductor is flaring</td></tr>
+              <tr><td>Farmer Carry</td><td>2</td><td>30 m</td><td>50 lb/hand</td><td>RPE 6 — held at last week's load rather than progressing. Stop immediately on any groin/hip pull</td></tr>
+              <tr><td>Plank</td><td>3</td><td>45 s</td><td>bodyweight</td><td>RPE 7</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><em>19 working sets (each arm counted separately for Dumbbell Row, per its exercise card) ·
+        ~50 min, longer than the usual 45 given the added lift. Still no squat loading — that stays
+        gated behind an actual clean screen or a clearer signal from daily activity before
+        reintroducing goblet/front/back squat.</em></p>
+      </div>
+    </section>
+
+    <!-- Volume summary -->
+    <section class="card">
+      <div class="card-header">Volume Summary</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Pattern</th><th>Sets This Week (revised)</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Squat</td><td>0</td><td>still paused — every squat variant in the library loads the adductors as a secondary muscle; today's lower-body work went to hinge instead</td></tr>
+              <tr><td>Hinge</td><td>4</td><td>reintroduced today via Dumbbell RDL (working set + warm-up) — first hinge volume in 3+ weeks, kept deliberately light. Doesn't list adductors on its exercise card, unlike squat variants</td></tr>
+              <tr><td>Push</td><td>10</td><td>Wed bench (7) + Sat bench (3) — Friday's planned incline bench work (4) was lost when that session was skipped</td></tr>
+              <tr><td>Pull</td><td>11</td><td>Wed pull-up (3) + Sat pull-up (4) + Sat dumbbell row (4, each arm) — Friday's barbell row (3) was lost</td></tr>
+              <tr><td>Carry</td><td>4</td><td>Wed (2) + Sat (2) — Friday's carry set (2) was lost; still down from the intended 6</td></tr>
+              <tr><td>Core</td><td>5</td><td>Wed (2) + Sat (3) — Friday's plank (3) was lost</td></tr>
+              <tr><td><strong>Total</strong></td><td><strong>~34</strong></td><td>still below the 42–54 target — one full session (Friday) and Monday both went untrained this week</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><em>Assumes Wednesday's bench session ran as planned — that hasn't been confirmed with a
+        <code>/log</code> entry either. profile.yaml's movement_patterns and strength_levels haven't been
+        refreshed by /review since 2026-08-08. Worth logging whatever actually happened this week (Wed
+        bench, today's adjusted Saturday session, and the two runs) via <code>/log</code>, then running
+        /review — both to get real data into the profile and to formally fold this week's sprinting
+        adductor mention into the pain-watch pattern history.</em></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

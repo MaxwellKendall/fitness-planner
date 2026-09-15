@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 12 Training Plan</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header workout">
+    <div class="header-inner">
+      <span class="badge workout">Week 12</span>
+      <h1>Training Plan</h1>
+      <span class="header-meta">Mon Jul 27 – Sun Aug 2, 2026 · Tier 30–39 · ~31 sets</span>
+    </div>
+    <div class="header-nav">
+      <a href="2026-07-20.html">← prev week</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="alert info">
+      <strong>Generated Thursday 2026-07-30 — mid-week, compressed schedule.</strong> No plan was written
+      for this week and Monday/Wednesday's lifts were both missed. Athlete confirmed Saturday 07-25's
+      added front squat session (from last week's plan) went fine — back stayed clean. Three lifting days
+      remain: today (Thu), tomorrow (Fri — BJJ at noon, drilling/technique only, no sparring), and
+      Saturday. Rotation is ordered around that: the heaviest session (deadlift verification) sits today
+      with no same-day competing demand, Friday is deliberately light to leave gas in the tank for BJJ,
+      and Saturday carries the full session since nothing else is scheduled that day.
+    </div>
+
+    <div class="alert warning">
+      <strong>Pain watch — lower back (2 mentions, unchanged — but 3 clean sessions running):</strong>
+      07-14 (squat) and 07-18 (deadlift) remain the only two recorded mentions. Bench (07-22), jiu jitsu
+      live sparring (07-24), and front squat (07-25) all came back clean. That's enough of a track record
+      to run today's deadlift at a real verification RPE (7) instead of the RPE-6 cap used last time —
+      still: abort to good mornings only on any lumbar signal. Three mentions would trigger a formal
+      <code>config.yaml</code> injury constraint; still at two.
+    </div>
+
+    <!-- Active goals -->
+    <section class="card">
+      <div class="card-header workout">Active Goals — Tier 30–39</div>
+      <div class="card-body">
+        <div class="goal-list">
+          <div class="goal-row">
+            <div class="goal-label">
+              <span class="goal-name">Back Squat</span>
+              <span class="goal-pct">current: ~186 lb (stale, pending re-test) · target: 250 lb</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 74%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label">
+              <span class="goal-name">Deadlift</span>
+              <span class="goal-pct">current: ~208–248 lb, verification test deferred to next week · target: 350 lb</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 71%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label">
+              <span class="goal-name">Bench Press</span>
+              <span class="goal-pct">current: 174 lb (verified 07-22) · target: 200 lb</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 87%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label">
+              <span class="goal-name">Pull-ups</span>
+              <span class="goal-pct">current: 6 unbroken · target: 10</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 60%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label">
+              <span class="goal-name">Body Composition</span>
+              <span class="goal-pct">current: 197 lb, waist 38.5" (07-13) · target: 180 lb, waist ≤ 34"</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 15%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label">
+              <span class="goal-name">5K</span>
+              <span class="goal-pct">current: untested · target: under 25 min</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 0%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label">
+              <span class="goal-name">Injury Prevention</span>
+              <span class="goal-pct">current: 3 clean sessions under load in a row · target: pain-free heavy squat + hinge</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" style="width: 30%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Thursday — adjusted for leg/hip fatigue, athlete requested bench -->
+    <section class="card workout" data-adjusted="true">
+      <div class="card-header">
+        Thursday, 2026-07-30 — Incline Bench Focus (today)
+        <span class="badge recovery" style="margin-left:auto">adjusted</span>
+      </div>
+      <div class="card-body">
+        <div class="alert warning">
+          <strong>Adjusted:</strong> hips and legs reported "absolutely smoked" from an unplanned hard
+          30-minute BJJ roll Tuesday 07-28 (first mention — wasn't logged anywhere until now). Today was
+          supposed to be the week's heaviest session precisely because nothing else competed for
+          recovery — that assumption no longer holds. Deadlift, good mornings, and farmer carries are all
+          heavily hip/leg (and carry: grip-under-load) dependent, so all three are dropped this week and
+          the deadlift verification top set (195×5) is deferred to next week. Athlete requested bench
+          today specifically — it doesn't load the legs, so it's a clean fit. To avoid stacking two push
+          sessions back-to-back before BJJ, Friday flips to pull instead of its original bench slot.
+        </div>
+        <div class="alert info">
+          <strong>Correction:</strong> athlete clarifies incline bench <em>is</em> the lift they've
+          been doing all along — the 135→155 lb progression, the 07-22 RPE 8 data point, and the
+          174 lb estimated 1RM in profile.yaml were always incline bench, just mislabeled as flat
+          "Bench Press" in the log. Flat bench has actually never been tested. Restoring the known
+          working weight below.
+          <a href="../exercise-library/incline-bench-press.md">Exercise card</a> and profile.yaml
+          updated to reflect the corrected history; the Push goal (200 lb, 1.0× BW) now tracks
+          incline bench.
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Incline Bench Press (warm-up)</td><td>3</td><td>10, 5, 5</td><td>45, 80, 115 lb</td><td>Bar, then 50% and 75% of working weight</td></tr>
+              <tr><td>Incline Bench Press</td><td>4</td><td>5</td><td>135 lb</td><td>RPE 7 — real-time finding today: 155 lb broke strict form (glutes lifted off the bench), 135 lb is clean. Working weight dropped to 135 lb for today's top sets; 155 lb needs re-verification with strict form before it counts again.</td></tr>
+              <tr><td>Dumbbell Bench Press</td><td>3</td><td>8</td><td>45 lb/hand</td><td>RPE 6–7 — full range, controlled</td></tr>
+              <tr><td>Plank</td><td>2</td><td>30 s</td><td>bodyweight</td><td>RPE 6 — brace hard</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><em>12 working sets · ~40 min. No hip-hinge, squat, or loaded-carry work today — legs get the day off entirely.</em></p>
+      </div>
+    </section>
+
+    <!-- Friday — skipped -->
+    <section class="card workout" data-adjusted="true">
+      <div class="card-header">
+        Friday, 2026-07-31 — Pull (light) — BJJ drilling at noon
+        <span class="badge recovery" style="margin-left:auto">skipped</span>
+      </div>
+      <div class="card-body">
+        <div class="alert warning">
+          <strong>Skipped:</strong> BJJ technique/drilling happened (60 min, no live rolling) but the
+          lift didn't — logged as <a href="../session-logs/2026-07-31.html">BJJ only</a>. The pull work
+          below never ran; it's made up in Saturday's full-body audible instead.
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Pull-up</td><td>4</td><td>5</td><td>bodyweight</td><td>RPE 6–7 — dead-hang start, crisp reps</td></tr>
+              <tr><td>Dumbbell Row</td><td>3</td><td>8</td><td>55 lb</td><td>RPE 6 — per side, strict; light drop from the usual 60 lb given the week's fatigue</td></tr>
+              <tr><td>Plank</td><td>2</td><td>30 s</td><td>bodyweight</td><td>Brace hard — shortened, core has work to do at the mat too</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><em>9 working sets planned · ~25 min. Never ran — see Saturday's card for where this volume landed instead.</em></p>
+      </div>
+    </section>
+
+    <!-- Saturday — audible: full body -->
+    <section class="card workout" data-adjusted="true">
+      <div class="card-header">
+        Saturday, 2026-08-01 — Full Body (audible)
+        <span class="badge recovery" style="margin-left:auto">adjusted</span>
+      </div>
+      <div class="card-body">
+        <div class="alert warning">
+          <strong>Adjusted:</strong> athlete called an audible for a full-body day. Friday's planned
+          Pull session (pull-ups, dumbbell row) was skipped entirely — BJJ technique/drilling happened
+          instead, no lifting. Today folds that missed pull volume in alongside the already-planned
+          front squat, and adds good mornings back in (dropped Thursday for leg fatigue) since hinge
+          sits at 0 sets for the week otherwise. Legs were "mostly recovered" as of Friday evening
+          (per yesterday's log) — one more day out, but still worth a gut-check on how they feel before
+          loading the front squat top sets.
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Exercise</th><th>Sets</th><th>Reps</th><th>Load</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>90/90 Hip Switch</td><td>2</td><td>45 s/side</td><td>bodyweight</td><td>Mobility warm-up</td></tr>
+              <tr><td>Front Squat (warm-up)</td><td>2</td><td>8, 5</td><td>bar, 95 lb</td><td>Front-rack mobility drill first</td></tr>
+              <tr><td>Front Squat</td><td>3</td><td>5</td><td>125 lb</td><td>RPE 6–7 — +10 lb from the clean 07-25 debut (115 lb). Still a new lift, not a % of back squat — let the front-rack position guide loading, not leg strength.</td></tr>
+              <tr><td>Good Morning</td><td>2</td><td>8</td><td>45 lb</td><td>RPE 5–6 — resuming at the 07-25 weight (held, not progressed) since it was skipped Thursday. Never grind this lift.</td></tr>
+              <tr><td>Pull-up</td><td>4</td><td>5</td><td>bodyweight</td><td>Dead-hang start, crisp reps</td></tr>
+              <tr><td>Dumbbell Row</td><td>3</td><td>8</td><td>55 lb</td><td>RPE 6–7 — per side, strict; makes up Friday's skipped row work</td></tr>
+              <tr><td>Farmer Carry</td><td>2</td><td>40 m</td><td>60 lb/hand</td><td>Full volume — no BJJ competing for grip today</td></tr>
+              <tr><td>Plank</td><td>3</td><td>45 s</td><td>bodyweight</td><td>Full volume</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><em>19 working sets · ~55 min. Covers squat, hinge, pull, carry, and core — a genuine full-body day. If the front squat stays clean, back squat itself is a reasonable candidate to reintroduce next week.</em></p>
+      </div>
+    </section>
+
+    <!-- Volume summary -->
+    <section class="card">
+      <div class="card-header">Volume Summary</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Pattern</th><th>Sets This Week</th><th>Weekly Target</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Squat</td><td>5</td><td>9–12</td><td>light — 2nd-ever front squat session, deliberately cautious progression</td></tr>
+              <tr><td>Hinge</td><td>2</td><td>9–12</td><td>well under — good mornings only, dropped from Thursday and only partially made up Saturday; deadlift verification deferred to next week</td></tr>
+              <tr><td>Push</td><td>10</td><td>10–14</td><td>✓ — all in Thursday's incline bench session</td></tr>
+              <tr><td>Pull</td><td>7</td><td>10–14</td><td>under — Friday's pull session was skipped entirely (BJJ only, no lift); Saturday's audible only partly makes it up</td></tr>
+              <tr><td>Carry</td><td>2</td><td>4–6</td><td>under — Thursday's farmer carry dropped (grip-under-load on tired legs); only Saturday's carry work landed</td></tr>
+              <tr><td>Core</td><td>5</td><td>3–5</td><td>✓</td></tr>
+              <tr><td><strong>Total</strong></td><td><strong>31</strong></td><td><strong>42–54</strong></td><td>well under target — leg/hip fatigue plus a fully skipped Friday lift; only 2 of 3 planned lifting sessions actually happened. Nothing to worry about volume-wise, but worth a normal week next week to catch back up.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><em>Not a deload week (last deload week of 2026-06-29; next due week of 2026-08-10 — ~1.5 weeks out). Front squat today is worth a fresh check-in before loading — legs were "mostly recovered" as of yesterday evening; drop to bodyweight/goblet-squat volume if they're not there yet.</em></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
