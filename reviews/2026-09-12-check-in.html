@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Body Comp Check-In — 2026-09-12</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header review">
+    <div class="header-inner">
+      <span class="badge recovery">Check-In</span>
+      <h1>Body Composition — 09/12</h1>
+      <span class="header-meta">2026-09-12 · 195 lb · 36.0&quot; waist · week 9 of the tracked trend</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="alert info">
+      <strong>Measurement check-in only</strong> — not a full review. Weight is a self-reported
+      evening number (&ldquo;still about 195&rdquo;), so treat it as approximate until the
+      morning-fasted re-weigh on 09/13.
+    </div>
+
+    <section class="card recovery">
+      <div class="card-header">The Trend</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Date</th><th>Weight</th><th>Waist</th><th>Δ Weight</th><th>Δ Waist</th><th>Context</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>2026-07-12</td><td>201 lb</td><td>38.5&quot;</td><td class="muted">baseline</td><td class="muted">baseline</td><td class="small">first measured baseline</td></tr>
+              <tr><td>2026-07-13</td><td>197 lb</td><td class="muted">—</td><td>−4 lb</td><td class="muted">—</td><td class="small">morning fasted; day-to-day variance</td></tr>
+              <tr><td>2026-08-08</td><td>196 lb</td><td>36.5&quot;</td><td>−1 lb</td><td>−2.0&quot;</td><td class="small">morning; waist outran the scale</td></tr>
+              <tr><td><strong>2026-09-12</strong></td><td><strong>195 lb</strong></td><td><strong>36.0&quot;</strong></td><td>−1 lb</td><td>−0.5&quot;</td><td class="small">evening, self-reported</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small muted">Nine-week totals from baseline: <strong>−6 lb</strong> and
+        <strong>−2.5&quot; of waist</strong>.</p>
+      </div>
+    </section>
+
+    <section class="card recovery">
+      <div class="card-header">Against Target — 180 lb / 34&quot; Waist</div>
+      <div class="card-body">
+        <div class="goal-list">
+          <div class="goal-row">
+            <div class="goal-label"><span class="goal-name">Waist</span>
+              <span class="goal-pct">38.5&quot; → 36.0&quot; of 34.0&quot; · 56%</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:56%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label"><span class="goal-name">Bodyweight</span>
+              <span class="goal-pct">201 → 195 lb of 180 lb · 29%</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:29%"></div></div>
+          </div>
+        </div>
+        <p class="small">Waist is more than halfway to target and now sits at exactly half your
+        height (72&quot; × 0.50) — the standard waist-to-height health threshold. Remaining gap:
+        <strong>2.0&quot;</strong> of waist, <strong>15 lb</strong> of scale weight.</p>
+      </div>
+    </section>
+
+    <section class="card recovery">
+      <div class="card-header">Read</div>
+      <div class="card-body">
+        <ul>
+          <li><strong>Still moving, but slower.</strong> The first four weeks gave −5 lb / −2.0&quot;;
+            the last five gave −1 lb / −0.5&quot;. Both metrics still point the right way, so this is
+            a slowdown rather than a stall — consistent with a smaller deficit, a lighter training
+            cycle, or both.</li>
+          <li><strong>Waist is still leading the scale.</strong> Same pattern flagged on 08-08, and
+            it keeps holding: the tape is the more sensitive signal here, not bodyweight.</li>
+          <li><strong>Training volume is the likeliest lever.</strong> Only two logged sessions
+            since 08-08 (08-26, 09-05). Getting back to the config&rsquo;s 3&times;/week — with the
+            carry and core work that has been at or near zero — is a bigger lever right now than
+            cutting calories further.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">Open Items</div>
+      <div class="card-body">
+        <ul>
+          <li><strong>Morning re-weigh (09/13)</strong> — the 195 here is an evening number. The
+            morning-fasted figure is the one that belongs in the trend.</li>
+          <li><strong>Photos not filed.</strong> Three shots taken today (front, side, side-turned)
+            were shared in conversation but are not in the repo. Save them as
+            <code>photos/2026-09-12-front-a.png</code>, <code>-side-a.png</code>,
+            <code>-side-b.png</code> to pair with the 06-13 / 07-12 / 08-08 series.</li>
+          <li><strong>Review is overdue.</strong> <code>profile.yaml</code> has not been regenerated
+            since 08-08. Sessions 08-26 and 09-05 are marked seen but never folded into strength
+            levels or movement patterns, and <code>training_week</code> /
+            <code>weeks_since_deload</code> are five weeks stale.</li>
+          <li><strong>Adductor check never recorded.</strong> The 09-05 log left a right-adductor
+            24–48h delayed-response check pending. Worth closing out before the next squat day.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script type="application/json" id="check-in-data">
+  {
+    "date": "2026-09-12",
+    "type": "body_composition_check_in",
+    "weight_lb": 195,
+    "waist_in": 36.0,
+    "time_of_day": "evening",
+    "self_reported": true,
+    "verified": false,
+    "morning_reweigh_due": "2026-09-13",
+    "baseline": {"date": "2026-07-12", "weight_lb": 201, "waist_in": 38.5},
+    "deltas_from_baseline": {"weight_lb": -6, "waist_in": -2.5, "weeks": 9},
+    "deltas_from_last": {"date": "2026-08-08", "weight_lb": -1, "waist_in": -0.5, "weeks": 5},
+    "targets": {"weight_lb": 180, "waist_in": 34.0},
+    "progress_pct": {"weight": 29, "waist": 56},
+    "photos_taken": 3,
+    "photos_filed": false,
+    "flags": ["review_overdue", "photos_unfiled", "adductor_check_pending", "weight_not_morning_fasted"]
+  }
+  </script>
+</body>
+</html>

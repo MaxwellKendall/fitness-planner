@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review — Week 18</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header review">
+    <div class="header-inner">
+      <span class="badge recovery">Week 18 Review</span>
+      <h1>Progress Report</h1>
+      <span class="header-meta">2026-09-12 · Tier 30–39 · 4 weeks since last deload · window 08-08 → 09-12</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="alert warning">
+      <strong>Read every volume number here as a floor, not as work performed.</strong>
+      Only two session logs exist in this five-week window (08-26, 09-05), and you've said more
+      training happened than got logged — the 08-31 plan independently confirms Saturday 08-30 ran
+      as planned and was never logged, and the 08-24 plan records two runs that week. The low set
+      counts below are a <em>logging</em> gap. They are not evidence of low adherence, and nothing
+      in this review should be read that way.
+    </div>
+
+    <div class="alert">
+      <strong>Two sessions folded in.</strong> 08-26 and 09-05 were marked <code>seen</code> by
+      <code>/log</code> but had never been processed into strength levels or movement patterns.
+      They are now. Both scored well above the bad-day threshold (composite 2.05 and 1.86).
+    </div>
+
+    <section class="card">
+      <div class="card-header">Goal Progress — Tier 30–39</div>
+      <div class="card-body">
+        <div class="goal-list">
+          <div class="goal-row">
+            <div class="goal-label"><span class="goal-name">Incline Bench Press</span>
+              <span class="goal-pct">174 lb est → 200 lb · 87%</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:87%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label"><span class="goal-name">Back Squat</span>
+              <span class="goal-pct">208 lb verified → 250 lb · 83%</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:83%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label"><span class="goal-name">Deadlift</span>
+              <span class="goal-pct">219 lb verified → 350 lb · 63% <span class="muted">(248 headline unverified)</span></span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:63%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label"><span class="goal-name">Pull-ups</span>
+              <span class="goal-pct">6 → 10 unbroken · 60%</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:60%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label"><span class="goal-name">Waist</span>
+              <span class="goal-pct">36.0&quot; → 34.0&quot; · 56%</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:56%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label"><span class="goal-name">Bodyweight</span>
+              <span class="goal-pct">195 lb → 180 lb · 29%</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:29%"></div></div>
+          </div>
+          <div class="goal-row">
+            <div class="goal-label"><span class="goal-name">Cardio — 5K</span>
+              <span class="goal-pct muted">untested · 0%</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:0%"></div></div>
+          </div>
+        </div>
+        <p class="small muted">No goal moved this cycle. That is the honest headline: five weeks of
+        gated training produced no strength progress on the tier targets, and the only metric that
+        advanced was body composition.</p>
+      </div>
+    </section>
+
+    <section class="card recovery">
+      <div class="card-header">⚠ Right Adductor — The Story of This Cycle</div>
+      <div class="card-body">
+        <p>This injury, not programming and not effort, is what consumed the last five weeks. It is
+        now at <strong>5 mentions</strong> spanning 08-07 → 09-05.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Date</th><th>Context</th><th>What happened</th></tr></thead>
+            <tbody>
+              <tr><td>2026-08-07</td><td>Front squat</td><td>First occurrence</td></tr>
+              <tr><td>2026-08-08</td><td>Tennis — push-off jumping a fence</td><td>Re-aggravated</td></tr>
+              <tr><td>2026-08-17</td><td>After a full week off</td><td>Did not resolve with rest</td></tr>
+              <tr><td>~2026-08-25</td><td>Sprinting on a run</td><td>Mild but noticeable pull</td></tr>
+              <tr><td>2026-09-05</td><td>Back squat 155 × 5 × 4 @ RPE 6</td><td><strong>Zero sensation</strong> — first clean loaded squat in 5 weeks</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>The good news is real, and it is also unconfirmed.</strong> 09-05 ran clean — but
+        it ran 63% heavier and double the programmed sets, with the movement screen and goblet ramp
+        skipped. Every previous flare of this injury showed up as a <strong>24–48 hour delayed
+        response</strong>, and that reading (Sun 09-06 / Mon 09-07) was never logged. Until you tell
+        me how those two days felt, &ldquo;resolved&rdquo; is an assumption.</p>
+      </div>
+    </section>
+
+    <div class="alert warning">
+      <strong>config.yaml.constraints.injuries is still empty.</strong> The adductor has been
+      flagged for escalation in three consecutive plans (08-17, 08-24, 08-31) and is far past this
+      repo's 3-mention threshold. This system never edits <code>config.yaml</code> — only you can.
+      Until the entry exists, every <code>/plan</code> run re-derives the constraint from prose
+      instead of applying a hard filter. Suggested:
+      <code>{area: right_adductor, note: "avoid explosive hip-rotational loading; squat pattern gated until cleared"}</code>
+    </div>
+
+    <section class="card">
+      <div class="card-header">Volume — Last 28 Days (logged only)</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Pattern</th><th>Sets (28d)</th><th>Prev (08-08)</th><th>Trend</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Squat</td><td>4</td><td>8</td><td>↓</td><td class="muted">adductor-gated</td></tr>
+              <tr><td>Hinge</td><td>0</td><td>12</td><td>↓</td><td class="muted">undertrained</td></tr>
+              <tr><td>Push</td><td>10</td><td>17</td><td>↓</td><td>✓</td></tr>
+              <tr><td>Pull</td><td>6</td><td>20</td><td>↓</td><td>✓</td></tr>
+              <tr><td>Carry</td><td>2</td><td>0</td><td>↑</td><td>✓ first carry volume since 07-10</td></tr>
+              <tr><td>Core</td><td>2</td><td>2</td><td>→</td><td>✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small">24 logged sets across 28 days, against a config target near 150
+        (3&times;/week at 14–18 sets). Squat and hinge sitting at 4 and 0 are downstream of the
+        adductor gate, not of effort. Push:pull is 1.67:1, over the 1.2:1 ceiling — on a 16-set
+        sample that's noise, not an imbalance worth correcting.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">Strength — No PRs, No Regressions, One New Lift</div>
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Lift</th><th>This cycle</th><th>Headline</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>Bench Press <span class="badge">flat — new</span></td>
+                  <td>135×5 @ RPE 7 (08-26) → 135×5 @ RPE 6 (09-05)</td>
+                  <td>152 lb est.</td>
+                  <td>Added to profile as a distinct lift</td></tr>
+              <tr><td>Back Squat</td><td>155×5×4 @ RPE 6 (09-05) → 174 est.</td><td>208 lb</td>
+                  <td>Submaximal — confirms, does not raise</td></tr>
+              <tr><td>Incline Bench</td><td class="muted">not trained</td><td>174 lb</td><td>Unchanged</td></tr>
+              <tr><td>Deadlift</td><td class="muted">not trained — hinge volume 0</td><td>248 lb <span class="muted">unverified</span></td>
+                  <td>Another cycle without a retest</td></tr>
+              <tr><td>Pull-up</td><td>3×5 @ RPE 6; max test not attempted</td><td>6 unbroken</td><td>Unchanged</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small"><strong>The quiet win:</strong> the same flat bench 135&times;5 went from
+        RPE 7 to RPE 6 in ten days. No heavier top set, but the load is getting easier — that's a
+        real signal in a cycle with very little else to show.</p>
+        <p class="small"><strong>The oldest open flag:</strong> the 248 lb deadlift headline is
+        still plan-derived and still contradicted by two verified sets below it (208, 219). Hinge
+        volume was zero all window, so it went untested again.</p>
+      </div>
+    </section>
+
+    <section class="card recovery">
+      <div class="card-header">Recovery State</div>
+      <div class="card-body">
+        <p><strong>Fatigue:</strong> moderate — <span class="muted">low confidence</span></p>
+        <p><strong>Last logged session:</strong> 2026-09-05 (7 days ago)</p>
+        <p><strong>Last high-intensity session:</strong> 2026-07-22</p>
+        <p><strong>Deload:</strong> the 08-10 travel week absorbed the one that was due. Counting
+        from 08-17 puts you at 4 weeks — <strong>next deload due the week of 2026-09-21</strong>.</p>
+        <p class="small">The formula says moderate, but it's reading two logged sessions. With
+        unlogged training in the window, both the real gap and the real load are unknown — worth a
+        direct answer before programming a heavy week.</p>
+      </div>
+    </section>
+
+    <section class="card meal">
+      <div class="card-header">Body Composition — The One Thing That Moved</div>
+      <div class="card-body">
+        <p><strong>195 lb, 36.0&quot; waist.</strong> Nine weeks from baseline: −6 lb, −2.5&quot;.
+        Full trend in <a href="2026-09-12-check-in.html">the 09-12 check-in</a>.</p>
+        <p>Worth naming what this cycle proves: fat loss continued through five weeks of heavily
+        gated, minimally-logged training. That's strong support for your own earlier read — the
+        waist trend is <strong>nutrition-driven, not training-driven</strong>.</p>
+        <p class="small muted">Weight is an evening self-report; morning-fasted re-weigh pending.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">Observations</div>
+      <div class="card-body">
+        <ul style="padding-left:1.25rem;display:flex;flex-direction:column;gap:.4rem;font-size:.9rem;">
+          <li><strong>Nutrition and sleep have been dark for 59 days</strong> — no
+            <code>daily-logs/</code> entries since 2026-07-15. All four REVIEW correlation checks
+            (protein near sessions, sleep before hard days, training-day calories, low-protein
+            patterns) could not run. Since you attribute the waist trend to nutrition, this is the
+            most valuable missing data in the repo after the adductor.</li>
+          <li><strong>Cardio is now real training, and this system doesn't measure it.</strong>
+            Running and tennis are recurring, and sprinting is what flared the adductor.
+            <code>movement_patterns</code> has no cardio dimension, and the 5K-under-25 goal is
+            still untested — your self-reported sub-60:00 10K suggests that target is too soft.
+            The activity most advancing the age-40 longevity vision is the one being tracked least.</li>
+          <li><strong>Lower back is quiet.</strong> Holds at 2 mentions (07-14, 07-18), none since
+            good mornings were introduced. Below the escalation threshold — no action.</li>
+          <li><strong>Carry is back.</strong> 2 sets of farmer carry on 08-26, clean, no adductor
+            sensation. First carry volume since 07-10 — keep it.</li>
+          <li><strong>Tooling bug:</strong> <code>tools.py:rolling_volume</code> globs
+            <code>session-logs/*.md</code> and parses YAML front matter, but every log is
+            <code>.html</code> with a JSON block. It returns zero for any window. Volume here was
+            computed manually.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">Proposals — Need Your Decision</div>
+      <div class="card-body">
+        <ul style="padding-left:1.25rem;display:flex;flex-direction:column;gap:.4rem;font-size:.9rem;">
+          <li><strong>Timeline expired.</strong> The 16-week horizon ran out around 2026-08-31;
+            you're in training week 18 with every target unmet. Proposal: extend by
+            <strong>8 weeks to 2026-11-09</strong>, keeping all targets as-is — the adductor gate,
+            not the goals, is what consumed the runway. Needs a
+            <code>config.yaml.goals.timeline_weeks</code> edit by you.</li>
+          <li><strong>Add the adductor constraint to config.yaml</strong> (see the warning above).</li>
+          <li><strong>How did 09-06 and 09-07 feel?</strong> Answer releases (or re-gates) the squat
+            pattern for next week's plan.</li>
+          <li><strong>Professional evaluation</strong> — declined twice. Five weeks, three distinct
+            contexts, unresolved by a full week of rest. Worth reconsidering.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="alert">
+      Next deload due the week of <strong>2026-09-21</strong>. Nothing is due this coming week.
+    </div>
+  </main>
+
+  <script type="application/json" id="review-data">
+  {
+    "review_date": "2026-09-12",
+    "training_week": 18,
+    "window": {"from": "2026-08-08", "to": "2026-09-12", "weeks": 5},
+    "sessions_folded": ["2026-08-26", "2026-09-05"],
+    "logging_gap": true,
+    "logging_gap_note": "Athlete reports unlogged training; 08-30 confirmed unlogged by the 08-31 plan. All volume figures are floors.",
+    "volume_28d_logged": {"squat": 4, "hinge": 0, "push": 10, "pull": 6, "carry": 2, "core": 2, "total": 24},
+    "push_pull_ratio": 1.67,
+    "new_prs": [],
+    "new_lifts": [{"slug": "bench-press", "estimated_1rm_lb": 152, "note": "flat bench, first history in program"}],
+    "strength_unchanged": ["back-squat", "incline-bench-press", "deadlift", "pull-up"],
+    "recovery": {"fatigue": "moderate", "confidence": "low", "weeks_since_deload": 4, "next_deload_week": "2026-09-21"},
+    "body": {"weight_lb": 195, "waist_in": 36.0, "self_reported": true},
+    "open_flags": [
+      "adductor_config_constraint_missing",
+      "adductor_delayed_response_unlogged",
+      "deadlift_headline_unverified",
+      "timeline_expired_extension_proposed",
+      "daily_logs_dark_59_days",
+      "cardio_untracked",
+      "rolling_volume_tool_broken"
+    ]
+  }
+  </script>
+</body>
+</html>
